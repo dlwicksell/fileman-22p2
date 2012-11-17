@@ -1,5 +1,5 @@
-DINIT ;SFISC/GFT,XAK-INITIALIZE VA FILEMAN ;29MAY2006
-V ;;22.0;VA FileMan;**1024**;Mar 30, 1999
+DINIT ;SFISC/GFT,XAK-INITIALIZE VA FILEMAN ;; 11/14/12 11:37am
+V ;;22.2;VA FileMan;;Mar 30, 1999
  D KL^DINIT6
 N ;
  D VERSION N DIFROM S DIFROM=VERSION W !!,X D DT^DICRW
@@ -67,17 +67,33 @@ OSETC ;BRING IN MUMPS OS, DIALOG & LANGUAGE DD AND DATA FOR FILEMAN
  . N I,DA,DIK F I=1,2,3,4,5,6,7,10,11,12,13,14,15 S DA=I,DIK="^DD(""OS""," D ^DIK
  . Q
  ;
- K ^UTILITY(U,$J),^UTILITY("DIK",$J) W !!,"Now loading DIALOG and LANGUAGE Files"
+ K ^UTILITY(U,$J),^UTILITY("DIK",$J),^UTILITY("KX",$J) W !!,"Now loading DIALOG and LANGUAGE Files"
+ K:$G(^DIC(.85,"%MSC"))'=3121114.111954 ^DI(.85) ; VEN/SMH If lang file dd isn't the latest one, kill data off.
+ K ^DIC(.85),^DD(.85),^DD(.8501),^DD(.8502) ; VEN/SMH - Kill the language file old DD, DIC and data. (22.2)
  S DN="^DINIT" F R=1:1:39 D @(DN_$$B36(R)) W "."
 EGP F R=901:1:911 D @(DN_R) ;**CCO/NI  BRING IN EXTRA DIALOG ENTRIES
  S $P(^DIC(.84,0),U,1,2)="DIALOG^.84",$P(^DI(.84,0),U,1,2)="DIALOG^.84I" I $D(^DIC(.84,0,"GL")) D A1^DINIT3
  S $P(^DIC(.85,0),U,1,2)="LANGUAGE^.85",$P(^DI(.85,0),U,1,2)="LANGUAGE^.85I" I $D(^DIC(.85,0,"GL")) D A1^DINIT3
- F I=.84,.841,.842,.844,.845,.847,.8471,.85 D XX^DINIT3
+ F I=.84,.841,.842,.844,.845,.847,.8471,.85,.8501,.8502 D XX^DINIT3 ; VEN/SMH - added .8501 and .8502 for new lang file
+ ; Keys and new style indexes installer ; new in FM V22.2
+ N DIFRSA S DIFRSA=$NA(^UTILITY("KX",$J)) ; Tran global for Keys and Indexes
+ N DIFRFILE S DIFRFILE=0 ; Loop through files
+ F  S DIFRFILE=$O(@DIFRSA@("IX",DIFRFILE)) Q:'DIFRFILE  D
+ . K ^TMP("DIFROMS2",$J,"TRIG")
+ . N DIFRD S DIFRD=0
+ . F  S DIFRD=$O(@DIFRSA@("IX",DIFRFILE,DIFRD)) Q:'DIFRD  D DDIXIN^DIFROMSX(DIFRFILE,DIFRD,DIFRSA) ; install New Style Indexes
+ . K ^TMP("DIFROMS2",$J,"TRIG")
+ . S DIFRD=0
+ . F  S DIFRD=$O(@DIFRSA@("KEY",DIFRFILE,DIFRD)) Q:'DIFRD  D DDKEYIN^DIFROMSY(DIFRFILE,DIFRD,DIFRSA) ; install keys
+ K @DIFRSA ; kill off tran global
+ ;
  D DATA
  Q
  ;
+ ; VEN/SMH - added kill D1 since that causes a problem with Transfer/Merge
+ ; for keyed fields if it leaks from the symbol table.
 DATA W "." S (D,DDF(1),DDT(0))=$O(^UTILITY(U,$J,0)) Q:D'>0
- S DTO=0,DMRG=1,DTO(0)=^(D),Z=^(D)_"0)",D0=^(D,0),@Z=D0,DFR(1)="^UTILITY(U,$J,DDF(1),D0,",DKP=0 F D0=0:0 S D0=$O(^UTILITY(U,$J,DDF(1),D0)) Q:'D0  I $D(^(D0,0)) S Z=^(0) D I^DITR ;**DON'T STOP IF A 0 NODE ISN'T THERE
+ S DTO=0,DMRG=1,DTO(0)=^(D),Z=^(D)_"0)",D0=^(D,0),@Z=D0,DFR(1)="^UTILITY(U,$J,DDF(1),D0,",DKP=0 F D0=0:0 S D0=$O(^UTILITY(U,$J,DDF(1),D0)) S:D0="" D0=-1 K D1 Q:'$D(^(D0,0))  S Z=^(0) D I^DITR
  K ^UTILITY(U,$J,DDF(1)),DDF,DDT,DTO,DFR,DFN,DTN G DATA
  ;
 B36(X) Q $$N1(X\(36*36)#36+1)_$$N1(X\36#36+1)_$$N1(X#36+1)
