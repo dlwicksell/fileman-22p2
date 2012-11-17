@@ -1,4 +1,4 @@
-DID1 ;SFISC/XAK,JLT-STD DD LIST ;26APR2010
+DID1 ;SFISC/XAK,JLT-STD DD LIST ;26APR2010 ; 11/16/12 12:06pm
  ;;22.0;VA FileMan;**7,76,105,152,999,1003,1004,1021,1039**;Mar 30, 1999
  S DJ(Z)=D0,DDL1=14,DDL2=32 G B
  ;
@@ -7,7 +7,7 @@ A S DJ(Z)=$O(^DD(F(Z),DJ(Z))) I DJ(Z)'>0 S:DJ(Z)="" DJ(Z)=-1 W !! S Z=Z-1 Q
 B S N=^DD(F(Z),DJ(Z),0) K DDF I $D(DIGR),Z<2!(DJ(Z)-.01) X DIGR E  G ND
  D HD:$Y+$L(X)+6>IOSL Q:M=U  W !!,F(Z),",",DJ(Z)
 LABEL W ?(Z+Z+12),$P(N,U),?DDL2+4," "_$P(N,U,4)
- F X=0:0 S X=$O(^DD(F(Z),DJ(Z),.008,X)) Q:'X  S W=$P($G(^(X,0)),U) I W]"",$D(^DI(.85,X,0)) S I=$P(^(0),U,2)_": " W !?(Z+Z+12-$L(I)),I,W ;**CCO/NI DISPLAY FOREIGN LABELS
+ F X=0:0 S X=$O(^DD(F(Z),DJ(Z),.008,X)) Q:'X  S W=$P($G(^(X,0)),U) I W]"",$D(^DI(.85,X,0)) S I=$P(^(0),U)_": " W !?(Z+Z+12-$L(I)),I,W ;**CCO/NI DISPLAY FOREIGN LABELS
  S X=$P(N,U,2)
 WP I X,$D(^DD(+X,.01,0)) S W=$P(^(0),U,2) I W["W" D
  .S X="WORD-PROCESSING #"_+X D  S X="(NOWRAP)" D:W["L"  S X="(IGNORE ""|"")" D:W["X"!(W["x")  S X="(UNEDITABLE)" D:W["I"  S X=""
