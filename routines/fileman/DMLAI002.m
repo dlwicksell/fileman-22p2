@@ -1,9 +1,9 @@
-DILAI002 ; ; 02-NOV-2012 ; 11/9/12 11:29am
- ;;22.2;LANGUAGE FILE INITS;;NOV 02, 2012
+DMLAI002 ; ; 20-NOV-2012
+ ;;22.2;LANGUAGE FILE INITS;;NOV 20, 2012
  Q:'DIFQ(.85)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,999) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q Q
  ;;^DD(.85,.05,"DT")
- ;;=3121102
+ ;;=3121101
  ;;^DD(.85,.06,0)
  ;;=SCOPE^S^I:Individual;M:Macrolanguage;C:Collective;S:Special;L:Local;^0;6^Q
  ;;^DD(.85,.06,3)
