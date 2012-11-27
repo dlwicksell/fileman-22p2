@@ -1,6 +1,5 @@
-DIFROM0 ;SFISC/XAK-GATHER PCS TO SEND ;2:59 PM  25 Sep 1998
- ;;22.0;VA FileMan;;Mar 30, 1999
- ;Per VHA Directive 10-93-142, this routine should not be modified.
+DIFROM0 ;SFISC/XAK-GATHER PCS TO SEND ; 10/31/12 8:33am
+ ;;22.2;VA FileMan;;Mar 30, 1999
  S %=2,DIT=0,DIH=""
  I DPK<0,$O(F(0))>0 K DIR S DIR(0)="Y",DIR("A")="Do you want to include all the templates and forms",DIR("B")="NO",DIR("??")="^D NOPKG^DIFROMH" D ^DIR G Q:$D(DIRUT) S DIT=Y=1
  W ! S DIR(0)="YA",DIR("??")="^D ^DIFROMH",DIR("B")="YES"
@@ -10,7 +9,7 @@ DIFROM0 ;SFISC/XAK-GATHER PCS TO SEND ;2:59 PM  25 Sep 1998
 S W ! S DIR("A")="Would you like security codes sent along: ",DIR("B")="NO"
  S DIR("??")="^D S^DIFROMH" D ^DIR G Q:$D(DIRUT) S DSEC=Y=1 K ^UTILITY("DI",$J)
 M ;
- S DIR("A")="Maximum Routine Size    (2000 - 9999) : ",DIR("B")=^DD("ROU"),DIR(0)="NA^2000:9999"
+ S DIR("A")="Maximum Routine Size    (2000 - "_^DD("ROU")_") : ",DIR("B")=^DD("ROU"),DIR(0)="NA^2000:"_^DD("ROU") ; VEN/SMH V22.2
  S DIR("??")="^D M^DIFROMH" D ^DIR G Q:$D(DIRUT) S DIFRM=Y
 GO W ! D WAIT^DICD
  D:DPK>0 PKG^DIFROM12
