@@ -1,5 +1,5 @@
-DINIT00S ; SFISC/TKW-DIALOG & LANGUAGE FILE INITS ;05:42 PM  21 Aug 2002
- ;;22.0;VA FileMan;**999**;Mar 30, 1999
+DINIT00S ; SFISC/TKW-DIALOG & LANGUAGE FILE INITS ;27 Nov 2012
+ ;;22.2;VA FileMan;;Mar 30, 1999
  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) S @X=Y
 Q Q
  ;;^UTILITY(U,$J,.84,9202,2,5,0)
@@ -151,7 +151,7 @@ Q Q
  ;;^UTILITY(U,$J,.84,9202,2,78,0)
  ;;=Exit Browser or help text                    <F1>E or "EXIT"
  ;;^UTILITY(U,$J,.84,9202,2,79,0)
- ;;=Quit                                         <F1>Q
+ ;;=Quit                                         <F1>Q or CTRL-E
  ;;^UTILITY(U,$J,.84,9202,2,80,0)
  ;;=
  ;;^UTILITY(U,$J,.84,9202,2,81,0)

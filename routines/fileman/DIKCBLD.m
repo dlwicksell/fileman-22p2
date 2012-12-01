@@ -1,6 +1,5 @@
-DIKCBLD ;SFISC/MKO-AUTOBUILD A ROUTINE THAT CALLS CREIXN^DDMOD ;11:30 AM  9 Jul 2002
- ;;22.0;VA FileMan;**95**;Mar 30, 1999
- ;Per VHA Directive 10-93-142, this routine should not be modified.
+DIKCBLD ;SFISC/MKO-AUTOBUILD A ROUTINE THAT CALLS CREIXN^DDMOD ; [2012-11-15T16:05:59-0700]
+ ;;22.2;VA FileMan;;Mar 30, 1999
  ;
 MAIN ;Main process
  N DIKCRTN,DIKCNMSP,DIKCITL,DIKCXR,%
@@ -127,7 +126,7 @@ ASKRTN() ;Prompt for routine name; return ^ if timeout, null, or ^
  F  D  Q:$G(DIKCRTN)]""
  . D ^DIR I $D(DIRUT) S DIKCRTN=U Q
  . S DIKCRTN=X
- . X ^%ZOSF("TEST") E  Q
+ . Q:$T(^@X)=""  ; routine doesn't exist; overwrite okay. VEN/SMH
  . Q:$$ASKREPL(DIKCRTN)
  . S DIKCRTN=""
  Q $G(DIKCRTN)
@@ -165,7 +164,7 @@ ASKNMSP() ;Prompt for a namespace
  ;
 ASKXR() ;Prompt for file/xref
  N DIKCCNT,DIKCROOT,DIKCTOP,DIKCFILE,DDS1,D,DIC,X,Y
- S DDS1="CROSS-REFERENCE FROM" D W^DICRW Q:Y<0 ""
+ S DDS1="CROSS-REFERENCE FROM: " D W^DICRW Q:Y<0 ""
  S DIKCTOP=+$P($G(@(DIC_"0)")),U,2) Q:'DIKCTOP ""
  S DIKCFILE=$$SUB^DIKCU(DIKCTOP)
  ;

@@ -1,5 +1,5 @@
-DDGLIB0 ;SFISC/MKO-SETUP AND CLEANUP FOR WINDOWS ;3OCT2007
- ;;22.0;VA FileMan;**1003,1004,1029**
+DDGLIB0 ;SFISC/MKO-SETUP AND CLEANUP FOR WINDOWS ;[2012-11-14T19:02:42-0700]
+ ;;22.2;VA FileMan;
 INIT() ;Setup required variables
  ;Set margin to 0
  ;Turn autowrap off
@@ -10,14 +10,14 @@ INIT() ;Setup required variables
  ;  DDGLED   = codes for editing
  ;  DDGLCLR  = codes to erase characters
  ;  DDGLGRA  = codes for graphics characters
- ;  DDGLZOSF = array of code from %ZOSF
+ ;  DDGLZOSF = array of code from %ZOSF (as of V22.2 - array comes from OS file)
  ;  DDGLREF  = global where window image is stored
  ;  DDGLKEY  = codes for non-alphanumeric keys
  ;  DDGLSCR  = array containing list of visible windows on screen
  ;
  N X
  I $D(DDGLDEL)[0 D SET Q:$G(DIERR)
- S X=0 X ^%ZOSF("RM"),^("TYPE-AHEAD")
+ S X=0 X DDGLZOSF("RM"),DDGLZOSF("TYPE-AHEAD")
  W $P(DDGLVID,DDGLDEL,8)
  Q
  ;
@@ -25,9 +25,10 @@ SET ;Setup screen handling variables
  K DIERR,DDGLSCR
  S U="^",DDGLDEL=$C(127)
  ;
- F X="EOFF","EON","TRMOFF","TRMON","TRMRD" D  G:$G(DIERR) ABT
- . I $D(^%ZOSF(X))#2 S DDGLZOSF(X)=^(X) Q
- . D BLD^DIALOG(810)
+ ; VEN/SMH - remove reliance on %ZOSF node -- next 3 lines changed v 22.2
+ D:'$D(DISYS) OS^DII ; garb OS from %ZOSF or Fileman in this sequence
+ F X="EOFF","EON","TRMOFF","TRMON","TRMRD","RM","TYPE-AHEAD","NO-TYPE-AHEAD" D  G:$G(DIERR) ABT
+ . S DDGLZOSF(X)=$G(^DD("OS",DISYS,X))
  ;
 ZIS N %ZIS,IOP S IOP="HOME" D ^%ZIS I POP D BLD^DIALOG(845) G ABT
  I $D(^%ZIS(2)),'$O(^%ZIS(2,+$G(IOST(0)),0)) D BLD^DIALOG(840,"#"_+$G(IOST(0))) G ABT
@@ -101,10 +102,11 @@ KILL(DDGLPARM) ;Cleanup variables
  ;Turn echo on
  ;Turn terminators off
  N X
+ D:'$D(DISYS) OS^DII ; garb OS from %ZOSF or Fileman in this sequence
  I $G(DDGLPARM)'["W" D
- . S X=$S($D(IOM)#2:IOM,1:80) X $G(^%ZOSF("RM"))
+ . S X=$S($D(IOM)#2:IOM,1:80) X DDGLZOSF("RM")
  . I $D(DUZ)#2,$D(^VA(200,DUZ,0))#2,$P($G(^(200)),U,9)'="Y" D
- .. I '$G(DUZ("BUF"),1) X $G(^%ZOSF("NO-TYPE-AHEAD"))
+ .. I '$G(DUZ("BUF"),1) X DDGLZOSF("NO-TYPE-AHEAD")
  . W $P($G(DDGLVID),$G(DDGLDEL),9),$P($G(DDGLVID),$G(DDGLDEL),10)
  ;
  I $G(DDGLPARM)'["T" D

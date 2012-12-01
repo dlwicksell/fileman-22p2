@@ -1,5 +1,6 @@
-DDBRP ;SFISC/DCL-BROWSER PRINT UTILITY ;06:05 PM  2 Sep 2002
- ;;22.0;VA FileMan;**999**;Mar 30, 1999
+DDBRP ;SFISC/DCL-BROWSER PRINT UTILITY ; 11/30/12 3:03pm
+ ;;22.2;VA FileMan;;Mar 30, 1999
+ ; 
 PRTHELP ; Print Help
  ;
  N DDGLI,DDGLHN1,DDGLHN2
@@ -23,7 +24,7 @@ BRM ;Clear scroll region, title bar and
  X IOXY
  ;
  ;Reset for Roll/Scroll mode
- S X=$G(IOM,80) X ^%ZOSF("RM")
+ S X=$G(IOM,80) X ^DD("OS",DISYS,"RM")
  W $P(DDGLVID,DDGLDEL,9)
  ;
  N POP,XQH
@@ -33,29 +34,48 @@ BRM ;Clear scroll region, title bar and
  N %A0,%D1,%D2,%DT,%J1,%W0
  ;
 DEVICE ;
+ ; Save $R, otherwise, it becomes ^%ZTSK in standalone-FM. Fails in DIALOG which saves ^(0)
+ ; ^(0) doesn't exist, and it fails on both GT.M and Cache.
+ N DINAKED S DINAKED=$NA(^(0))
  S %ZIS=$S($D(^%ZTSK):"Q",1:""),%ZIS("B")=""
  S %ZIS("S")="I $$UP^DILIBF($P(^(0),U))'[""BROWSE"",$E($$GET1^DIQ(3.5,Y,""SUBTYPE""))=""P""" ;**
  S IOF="#",IOSL=DDBSRL
  D ^%ZIS
  K %ZIS
  ;
+ ; Restore $R for DIALOG call.
+ D:DINAKED]""
+ .I DINAKED["(" Q:$O(@(DINAKED))  Q
+ .I $D(@(DINAKED))
+ ;
  I POP D
  .W !!,$$EZBLD^DIALOG(1901) ;**REPORT CANCELLED
  .H 2
  ;
  ;Queue report
+ ;
  E  I $D(IO("Q")),$D(^%ZTSK) D
  .S ZTRTN="PRINTHLP^DDBRP"
  .S ZTDESC="Browser help printout."
  .N I F I="DDGLHN1","DDGLHN2" S ZTSAVE(I)=""
  .D ^%ZTLOAD
+ .;
+ .; Restore $R again
+ .D:DINAKED]""
+ ..I DINAKED["(" Q:$O(@(DINAKED))  Q
+ ..I $D(@(DINAKED))
+ .;
+ .; Done with DINAKED
+ .K DINAKED
+ .;
 QUEUED .I $D(ZTSK)#2 W !,$$EZBLD^DIALOG(8161,ZTSK),! ;**
  .E  W !,$$EZBLD^DIALOG(1901),! ;**REPORT CANCELLED
  .K ZTSK
  .S IOP="HOME" D ^%ZIS
  ;
- E  I $E(IOST,1,2)="C-" D  G DEVICE
+ E  I $E(IOST,1,2)="C-" D
  .W !,$C(7)_$$EZBLD^DIALOG(7076.3),! ;**NOT ON CRT
+ .H 2
  ;
  ;Non-queued report
  E  D
@@ -65,7 +85,7 @@ QUEUED .I $D(ZTSK)#2 W !,$$EZBLD^DIALOG(8161,ZTSK),! ;**
  .X $G(^%ZIS("C"))
  ;
  ;Reset for Screen Mode
- S X=0 X ^%ZOSF("RM")
+ S X=0 X ^DD("OS",DISYS,"RM")
  W $P(DDGLVID,DDGLDEL,8)
  ;
  ;Repaint help screen

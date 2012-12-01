@@ -1,5 +1,5 @@
-DDS6 ;SFISC/MKO-DELETIONS ;14NOV2003
- ;;22.0;VA FileMan;**1003**;Mar 30, 1999
+DDS6 ;SFISC/MKO-DELETIONS ; [2012-11-14T18:54:00-0700]
+ ;;22.2;VA FileMan;;Mar 30, 1999
  ;Enter here if user deleted record from the .01 of the (sub)record
  ;(called from DDS01)
  ;In:  DDSU array, DDSOLD, DDSFLD
@@ -64,9 +64,9 @@ D ;Delete the subrecord
  ;
  S DDS6DA=DA N D0
  F DDSI=1:1 Q:$D(DA(DDSI))[0  S DDS6DA(DDSI)=DA(DDSI) N @("D"_DDSI)
- W $P(DDGLVID,DDGLDEL,9) S X=IOM X $G(^%ZOSF("RM"))
+ W $P(DDGLVID,DDGLDEL,9) S X=IOM X DDGLZOSF("RM")
  S DR=".01///@" D ^DIE K DI ;DELETE THE SUB-RECORD!
- W $P(DDGLVID,DDGLDEL,8) S X=0 X ^%ZOSF("RM")
+ W $P(DDGLVID,DDGLDEL,8) S X=0 X DDGLZOSF("RM")
  ;
  ;I $D(DA) H 2 W $P(DDGLCLR,DDGLDEL,2) D R^DDSR S Y=0 Q
  I $D(DA) S:$Y>(DDSHBX+1) DDSKM=1,DDM=1 S Y=0 Q
