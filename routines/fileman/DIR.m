@@ -1,5 +1,5 @@
-DIR ;SFISC/XAK-READER, HELP ;16MAR2010
- ;;22.0;VA FileMan;**30,999,1004,1037,1038**;Mar 30, 1999
+DIR ;SFISC/XAK-READER, HELP ;18NOV2012
+ ;;22.0;VA FileMan;**30,999,1004,1037,1038,1044**;Mar 30, 1999
  N %,%A,%B,%B1,%B2,%B3,%BA,%C,%E,%G,%H,%I,%J,%N,%P,%S,%T,%W,%X,%Y,A0,C,D,DD,DDH,DDQ,DDSV,DG,DH,DIC,DIFLD,DIRO,DO,DP,DQ,DU,DZ,X1,XQH,DIX,DIY,DISYS,%BU,%J1,%A0,%W0,%D1,%D2,%DT,%K,%M
  S:$D(DDH)[0 DDH=0 Q:'$D(DIR(0))  D ^DIR2 G Q:%T=""
  I $D(DIR("V"))#2 D ^DIR1 S DDER=%E G Q
@@ -73,8 +73,8 @@ SETSCR(DIRFIL,DIRFLD) ;SET UP DIC("S")
  Q:'$D(^DD(DIRFIL,DIRFLD,12.1))
  X ^(12.1)
  Q:$G(DUZ("LANG"))'>1!'$D(DIC("S"))
- S DIC("S",1.007)=$P(^DD(DIRFIL,DIRFLD,0),U,3),DIC("S",2.007)=DIC("S")
- S DIC("S")="N DIRS S DIRS=$P($P(DIC(""S"",1.007),"";"",Y),"":"") N Y S Y=DIRS X DIC(""S"",2.007)"
+ S DIC("S",1.007)=$P(^DD(DIRFIL,DIRFLD,0),U,3),DIC("S",0)=";"_$$SETIN^DIALOGZ,DIC("S",2.007)=DIC("S")
+ S DIC("S")="N S,I S S=DIC(""S"",0),I=$L($E(S,1,$F(S,"";""_Y_"":"")),"";"")-1,S=$P($P(DIC(""S"",1.007),"";"",I),"":"") N Y S Y=S X DIC(""S"",2.007)"
  Q
  ;
  ;
