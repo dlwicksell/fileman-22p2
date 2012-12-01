@@ -1,6 +1,5 @@
-DILIBF ;SFISC/STAFF-LIBRARY OF FUNCTIONS ;26SEP2007
- ;;22.0;VA FileMan;**48,71,1004,1024,1029**;Mar 30, 1999
- ;
+DILIBF ;SFISC/STAFF-LIBRARY OF FUNCTIONS ;15NOV2012 ; 12/1/12 3:12pm
+ ;;22.2;VA FileMan;;Mar 30, 1999
 HTFM(%H,%F) ;$H to FM
  N X,%,%Y,%M,%D S:'$D(%F) %F=0
  S:%H[",0" %H=%H-1_",86400"
@@ -89,10 +88,8 @@ GLO(Z) ; gets the file number from a global root
  Q $$FNO(+Y)
  ;
 UP(X) ; convert string X to uppercase
- I X?.UNP Q X
- N A,L,B,C S C=""
- F A=1:1:$L(X) S L=$E(X,A),B=$C($A(L)-32) S C=C_$S(L'?1L:L,B?1L:"Z",1:B) ;$C(255) matches lower-case, and so does $C(255-32), so lamely return "Z"
- Q C
+ I $G(DUZ("LANG")) Q $$OUT^DIALOGU(X,"UC")
+ E  Q $TR(X,"abcdefghijklmnopqrstuvwxyz","ABCDEFGHIJKLMNOPQRSTUVWXYZ")
  ;
 ROUEXIST(X) ; Execute routine existence test
  G:X="" QRER I '$D(DISYS) N DISYS D OS^DII
@@ -129,35 +126,18 @@ HKERR(DIFILE,DIIENS,DIFLD,DIHOOK) ;
  D BLD^DIALOG(120,DIHOOK,.DIEXT)
  Q
  ;
-FILENUM(DIGREF) ; Return file/subfile number from open global reference
+FILENUM(DIGREF) ;Return file/subfile number from open global reference
  Q:$G(DIGREF)'?1"^".1"%"1U.UN1"(".E ""
- N DIGR,X,DIFILE
- S DIFILE=$$FNUM1(DIGREF) Q:DIFILE'="" DIFILE
  I $E(DIGREF,1,8)="^DIC(.2," Q .2
- S DIGREF=$$CREF^DILF(DIGREF),DIGREF=$NA(@DIGREF),DIGREF=$$OREF^DILF(DIGREF)
- S DIFILE="" D  I DIFILE="" Q ""
- . S DIGR=DIGREF N DISUBS S DISUBS=$QL($$CREF^DILF(DIGR)) Q:'DISUBS
- . F DISUBS=DISUBS-1:-1 Q:DISUBS'>-1  D  Q:DIFILE'=""
- . . I DISUBS S DIGR=$P(DIGR,",",1,DISUBS)_"," S DIFILE=$$FNUM1(DIGR) Q
- . . S DIGR=$P(DIGR,"(")_"(" Q:DIGR="^DIC("  S DIFILE=$$FNUM1(DIGR) Q
- . Q
- S X=$P(DIGREF,DIGR,2,99) I X="" Q DIFILE
- N I,J,K,Q S Q=""""
- F I=2:2 S J=$P(X,",",I) Q:J=""  D  Q:DIFILE=""
- . I $E(J)=Q S J=$P(J,Q,2)
- . S K=$O(^DD(DIFILE,"GL",J,0,0)) I 'K S DIFILE="" Q
- . S DIFILE=+$P($G(^DD(DIFILE,K,0)),U,2) Q
+ N F,X,DIFILE,S
+ S DIFILE=+$P($G(@(DIGREF_"0)")),U,2) I DIFILE Q DIFILE
+ S DIGREF=$$CREF^DILF(DIGREF)
+ F X=$QL($NA(@DIGREF)):-2:0 S X(X)=$QS(DIGREF,X),X(X,0)=$$CREF^DILF($NA(@DIGREF,X))
+ S X=$O(X("")) I X="" Q ""
+ I X(X)="^DIC" S F=1
+ E  I X(X)="^DD" S F=0
+ E  S S=$P($G(@X(X,0)@(0)),U,2),F=+S I S="" Q ""
+ F X=X:0 S X=$O(X(X)) Q:X=""  S DIFILE=$O(^DD(F,"GL",X(X),0,"")) Q:DIFILE=""  S (F,DIFILE)=+$P($G(^DD(F,DIFILE,0)),U,2) Q:'F
  Q DIFILE
  ;
-FNUM1(DIGR) ; Return file number for file 0, or from 0 node of data
- ; DIGR is the open global reference
- N DIFILE
- I $E(DIGR,1,4)="^DD(",$P(DIGR,"(",2) D  I $D(DIFILE) Q DIFILE
- . I $L(DIGR,",")=2 S DIFILE=0 Q
- . I $L(DIGR,",")'=4 Q
- . N % S %=$P(DIGR,",",3)
- . I %=11 S DIFILE=.2 Q
- . S:%=20 DIFILE=.3 Q
- S DIFILE=+$P($G(@(DIGR_"0)")),U,2)
- I DIFILE,$G(^DIC(DIFILE,0,"GL"))=DIGR Q DIFILE
- Q ""
+ ;
