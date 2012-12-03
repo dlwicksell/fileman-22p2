@@ -1,4 +1,4 @@
-DINVGUX ; VEN/SMH - GT.M (Unix) Specific Functions; [11/30/12 2:48pm]
+DINVGUX ; VEN/SMH - GT.M (Unix) Specific Functions; 30NOV2012
  ;;22.2;VA FILEMAN;
 DEL(RN) ; Delete Routine; Fileman Entry Point.
  ; Input: Routine Name by Value

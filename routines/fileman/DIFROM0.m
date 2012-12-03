@@ -1,4 +1,4 @@
-DIFROM0 ;SFISC/XAK-GATHER PCS TO SEND ; 10/31/12 8:33am
+DIFROM0 ;SFISC/XAK-GATHER PCS TO SEND ; 31OCT2012
  ;;22.2;VA FileMan;;Mar 30, 1999
  S %=2,DIT=0,DIH=""
  I DPK<0,$O(F(0))>0 K DIR S DIR(0)="Y",DIR("A")="Do you want to include all the templates and forms",DIR("B")="NO",DIR("??")="^D NOPKG^DIFROMH" D ^DIR G Q:$D(DIRUT) S DIT=Y=1

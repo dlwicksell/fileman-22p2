@@ -1,4 +1,4 @@
-DINVGTM ; VEN/SMH - GT.M (VMS) Specific Functions; [11/30/12 2:19pm]
+DINVGTM ; VEN/SMH - GT.M (VMS) Specific Functions; 30NOV2012
  ;;22.2;VA FILEMAN;
 DEL(RN) ; Delete Routine; Fileman Entry Point.
  ; Input: Routine Name by Value

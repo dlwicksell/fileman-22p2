@@ -1,4 +1,4 @@
-DDS6 ;SFISC/MKO-DELETIONS ; [2012-11-14T18:54:00-0700]
+DDS6 ;SFISC/MKO-DELETIONS ; 14NOV2012
  ;;22.2;VA FileMan;;Mar 30, 1999
  ;Enter here if user deleted record from the .01 of the (sub)record
  ;(called from DDS01)
