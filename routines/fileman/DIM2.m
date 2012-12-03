@@ -1,13 +1,13 @@
-DIM2 ;SFISC/XAK,GFT,TOAD-FileMan: M Syntax Checker, Exprs ;6JUN2012
- ;;22.0;VA FileMan;**1043**;Mar 30, 1999
- ;
+DIM2 ;SFISC/XAK,GFT,TOAD-FileMan: M Syntax Checker, Exprs ;20NOV2012
+ ;;22.0;VA FileMan;**169**;Mar 30, 1999
+ ;Per VHA Directive 2004-038, this routine should not be modified
  ;12277;4186487;4104;
  ;
 SUB ; "(": open paren situations (GG^DIM1)
  F %J=%I-1:-1 S %C1=$E(%,%J) Q:%C1'?1(1UN,1"%")
  S %C1=$E(%,%J+1,%I-1)
  I %C1]"",%C1'?1(1U,1"%").UN G ERR
- I %C1]"",%[("."_%C1) G ERR
+ ;I %C1]"",%[("."_%C1) G ERR ;DID NOT ALLOW "W A(6)-$$X(.A)"
  S %(%N,0)=$S(%C1]""!($E(%,%J)="^"):"V^",$E(%,%J)="@":"@^",1:"0^")
  S %(%N,1)=0,%(%N,2)=0,%(%N,3)=0,%N=%N+1 G 1
  ;
