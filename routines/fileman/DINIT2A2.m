@@ -1,4 +1,4 @@
-DINIT2A2 ;SFISC/MKO-KEY AND INDEX FILES ;7NOV2012
+DINIT2A2 ;SFISC/MKO-KEY AND INDEX FILES ;11:29 AM  19 Nov 2012
  ;;22.0;VA FileMan;**1,167**;Mar 30, 1999
  ;Per VHA Directive 2004-038, this routine should not be modified.
  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,99) S:$A(Y)=61 Y=$E(Y,2,999) S @X=Y
@@ -113,7 +113,7 @@ Q Q
  ;;^DD(.11,2.5,21,0)
  ;;=^^4^4^2980911^
  ;;^DD(.11,2.5,21,1,0)
- ;;=This is kill statement that can be executed to remove an entire index for
+ ;;=This is a kill statement that can be executed to remove an entire index for
  ;;^DD(.11,2.5,21,2,0)
  ;;=all records in a file. When an entire file is reindexed, FileMan executes
  ;;^DD(.11,2.5,21,3,0)
