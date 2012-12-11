@@ -49,7 +49,7 @@ Q Q
  ;;^DIC(.85,"%D",19,0)
  ;;=The ISO-639-1 and ISO-639-2 compatible language file is distributed in the
  ;;^DIC(.85,"%D",20,0)
- ;;=DILAINIT routines, shipped with Fileman 22.2.
+ ;;=DMLAINIT routines, shipped with Fileman 22.2.
  ;;^DIC(.85,"%D",21,0)
  ;;= 
  ;;^DIC(.85,"%D",22,0)
