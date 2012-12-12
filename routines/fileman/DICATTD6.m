@@ -1,4 +1,4 @@
-DICATTD6	;GFT;12:54 PM  21 Mar 2001;COMPUTED FIELD
+DICATTD6	;GFT/GFT - Computed Field;12:54 PM  21 Mar 2001
 	;;22.2T0;VA FILEMAN;;Dec 03, 2012
 	;Per VHA Directive 10-93-142, this routine should not be modified.
 	;

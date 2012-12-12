@@ -1,4 +1,4 @@
-DICATTDD	;GFT;12:02 PM  8 Apr 2001; multiple fields
+DICATTDD	;GFT/GFT - Multiple Fields;12:02 PM  8 Apr 2001
 	;;22.2T0;VA FILEMAN;;Dec 03, 2012
 	;Per VHA Directive 10-93-142, this routine should not be modified.
 	;

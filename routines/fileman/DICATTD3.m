@@ -1,4 +1,4 @@
-DICATTD3	;GFT;09:06 AM  21 Jan 1999;SET OF CODES
+DICATTD3	;GFT/GFT - Set of Codes ;09:06 AM  21 Jan 1999
 	;;22.2T0;VA FILEMAN;;Dec 03, 2012
 	;Per VHA Directive 10-93-142, this routine should not be modified.
 	;

@@ -1,4 +1,4 @@
-DICATTDE	;GFT -- END screen edit;24MAY2012
+DICATTDE	;GFT/GFT -- END screen edit;24MAY2012
 	;;22.2T0;VA FILEMAN;;Dec 03, 2012
 	;
 LAYGODEF	;should user see 'ADDING NEW'?

@@ -1,4 +1,4 @@
-DICATTD4	;GFT -- FREE TEXT FIELDS;14NOV2008
+DICATTD4	;GFT/GFT - FREE TEXT FIELDS;14NOV2008
 	;;22.2T0;VA FILEMAN;;Dec 03, 2012
 	;Per VHA Directive 10-93-142, this routine should not be modified.
 	;
