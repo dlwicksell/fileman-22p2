@@ -1,6 +1,6 @@
-DIRCR	;SFISC/GFT-DELETE THIS LINE AND SAVE AS '%RCR'*** ;30MAY2004
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+DIRCR	;SFISC/GFT-DELETE THIS LINE AND SAVE AS '%RCR'*** ;13DEC2012
+	;;22.2T1;VA FILEMAN;;Dec 13, 2012
+	;
 %RCR	;GFT/SF
 	;
 	;
@@ -38,11 +38,11 @@ RE	F  S %C=$O(@%A@(%C)) Q:%C=""  D
 	.M @%B@(%C)=@%A@(%C)
 	Q
 	;
-NA(X)	;
-	N L S L=$L(X)
-	I $E(X,L)="," S X=$E(X,1,L-1)_")"
-	E  S X=$E(X,1,L-1)
-	Q $NA(@X)
+NA(%X)	;
+	N L S L=$L(%X)
+	I $E(%X,L)="," S %X=$E(%X,1,L-1)_")"
+	E  S %X=$E(%X,1,L-1)
+	Q $NA(@%X)
 	;
 	;
 OS	;
