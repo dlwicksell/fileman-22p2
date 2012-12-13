@@ -1,4 +1,4 @@
-DIINIS ; ; 12-DEC-2012
+DIINIS ; ; 13-DEC-2012
  ;;22.2T0;VA FILEMAN;;DEC 03, 2012
 PAC(PKG,VER) ; called from package init (DIFROM7 created this routine)
  ; PKG = $T(IXF) of the INIT routine.
