@@ -1,5 +1,6 @@
 DIEZ0	;SFISC/GFT-COMPILE INPUT TEMPLATE ;13SEP2004
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	D L
 DL	S DQ=0,DK=0,DQFF=0
 MR	S DK=DK+1,DH=$P(DR,";",DK),DI=$P(DH,":",1),(DIEZP,DIEZDUP,DIEZR)="" G:'DI K:DI=0,PB S DPR=$P(DH,"//",2,99),DM=+DI S:DPR]"" DI=$P(DI,"//",1),DH=""

@@ -1,6 +1,6 @@
 DIFGG4	;SFISC/XAK,EDE(OHPRD)-FILEGRAM SUBFILES ;6/10/93  1:41 PM
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 SUBFILE	; DO ONE SUBFILE
 	F DIFG(DILL,"FE")=0:0 S DIFG(DILL,"FE")=$O(@(DIFG(DILL,"FGBL")_DIFG(DILL,"FE")_")")) Q:DIFG(DILL,"FE")'=+DIFG(DILL,"FE")  D SUBENTRY
 	Q

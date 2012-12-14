@@ -1,6 +1,6 @@
 DIS3	;SFISC/SEARCH - PROGRAMMER ENTRY POINT ;12/16/93  13:16
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 EN	;
 	N DIQUIET,DIFM S L=$G(L),DIFM=+L D CLEAN^DIEFU,INIT^DIP
 	S:$G(DIC) DIC=$G(^DIC(DIC,0,"GL")) G QER1:$G(DIC)="" N DK S DK=+$P($G(@(DIC_"0)")),U,2) G QER1:'DK

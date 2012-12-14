@@ -1,6 +1,6 @@
 DIS0	;SFISC/GFT-SEARCH, IF STATEMENT AND MULTIPLE COMBO'S ;30JAN2005
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	W ! K R,N,DL,DE,DJ
 	S O=0,E=$D(DC(2)),N="IF: A// ",DE=$S(E:"IF: ",1:N),DL=0
 	S C=","

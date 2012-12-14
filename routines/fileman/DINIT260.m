@@ -1,6 +1,6 @@
 DINIT260	;SFISC/XAK-INITIALIZE VA FILEMAN ;12/14/92  2:48 PM
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	F I=1:2 S X=$T(Q+I) G ^DINIT27:X="" S Y=$E($T(Q+I+1),5,999),X=$E(X,4,999),@X=Y
 Q	Q
 	;;^DD(1.11,12,0)

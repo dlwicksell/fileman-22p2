@@ -1,5 +1,6 @@
 DIFROM1	;SFISC/XAK-CREATES RTNS WITH DD'S ; 29OCT2012
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 L	S DH=" F I=1:2 S X=$T(Q+I) Q:X=""""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,999) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y",F=$O(F(F))
 	I F'>0 D:DSEC SEC K ^UTILITY("DI",$J) G ^DIFROM11
 	S ^UTILITY($J,DL+1,0)="^DIC("_F_",0,""GL"")",^UTILITY($J,DL+2,0)="="_F(F,0),^UTILITY($J,DL+3,0)="^DIC(""B"","""_F(F)_""","_F_")",^UTILITY($J,DL+4,0)="=",DL=DL+4

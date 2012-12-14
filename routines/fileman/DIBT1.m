@@ -1,6 +1,6 @@
 DIBT1	;SFISC/GFT,TKW-STORE A SORT TEMPLATE ;8/2/94  15:57
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 S1	K DIR S DIR(0)="O",DIR("A")="STORE IN 'SORT' TEMPLATE",DIR("?")="^D H1^DIBT1"
 	D SAV Q:$D(DIRUT)  D DIC Q
 	;

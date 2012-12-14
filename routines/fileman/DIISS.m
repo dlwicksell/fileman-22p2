@@ -1,6 +1,6 @@
 DIISS	;SFISC/MKO-SAVE AS %ZISS IF STANDALONE FILEMAN ;01:39 PM  21 Dec 1994
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 %ZISS	;SFISC/MKO-RETURN SCREEN HANDLING IO VARIABLES ;
 	;
 	; This routine is for standalone FileMan sites that want to use

@@ -1,6 +1,6 @@
 DDXP33	;SFISC/DPC - CREATE EXPORT TEMPLATE (CONT) ;12:45 PM  7 Jun 1999
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 FLDTEMP	;
 	S DDXPOUT=0
 	S DIC="^DIPT(",DIC(0)="QEASZ",DIC("S")="I $P(^(0),U,8)=7",DIC("A")="Enter SELECTED EXPORT FIELDS Template: ",D="F"_DDXPFINO W ! D IX^DIC K DIC,D

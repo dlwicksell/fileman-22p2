@@ -1,5 +1,6 @@
 DDSWP	;SFISC/MKO-WP ;21AUG2005
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 EDIT	;Edit the word processing field
 	N I
 	S DDSUE=$D(DDSTP)#2!$S($P($G(DDSU("A")),U,4)="":$P($G(DDSO(4)),U,4),1:$P(DDSU("A"),U,4))

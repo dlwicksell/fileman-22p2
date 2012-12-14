@@ -1,5 +1,6 @@
 DDBRAP	;SFISC/DCL-BROWSER WP ANCHOR PROCESSOR ;06:56 PM  31 Aug 2002
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	Q
 WP(DDBROOT,DDBRFLG,DDBRTLE)	;
 	;Pass existing wp root, flag=c/clear all -indexes, title

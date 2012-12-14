@@ -1,6 +1,6 @@
 DMSQF2	;SFISC/JHM-BUILD INDEX AND PARENT FOREIGN KEYS ;7/28/97  11:10
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	Q
 PFK(TI)	;BUILD FOREIGN KEYS FOR PARENT TABLES
 	N T,GL,FL,PEI,S,TE,TC

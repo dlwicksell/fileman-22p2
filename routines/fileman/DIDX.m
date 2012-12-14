@@ -1,6 +1,6 @@
 DIDX	;SFISC/XAK-BRIEF DD ;25SEP2003
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	S D1=D0,DINM=1,DDRG=1,DDL1=14,DDL2=32 G B
 	;
 L	S DJ(Z)=0

@@ -1,6 +1,6 @@
 DIS2	;SFISC/GFT-SEARCH, TEMPLATES & COMPUTED FIELDS;4JUN2005
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	K DISV G G:'DUZ
 0	D  K DIRUT,DIROUT I $D(DTOUT)!($D(DUOUT)) G Q
 	. N DIS,DIS0,DA,DC,DE,DJ,DL D S3^DIBT1 Q

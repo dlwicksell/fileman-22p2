@@ -1,6 +1,6 @@
 DDS7	;SFISC/MKO-Relational ;1:39 PM  28 Jun 1996
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 RPB(DDP,DDSFLD,DDSPG)	;Repaint pointed-to block(s) recursively
 	N DDS7B
 	S DDS7B=""

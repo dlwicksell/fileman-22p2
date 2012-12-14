@@ -1,5 +1,6 @@
 DDBRU	;SFISC/DCL-BROWSER UTILITIES AND EXTRINSIC FUNCTIONS ; 18NOV2012
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 CTRLCH()	;Extrinsic function - returns control characters 1-31
 	N I,X S X="" N I F I=1:1:31 S X=X_$C(I)
 	Q X

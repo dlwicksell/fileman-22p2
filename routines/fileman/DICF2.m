@@ -1,6 +1,6 @@
 DICF2	;SEA/TOAD,SF/TKW-VA FileMan: Finder, Part 3 (All Indexes) ;12/17/99  08:24
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 CHKALL(DIFILE,DIEN,DIFIEN,DIFLAGS,DIVALUE,DISCREEN,DINUMBER,DIFORCE,DINDEX,DIDENT,DILIST,DIC,DIY,DIYX)	;
 	; Loop through all indexes to be searched, perform data type

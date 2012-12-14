@@ -1,6 +1,6 @@
 DIOQ	;SFISC/GS,TKW-QUERY OPTIMIZER ;4/5/95  14:02
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 SER(F,DIOQGET,DIOQCHEK,C,X,%,W)	; COMPUTE SEARCH EFFICIENCY RATING
 	; F=FILE#, DIOQGET=GET CODE, DIOQCHEK=EVALUATION CODE,
 	; C=USEABLE INDEX? (1=YES, 0=NO)

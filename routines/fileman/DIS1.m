@@ -1,6 +1,6 @@
 DIS1	;SFISC/GFT-BUILD DIS-ARRAY ;20MAR2005
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	K DIS0 I $D(DL)#2 S DIS0=DL
 	S DL(0)="" W ! G 1:$D(DE)>1!$D(DJ) I DL=1 S DL(0)=DL(1),DL=0 K DL(1)
 	E  F P=2:1 S Y=$P(DL(1),U,P) Q:Y=""  S Y=U_Y_U,X=2 D 2

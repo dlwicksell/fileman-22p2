@@ -1,5 +1,6 @@
 DINZMGR	;SFISC/MKO-TO SET UP THE MGR ACCOUNT FOR THE SYSTEM ;27OCT2011
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 	;This is a modification of Kernel's ZTMGRSET routine.
 	I $D(^%ZTSK),$D(^%ZOSF("MGR"))#2 D  Q

@@ -1,6 +1,6 @@
 DICATT6	;SFISC/XAK-SETS,FREE TEXT ;17MAY2005
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	G @N
 	;
 3	S Z="",L=1,P=0,Y="INTERNALLY-STORED CODE: "

@@ -1,6 +1,6 @@
 DIQGU0	;SFISC/DCL-DATA RETRIVIAL UTILITY PROGRAM ;02:42 PM  24 Aug 1993
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 R(%R)	;
 	N %C,%F,%G,%I,%R1,%R2
 	S %R1=$P(%R,"(")_"(" I $E(%R1)="^" S %R2=$P($Q(@(%R1_""""")")),"(")_"(" S:$P(%R2,"(")]"" %R1=%R2

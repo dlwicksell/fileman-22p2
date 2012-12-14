@@ -1,5 +1,6 @@
 DIE3	;SFISC/XAK-PROCESS SINGLE-VALUED VARIABLE PNTR ;03:06 PM  14 Feb 2003
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 V	;
 	S DIEX=X ;I $D(DNM) S DIDS=D
 	G ALL:X'["." S DIVP=$P(X,"."),X=$P(X,".",2,999),Y=-1,A9=1 I X="" G Q

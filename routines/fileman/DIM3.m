@@ -1,5 +1,6 @@
 DIM3	;SFISC/JFW,GFT,TOAD-FileMan: M Syntax Checker, Commands ;25MAR2010
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 	;
 DG	; DO and GET (D^DIM and G^DIM)

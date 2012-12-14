@@ -1,5 +1,6 @@
 DIH	;SFISC/GFT-HISTOGRAM ;23SEP2004
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 NO	I $O(^DOSV(0,IO(0),0))'>0 D ^DIALOG(1520) Q  ;**CCO/NI 'NO SUB-COUNTS'
 	K ZTSK S:$D(^%ZTSK) %ZIS="QM" D ^%ZIS G ENDK:POP,QUE:$D(IO("Q"))
 DQ	S J=$I,DN="=$O(^DOSV(0,J," F X=0:1 Q:'$D(^DOSV(0,J,"BY",X+1))

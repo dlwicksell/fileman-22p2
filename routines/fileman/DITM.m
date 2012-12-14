@@ -1,6 +1,6 @@
 DITM	;SFISC/JCM(OHPRD)-FILE COMPARE AND MERGE DRIVER ;6/8/94  14:21
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 START	;
 	D ASK ; Asks file, from, to, merge ,etc.
 	G:$D(DITM("QFLG")) END

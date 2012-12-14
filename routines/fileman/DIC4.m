@@ -1,6 +1,6 @@
 DIC4	;SFISC/TKW-VA FileMan Lookup utilities ;5:59 AM  20 Sep 2002
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 EXACT	; Find next exact match on a compound index
 	N DIFLAGS,DIFIELDS,DIWRITE,DIIENS,DIFORCE,DIERR,DISCR,DIQUIET,DIIX
 	S DIFLAGS="lX" D GETPAR N DINDEX

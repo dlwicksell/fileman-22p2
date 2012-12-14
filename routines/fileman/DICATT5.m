@@ -1,6 +1,6 @@
 DICATT5	;SFISC/XAK-POINTERS ;12:04 PM  25 Jan 2000
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 7	K DIC S Y="",%=$P(O,U,3),DIC(0)="EFQIZ"
 	S:$P(O,U,2)["P"&$L(%) Y=$S($D(@("^"_%_"0)")):$P(^(0),U),1:"")
 	W !,"POINT TO WHICH FILE: " W:Y]"" Y_"// " R X:DTIME S:'$T DTOUT=1 G CHECK^DICATT:X=U!'$T I Y]"",X="" S X=Y,DIC(0)=DIC(0)_"O"

@@ -1,6 +1,6 @@
 DIFROMSE	;SFISC/DCL-FILE ORDER TO RESOLVE POINTERS ;07:27 AM  2 Jun 1994
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	Q
 	;File Order List for Resolving Pointers
 FOLRP(DIFRFLG,DIFRTA)	;FLAGS,TARGET_ARRAY ; Creates the "DIORD" subscript

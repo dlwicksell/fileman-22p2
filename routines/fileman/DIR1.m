@@ -1,5 +1,6 @@
 DIR1	;SFISC/XAK(PROCESS DATATYPE) ;4DEC2009
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 	S %E=0 D @%T S:X?.E1C.E %E=1 Q:'%E!(X'?.E1L.E)!(%A["S")!(%A["Y")!((%T=1)&(%B["P"))!(%A["P")
 	S X=$$UP^DILIBF(X) ;**CCO/NI UPPERCASE TRANSLATION

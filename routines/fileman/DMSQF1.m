@@ -1,6 +1,6 @@
 DMSQF1	;SFISC/JHM-INITIALIZE SQLI_FILE (CONT) ;5/7/98  14:53
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	Q
 PK(TI)	;GENERATE PRIMARY KEY ELEMENTS AND COLUMNS FOR TABLE IDENTIFIER TI
 	I '$G(DIFM) D ENV^DMSQU

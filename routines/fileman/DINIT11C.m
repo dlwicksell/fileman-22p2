@@ -1,5 +1,6 @@
 DINIT11C	;SFISC/GFT,DCM-INITIALIZE VA FILEMAN ;16NOV2012
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 	F I=1:1:6 S D=$P("DD^RD^WR^DEL^LAYGO^AUDIT",U,I),^DD(1,30+I,0)=D_" ACCESS^C^^ ; ^S X=$S($D(^DIC(D0,0,"""_D_""")):^("""_D_"""),1:"""")"
 	S ^DD(1,50,0)="LOOKUP PROGRAM^C^^ ; ^S X=$S($D(^DD(D0,0,""DIC"")):^(""DIC""),1:"""")"

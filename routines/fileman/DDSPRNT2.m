@@ -1,5 +1,6 @@
 DDSPRNT2	;SFISC/MKO-PRINT A FORM ;29JAN2004
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 BLOCK	;Print Block properties from Block file
 	D WP^DDSPRNT($NA(^DIST(.404,DDSBK,15)),DDSCOL2+1,"AB") Q:$D(DIRUT)
 	;

@@ -1,5 +1,6 @@
 DICRW	;SFISC/XAK-SELECT A FILE ;17SEP2010
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 R	D DT S D=8101,DIC(0)="QEI",DIA=$G(^DISV(DUZ,"^DIC(")) ;**CCO/NI 'OUTPUT FROM WHAT FILE'
 	D R1,DIC K DIAC,DIFILE,DIC("S") Q:$D(DTOUT)  G R:'$T,AU:+Y=1.1,A:+Y=.6
 R2	I DUZ(0)'="@" S DICS="I 1 Q:'$D(^(8))  F DW=1:1:$L(^(8)) I DUZ(0)[$E(^(8),DW) Q"

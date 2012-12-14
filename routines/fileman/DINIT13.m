@@ -1,6 +1,6 @@
 DINIT13	;SFISC-INITIALIZE VA FILEMAN ;6APR2005
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 DD	F I=1:1 S X=$T(DD+I),Y=$P(X," ",3,99) G ^DINIT14:X?.P S @("^DD("_$E($P(X," ",2),3,99)_")=Y")
 	;;.402,10,0 DESCRIPTION^.4021^^%D;0
 	;;.4021,0,"UP" .402

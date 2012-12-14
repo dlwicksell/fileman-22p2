@@ -1,6 +1,6 @@
 DIAXU3	;SFISC/DCM-EXCEPTION REPORT ;6/9/93  3:55 PM
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 EN	;
 	S DIPAGE=0,DIAXLINE="",DIAXX=^DIAR(1.11,DIARC,0),DIAXZ1=$P(DIAXX,U,2),DIAXZ2=$P($G(^DIC(DIAXZ1,0)),U),DIAXZ=0
 	S Y=DT X ^DD("DD") S DIAXY=Y

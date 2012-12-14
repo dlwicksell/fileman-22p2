@@ -1,6 +1,6 @@
 DIAXGI	;SFISC/DCM-EXTRACT INITIALIZATION ;11/10/92  2:56 PM
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012;
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012;
+	;Per VHA Directive 2004-038, this routine should not be modified.
 INIT	S DIAXI=0,DILL=1
 	D FIRST
 	Q

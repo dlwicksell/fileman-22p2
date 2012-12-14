@@ -1,6 +1,6 @@
 DDGFSV	;SFISC/MKO- SAVE DATA ;12:41 PM  29 Mar 1995
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 SAVE	;Save in form/block files data in DDGFREF
 	N P,B,F,P1,B1,F1,N
 	;

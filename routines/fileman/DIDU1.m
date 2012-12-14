@@ -1,6 +1,6 @@
 DIDU1	;SEA/TOAD-VA FileMan: DD Tools, IENS Check ;10:39 AM  8 Jul 1998
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 IEN(DIENS,DIFLAGS)	;
 	;ENTRY POINT--return whether the IEN String is valid

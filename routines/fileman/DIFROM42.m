@@ -1,6 +1,6 @@
 DIFROM42	;SFISC/XAK-CREATES 'INIT4' ;10/9/95  05:59
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	S DNAME=E_4,DL=0,(DH,Q)=" ;"
 	K ^UTILITY($J) F DD=1:1 S X=$T(TXT+DD) Q:X=""  S ^UTILITY($J,DD,0)=$E(X,4,999)
 	S DIFROM=2 D ZI^DIFROM3 G ^DIFROM5

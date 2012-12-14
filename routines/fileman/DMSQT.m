@@ -1,6 +1,6 @@
 DMSQT	;SFISC/EZ-TROUBLE SHOOTING ;11/13/97  12:25
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	Q
 	; DMQ - status flag for flow of control
 	; DMTDATE, DMEDATE - dates when Tables and Errors last updates

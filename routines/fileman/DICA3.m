@@ -1,5 +1,6 @@
 DICA3	;SEA/TOAD-VA FileMan: Updater, Adder ;16FEB2011
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 CREATE(DIFILE,DIEN,DIROOT,DIVALUE)	;If DIEN comes in with a leading number, use it as IEN
 	N DIENP S DIENP=","_$P(DIEN,",",2,999)

@@ -1,6 +1,6 @@
 DIFG6	;SFISC/DG(OHPRD)-UPDATE FILES ;2/3/93  12:23 PM
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 START	;
 	S DIFGORDR=0
 	F DIFGL=0:0 S DIFGORDR=$O(^UTILITY("DIFG",$J,DIFGORDR)) Q:DIFGORDR=""!(DIFGER)  D SETVAR D:'$D(DIFGNODL) PROCESS K DIFGNODL

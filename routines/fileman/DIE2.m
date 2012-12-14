@@ -1,5 +1,6 @@
 DIE2	;SFISC/GFT,XAK-DELETE AN ENTRY ;12:37 PM  20 Feb 2003
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	D F,DL Q:$D(DTOUT)  G B^DIED:Y=2,A^DIED:Y,UP^DIE1:DL>1,Q^DIE1
 	;
 F	S D=$P(DQ(DQ),U,4) S:DP+1 D=DIFLD Q

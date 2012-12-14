@@ -1,6 +1,6 @@
 DDGLIBW1	;SFISC/MKO-WINDOWING PRIMITIVES ;02:23 PM  13 Jul 1994
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 CREATE(I,A,B,N)	;
 CREATE1	;Create window I of area A and draw border (if B)
 	;N = nn; first n=1 means don't give the window focus

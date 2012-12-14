@@ -1,5 +1,6 @@
 DIPZ	;SFISC/XAK,TKW-COMPILE PRINT TEMPLATES ;3FEB2011
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 	I $G(DUZ(0))'="@" W:$D(^DI(.84,0)) $C(7),$$EZBLD^DIALOG(101) Q
 EN1	N DNM,X,Y,Z D K I '$D(DISYS) N DISYS D OS^DII

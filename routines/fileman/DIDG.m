@@ -1,5 +1,6 @@
 DIDG	;SFISC/RWF-GLOBAL MAP ;10JAN2006
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	K W S DJ(Z)=D0,F=0,W=F(Z),M=1,DP=0
 	W !
 UP	I $D(^DD(W,0,"UP")) S Y=^("UP"),N=$O(^DD(Y,"SB",W,0)) I $D(^DD(Y,N,0)) S F=F+1,W(F)=$P($P(^(0),U,4),";",1),W=Y G UP

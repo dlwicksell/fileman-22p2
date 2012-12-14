@@ -1,6 +1,6 @@
 DIFROMSS	;SCISC/DCL-DIFROM SERVER/DATA SORT LIST/SB-DD/HDR2P ;6/2/96  18:55
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	Q
 SEL(DIFRFILE,DIFRX)	;Extrinsic function to return resolved value for
 	;freetext pointer

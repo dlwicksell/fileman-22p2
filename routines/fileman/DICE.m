@@ -1,6 +1,6 @@
 DICE	;SFISC/GFT-CREATE AN XREF ;17DEC2010
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	S %=2,DCOND="CROSS-REFERENCE" W !,"WANT TO CREATE A NEW ",DCOND," FOR THIS FIELD" D YN^DICN G Q:%-1
 N	F DQ=1:1 Q:'$D(^DD(DI,DA,1,DQ))
 	W !,"CROSS-REFERENCE NUMBER: "_DQ_"// " R X:DTIME S:'$T DTOUT=1 G Q:'$T S:X="" X=DQ G NQ:X'?.N!'X,X:$D(^(X)) S DQ=X

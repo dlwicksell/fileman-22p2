@@ -1,6 +1,6 @@
 DII1	;SFISC/XAK-OTHER OPTIONS ;7/25/96  14:15
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 0	S DIC="^DOPT(""DII1"","
 	G OPT:$D(^DOPT("DII1",9)) S ^(0)="OTHER OPTION^1.01" K ^("B")
 	F X=1:1:9 S ^DOPT("DII1",X,0)=$P($T(@X),";;",2)

@@ -1,6 +1,6 @@
 DIAXG2	;SFISC/DCM-EXTRACT SUBFILES ;9/2/94  06:35
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 SUBFILE	F DIAX(DILL,"FE")=0:0 S DIAX(DILL,"FE")=$O(@(DIAX(DILL,"FGBL")_DIAX(DILL,"FE")_")")) Q:DIAX(DILL,"FE")'=+DIAX(DILL,"FE")!($D(DIAXMSG))  D SUBENTRY
 	Q
 	;

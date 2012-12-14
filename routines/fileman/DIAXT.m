@@ -1,6 +1,6 @@
 DIAXT	;SFISC/DCM-GET EXTRACT TEMPLATE SPECS ;5/13/96  14:01
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 EN	N DIAXI,DILL,DIAX
 	S DIAXTTO="^TMP($J,""DIAXTTO"")",DIAXTFR="^TMP($J,""DIAXTFR"")"
 	K @DIAXTTO,@DIAXTFR

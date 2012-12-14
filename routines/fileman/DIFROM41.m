@@ -1,6 +1,6 @@
 DIFROM41	;SFISC/XAK-CREATES 'INIT3' (CONT.) ;11:02 AM  13 Sep 1994
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	S L=0 F DD=DD:1 S L=L+1,X=$T(TXT+L) Q:X=""  S ^UTILITY($J,DD,0)=$E(X,4,999)
 	Q
 TXT	;

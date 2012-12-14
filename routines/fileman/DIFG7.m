@@ -1,5 +1,6 @@
 DIFG7	;SFISC/DG(OHPRD)-CALLS TO DIC,DIE,DIK ;9MAR2006
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;;22.0;VA FileMan;;Mar 30, 1999
 	;THIS ROUTINE CONTAINS IHS MODIFICATIONS BY IHS/TUCSON/LAB 3/13/96
 	;This routine is modified to pass back to the caller, an array,

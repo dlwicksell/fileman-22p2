@@ -1,5 +1,6 @@
 DICA1	;SEA/TOAD-VA FileMan: Updater, Pre-Processor ;11:57 AM  6 Sep 1999
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 CHECK(DIFLAGS,DIFDA,DINUMS,DIRULE,DIOK)	;
 	; ENTRY POINT--check out the FDA

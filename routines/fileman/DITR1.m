@@ -1,5 +1,6 @@
 DITR1	;SFISC/GFT-FIND ENTRY MATCHES ;04:12 PM  3 Dec 2002
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	S W=DMRG,X=$P(Z,U),%=DFL\2,Y=@("D"_%),A=1 S:$G(DIFRDKP) DIFRNOAD=$D(@DIFRSA@("^DD",DIFRFILE,DDT(DTL),.01,0))
 	N DIMATCH S DIMATCH=0
 	G WORD:$P(^DD(DDT(DTL),.01,0),U,2)["W",Q:X="",ON:'W

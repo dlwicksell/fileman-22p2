@@ -1,6 +1,6 @@
 DICF3	;SEA/TOAD,SF/TKW-VA FileMan: Finder, Part 3 (One Index) ;4/20/99  09:43
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 CHKONE(DIFLAGS,DIVALUE,DINDEX,DIDENT,DIFILE,DIEN,DIFIEN,DISCREEN,DILIST,DIC,DIY,DIYX)	;
 	; Called from CHKALL--check one index for possible matches

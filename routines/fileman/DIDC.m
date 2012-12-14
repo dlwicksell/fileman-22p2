@@ -1,5 +1,6 @@
 DIDC	;SFISC/STAFF-CONDENSED DD ;26APR2010
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 TODAY	S DM="",Y=DT,X="I $Y+3>IOSL W $C(7) D P" X ^DD("DD") S DAT=Y ;**CCO/NI TODAY'S DATE
 EN	S N(0)=$O(^DD(X1),-1),I=0 F  S N(0)=$O(^DD(N(0))) Q:N(0)'>0!(N(0)>X2)  S NAME=$O(^DD(N(0),0,"NM",0)) I NAME'="" S P=0 D P,P2 G:DM["^" EXIT
 EXIT	K %DT,%ZIS,DAT,I,J,K,K1,M,N,N1,NAME,MO,P,X,X1,X2,Y,KK,NF,NY,POP S D0="B",M=DM K DM Q

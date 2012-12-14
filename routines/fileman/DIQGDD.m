@@ -1,6 +1,6 @@
 DIQGDD	;SFISC/DCL-DATA DICTIONARY ATTRIBUTE RETRIEVER ;10:55 AM  8 Nov 2000
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 GET(DIQGR,DA,DR,DIQGPARM,DIQGETA,DIQGERRA,DIQGIPAR)	;
 EN3	I $G(U)'="^" N U S U="^"
 	I $G(DIQGIPAR)'["A" K DIERR,^TMP("DIERR",$J)

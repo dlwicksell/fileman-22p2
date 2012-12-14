@@ -1,5 +1,6 @@
 DII	;SFISC/GFT,XAK,TKW-OPTION RDR, INQUIRY ;9JUN2011
-V	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+V	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	D
 	.N VERSION,X D VERSION^DI W !!,X,!
 	I '$G(DUZ),$D(^VA(200,0))#2 D  I '$G(DUZ) W $C(7),!,$$EZBLD^DIALOG(7005),! Q  ;MUST HAVE DUZ!

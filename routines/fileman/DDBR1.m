@@ -1,5 +1,6 @@
 DDBR1	;SFISC/DCL-VA FILEMAN BROWSER PROTOCOLS ;06:01 PM  31 Aug 2002
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	Q
 GOTO	N X
 GTR	S X(1)=$G(X(1)),X(2)=$$EZBLD^DIALOG(1408)_" >" W $$WS(.X) D  G:X=""!(X=U) OUT ;**

@@ -1,6 +1,6 @@
 DIARR	;SFISC/DCM-ARCHIVING FUNCTION, RETRIEVAL OF ARCHIVED RECORD ;8/11/98  13:19
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 START	W !!,"This option will scan your archived file and will attempt to retrieve entries"
 	W !,"that match the name (.01) field and",!,"either Primary KEY or identifier field(s) of the archived file."
 	W !!,"Magnetic tapes should be opened with variable length records."

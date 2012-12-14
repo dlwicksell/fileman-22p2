@@ -1,5 +1,6 @@
 DIP12	;SFISC/TKW-PROCESS FROM-TO (CONT.) ;08:02 PM  9 Dec 2002
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 OPT	;Build code to extract field & test sort criteria, build sort description.
 	N S,F,X,%,F1,F2,F3,T1,T2,T3,N,DIRANGE
 	S S=$P(DPP(DJ),U),F=$P(DPP(DJ),U,2),N=$P(DPP(DJ),U,3) S:N["""" N=$$CONVQQ^DILIBF(N),DIRANGE=""

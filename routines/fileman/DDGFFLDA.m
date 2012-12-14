@@ -1,6 +1,6 @@
 DDGFFLDA	;SFISC/MKO-ADD A FIELD ;2:22 PM  13 Sep 1995
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 ADD	;Add a field
 	I '$O(^DIST(.403,+DDGFFM,40,DDGFPG,40,0)) D  Q
 	. D MSG^DDGF($C(7)_"There are no blocks defined on this page.  To add a block, press <PF2>B.")

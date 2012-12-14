@@ -1,5 +1,6 @@
 DIL1	;SFISC/GFT-STATS, NUMBER FIELD, ON-THE-FLY ;26FEB2005
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	I $A(W)=34 D  Q
 	.N A9
 	.S Y="" F A9=0:0 S Y=Y_""""_$P(W,"""",2)_"""",W=$P(W,"""",3,99) Q:$A(W)'=34&($A(W)'=95)  S:$A(W)=95 Y=Y_$C(95),W=$P(W,"_",2,99)

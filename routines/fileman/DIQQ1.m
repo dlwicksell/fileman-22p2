@@ -1,6 +1,6 @@
 DIQQ1	;SFISC/TKW-NONDESTRUCTIVE ONLINE HELP FOR FIELDS ;4/4/95  09:16
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 EN(DP,D,X)	; DP=file no.,D=field no.,X="?" or "??"
 	Q:'$G(DP)  Q:'$G(D)  Q:$G(X)'?1"?"."?"
 	N %,%DT,A1,A2,DA,DC,DDH,DG,DIC,DIG,DIRUT,DISORT,DTOUT,DUOUT,DO,DQ,DST,DU,DV,DZ,Y

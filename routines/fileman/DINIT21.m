@@ -1,5 +1,6 @@
 DINIT21	;SFISC/GFT-INITIALIZE VA FILEMAN ; 30NOV2012
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 DINITOSX	G DD:'$O(^DD("OS",0)) W !!,"Do you want to change the MUMPS OPERATING SYSTEM File? NO//" R Y:60 Q:Y["^"!("Nn"[$E(Y))!('$T)
 	I "Yy"'[$E(Y) W !,"Answer YES to overwrite MAXIMUM ROUTINE SIZE" G DINITOSX
 	; Variable DINITOSX used in Routine DINIT6. TODO: See if we can move that logic here. VEN/SMH 3121128

@@ -1,6 +1,6 @@
 DITC3	;SFISC/XAK-COMPARE FILE ENTRIES ;9/17/91  3:12 PM
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	F I=1:1:(IOSL-$Y-1) W !
 	W "Enter RETURN to continue: " R X:DTIME S:'$T DTOUT=1
 ASK	Q:$D(DTOUT)  K DUOUT,DIRUT W @IOF,!,"OK.  I'M READY TO DO THE MERGE."

@@ -1,5 +1,6 @@
 DINIT14	;SFISC/YJK-INITIALIZE VA FILEMAN ;08:33 AM  13 Aug 2002
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	F I=1:2 S X=$T(Q+I) G:X="" ^DINIT2 S Y=$E($T(Q+I+1),5,999),X=$E(X,4,999),@X=Y
 Q	Q
 	;;^DIC(.6,0)

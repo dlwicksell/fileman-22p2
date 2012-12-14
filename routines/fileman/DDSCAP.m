@@ -1,5 +1,6 @@
 DDSCAP	;SFISC/MKO-INPUT TRANSFORM FOR CAPTIONS ;01:24 PM  14 Aug 2002
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 FUNC(X)	;
 	Q:$E(X)'="!"

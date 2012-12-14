@@ -1,5 +1,6 @@
 DIL0	;SFISC/GFT-TURN PRINT FLDS INTO CODE ;26FEB2005
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	D XDUY S %=$P(X,U,2) S:%["Cm"&(W[";W") %="w"_% G WP:%["W",M:%["m",STATS^DIL1:$D(DCL(DP_U_+W)),N:W[";N"
 	I W[";W" D  S D1=$S(%["C":Y,1:$P(" S Y=",U,Y'?1" ".E)_Y_" S X=Y") D W S Y=Y_D1_" D ^DIWP" Q
 	.N %,DNP S DNP=1 D ^DILL(DP,+W,1)

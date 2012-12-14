@@ -1,5 +1,6 @@
 DDW3	;SFISC/MKO-TOP, BOTTOM, SCROLL ;11:57 AM  24 Aug 2002
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 TOP	N DDWI
 	I DDWA=0 D POS(1,1,"RN") Q

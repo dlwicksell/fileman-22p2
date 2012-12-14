@@ -1,6 +1,6 @@
 DDBRAHTE	;SFISC/DCL-BROWSER ANCHOR & HYPERTEXT JUMP EDIT ;NOV 04, 1996@13:51
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	Q
 REDIT	; root edit for hypertext jump - CLOSED_ROOT
 	Q

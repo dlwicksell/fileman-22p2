@@ -1,6 +1,6 @@
-DINTEG03	;ISC/XTSUMBLD KERNEL - Package checksum checker ;3121212.184524
+DINTEG03	;ISC/XTSUMBLD KERNEL - Package checksum checker ;3121214.12585
 	;;0.0;
-	;;7.3;3121212.184524
+	;;7.3;3121214.12585
 	S XT4="I 1",X=$T(+3) W !!,"Checksum routine created on ",$P(X,";",4)," by KERNEL V",$P(X,";",3),!
 CONT	F XT1=1:1 S XT2=$T(ROU+XT1) Q:XT2=""  S X=$P(XT2," ",1),XT3=$P(XT2,";",3) X XT4 I $T W !,X X ^%ZOSF("TEST") S:'$T XT3=0 X:XT3 ^%ZOSF("RSUM") W ?10,$S('XT3:"Routine not in UCI",XT3'=Y:"Calculated "_$C(7)_Y_", off by "_(Y-XT3),1:"ok")
 	G CONT^DINTEG04
@@ -100,7 +100,7 @@ DIR0W	;;3089175
 DIR1	;;12518642
 DIR2	;;10146310
 DIR3	;;3309472
-DIRCR	;;1476465
+DIRCR	;;1484684
 DIRQ	;;968045
 DIS	;;12609000
 DIS0	;;7905684

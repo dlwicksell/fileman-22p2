@@ -1,5 +1,6 @@
 DICATT1	;SFISC/GFT,XAK-NODE AND PIECE, SUBFILE ;21APR2008
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 	I DA=.001 S W=" " G 2
 	S (DG,W)=$P(O,U,4) G M:W="" S T=0,DP=DA,Y=$P(W,";"),N=$P(W,";",2) D MX S L=L-T D MAX I T+3<$G(^DD("STRING_LIMIT"),255) S W=DG G ^DICATT2

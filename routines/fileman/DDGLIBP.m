@@ -1,6 +1,6 @@
 DDGLIBP	;SFISC/MKO-PRINT FROM WITHIN SCREEN TOOLS ;7:56 AM  5 Dec 2012
-	;;22.2;VA FileMan;;Mar 30, 1999;Build 19
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012;Build 19
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 PT(DDGLROOT,DDGLHDR)	;Prompt for device and print
 	N POP,DDGLFLAG,DDGLI,DDGLPHDR,DDGLWRAP,DX,DY

@@ -1,5 +1,6 @@
 DIP1	;SFISC/GFT,TKW-PROCESS FROM-TO ;11:38 AM  9 Aug 2002
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	D DJ Q
 DUP	D DPQ G DIP1^DIQQQ:$D(A(1))
 	I '($D(BY)#2),$D(DPP((+$G(DPP(0))+2),"T"))!$D(DPP((+$G(DPP(0))+3)))!$D(DPP(0))!$D(DXS) S DK=S G S^DIBT

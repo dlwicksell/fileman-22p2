@@ -1,5 +1,6 @@
 DICOMPU(Y,J,DICOMP,DICMX)	;GFT   META-DATA-DICTIONARY LOOKUP;13AUG2010
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;Y=expression; DICOMP=parameter string; J array by reference, as set up by IJ^DIUTL, or just FILE NUMBER; DICMX defined means multiples allowed
 	N DATE,D,DD,DIS,DISTART,DICN,FIL,FIELD,F,FLD,DSPI,FILE,DIC,%,X,ASKED
 	I $D(J)=1 S D=J K J S J(0)=D

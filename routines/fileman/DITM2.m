@@ -1,6 +1,6 @@
 DITM2	;SFISC/JCM(OHPRD)-DOES COMPARE AND MERGE ;11/18/94  15:42
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 	; See DITMDOC for documentation
 	; Subfiles are not currently supported by the call to EN^DITM2

@@ -1,6 +1,6 @@
 DIPR41	;SFISC/SO- PRE INSTALL ROUTINE FOR PATCH DI*22.0*41 ;6/20/00  14:05
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	; Add two new entries to LANGUAGE file, 12 GREEK, 18 HEBREW
 	;
 EN	N DIIFDA,DIIEN

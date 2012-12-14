@@ -1,5 +1,5 @@
 DICF4	;SEA/TOAD,SF/TKW-VA FileMan: Finder, (pointer indexes) ;19NOV2011
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 POINT(DIFILE,DIFLAGS,DINDEX,DIDENT,DIEN,DIFIEN,DISCREEN,DIVALUE,DIC,DIFORCE)	;

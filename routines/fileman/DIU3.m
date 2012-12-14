@@ -1,5 +1,6 @@
 DIU3	;SFISC/GFT-IDENTIFIERS ;05:46 PM  7 Aug 2002
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 3	;
 	S %=2,X="W """"",DA=+Y

@@ -1,6 +1,6 @@
 DDUCHK2	;SFISC/RWF/SO-CHECK DD (FIELDS) ;11:46 AM  5 Mar 2004
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 CHK6	;W !?5,"Checking FIELDs"
 	F DDUCFE=0:0 S DDUCFE=+$O(^DD(DDUCFI,DDUCFE)) Q:DDUCFE'>0  D FIELD Q:$D(DIRUT)  D FIVE,DXREF^DDUCHK3,XREF^DDUCHK3,COMP^DDUCHK3
 	;D CHKSB,CHKGL

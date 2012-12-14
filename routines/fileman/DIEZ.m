@@ -1,5 +1,6 @@
 DIEZ	;SFISC/GFT-COMPILE INPUT TEMPLATE ; 30NOV2012
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 	I $G(DUZ(0))'="@" W:$D(^DI(.84,0)) $C(7),$$EZBLD^DIALOG(101) G K
 EN1	D:'$D(DISYS) OS^DII

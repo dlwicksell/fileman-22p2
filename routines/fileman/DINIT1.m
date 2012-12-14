@@ -1,5 +1,6 @@
 DINIT1	;SFISC/GFT,XAK-INITIALIZE VA FILEMAN ;6NOV2012
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 DD	F I=1:1 S X=$T(DD+I),Y=$P(X," ",3,99) G ^DINIT11:X?.P S @("^DD(0,"_$E($P(X," ",2),3,99)_")=Y")
 	;;.26,0 COMPUTE ALGORITHM^FJ30^^9.1;E1,245^K:$L(X)>50 X
 	;;.27,0 SUB-FIELDS^CJ1^^ ; ^Q:$D(DIQ(0))  X ^DD(0,.27,9.2) S X="" I $D(Y)#2,Y=U S DN=0

@@ -1,5 +1,6 @@
 DICN1	;SFISC/GFT,TKW,SEA/TOAD-PROCESS DIC("DR") ;8MAR2006
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 	K DIDA,DICRS,Y,%RCR
 	F Y="DIADD","I","J","X","DO","DC","DA","DE","DG","DIE","DR","DIC","D","D0","D1","D2","D3","D4","D5","D6","DI","DH","DIA","DICR","DK","DIK","DL","DLAYGO","DM","DP","DQ","DU","DW","DIEL","DOV","DIOV","DIEC","DB","DV","DIFLD" S %RCR(Y)=""

@@ -1,5 +1,6 @@
 DDSR	;SFISC/MKO-PAINT ;22DEC2011
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 R	;All pages
 	;Called after wp, mults, & deletions
 	F DDSSC=1:1:DDSSC D RP(DDSSC(DDSSC),DDSSC=1)

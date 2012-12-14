@@ -1,5 +1,6 @@
 DIPTED	;SFISC/GFT-EDIT PRINT TEMPLATE ; 18NOV2012
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012;Build 11
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012;Build 11
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 	N DIC,DIPT,DIPTED,DRK,DIPTEDTY,I,J
 	S DIC=.4,DIC(0)="AEQ",DIC("S")="I $P(^(0),U,8)=7!'$P(^(0),U,8)" D ^DIC Q:Y<1

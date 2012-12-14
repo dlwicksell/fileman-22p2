@@ -1,5 +1,6 @@
 DIEQ	;SFISC/XAK,YJK-HELP DURING INPUT ;24AUG2006
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 BN	S D=$P(DQ(DQ),U,4) S:DP+1 D=DIFLD
 	S DZ=X D EN1 G B^DIED
 QQ	;

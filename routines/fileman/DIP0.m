@@ -1,5 +1,6 @@
 DIP0	;SFISC/XAK-COMPUTED FIELD ON A SORT, EDITING A SORT TEMPLATE ;9DEC2007
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	S P=P_Q,DPP=$P(X,U,1)
 C	;
 	S DICOMP=N_$E("?",''L),DM=X,DQI="Y(",DA="DPP("_DJ_",""OVF"_N_""",",DICMX="D M^DIO2" G COLON:X?.E1":" D EN^DICOMP K DUOUT G X:'$D(X),X:Y["m"

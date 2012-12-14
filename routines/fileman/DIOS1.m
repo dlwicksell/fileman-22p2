@@ -1,6 +1,6 @@
 DIOS1	;SFISC/GFT-BUILD SORT LOGIC ;04:33 PM  10 Nov 1999
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 L	S X=$P(DPP(DL),U,2) S:X=0 X=.001
 	S W=+$P($P(DPP(DL),U,5),";L",2) I W D  G SL
 	. I $P(DPP(DL),U,5)[";TXT" S W=W+1

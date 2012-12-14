@@ -1,5 +1,6 @@
 DIED	;SFISC/GFT,XAK-MAJOR INPUT PROCESSOR ;3FEB2006
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 O	D W W Y W:$X>48 !?9
 	I $L(Y)>19,'DV,DV'["I",(DV["F"!(DV["K")) G RW^DIR2
 	I Y]"" W "// " I 'DV,DV["I",$D(DE(DQ))#2 K X S X("FIELD")=DIFLD,X("FILE")=DP,X="  ("_$$EZBLD^DIALOG(3090,$$LABEL^DIALOGZ(DP,DIFLD))_")" W:$L(X)+$X>78 !?9 W X K X S X="" Q  ;**

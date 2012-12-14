@@ -1,6 +1,6 @@
 DIB	;SFISC/GFT,XAK-CREATE A NEW FILE ;9JUN2003
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	W !! K DLAYGO,DTOUT D W^DICRW G Q:$D(DTOUT) K DICS,DIA Q:Y<0
 1	I '$D(@(DIC_"0)")) W !!,$C(7),"DATA GLOBAL DOES NOT EXIST!" K DIC Q
 	I $P($G(^DD(+$P(@(DIC_"0)"),U,2),0,"DI")),U,2)["Y" W !!,$C(7),"RESTRICTED"_$S($P(^("DI"),U)["Y":" (ARCHIVE)",1:"")_" FILE - NO EDITING ALLOWED!" Q

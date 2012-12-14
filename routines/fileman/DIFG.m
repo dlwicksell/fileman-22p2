@@ -1,6 +1,6 @@
 DIFG	;SFISC/DG(OHPRD)-FILEGRAM INSTALLER ;10/9/95  05:50
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	I $D(DIFGREI) S DIFGLO="^DIAR(1.13,"_DIFGREI_",21," K DIFGLC
 	I '$D(DIFGLO) S DIFGER="1^0" Q
 	I $E(DIFGLO,$L(DIFGLO))=","!($E(DIFGLO,$L(DIFGLO))="(")

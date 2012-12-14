@@ -1,5 +1,6 @@
 DINIT6	;SFISC/XAK-INITIALIZE VA FILEMAN ;20SEP2012
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	I $D(^DD("OS"))[0 D OS^DINIT
 	W !!,"The following files have been installed:",!
 	F X=0:0 S X=$O(^DIC(X)) Q:X>1.9999  Q:'X  W $E("   ",1,(3-$L($P(X,"."))))_X,?11,$P($G(^DIC(X,0)),U),! S ^DD(X,0,"VR")=VERSION

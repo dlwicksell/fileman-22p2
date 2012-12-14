@@ -1,6 +1,6 @@
 DIM2	;SFISC/XAK,GFT,TOAD-FileMan: M Syntax Checker, Exprs ;20NOV2012
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 2004-038, this routine should not be modified
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;12277;4186487;4104;
 	;
 SUB	; "(": open paren situations (GG^DIM1)

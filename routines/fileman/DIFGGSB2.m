@@ -1,6 +1,6 @@
 DIFGGSB2	;SFISC/DG,EDE(OHPRD)- ;6/19/92  9:28 AM
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 SPSPEC	; UNIQUE SPECIFIER
 	F DIFGSB(DILL,"SPSPEC")=0:0 S DIFGSB(DILL,"SPSPEC")=$O(^DD(DIFG(DILL,"FILE"),0,"SP",DIFGSB(DILL,"SPSPEC"))) Q:'DIFGSB(DILL,"SPSPEC")  I +^(DIFGSB(DILL,"SPSPEC")) Q:$P(^(DIFGSB(DILL,"SPSPEC")),U,2)'=""
 	Q:'DIFGSB(DILL,"SPSPEC")

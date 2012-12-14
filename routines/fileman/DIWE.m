@@ -1,5 +1,6 @@
 DIWE	;SFISC/GFT,XAK-START OF WP ;20AUG2005
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 EN	K DTOUT,DUOUT,DIRUT ;G Q:'$D(@(DIC_"0)")) D A
 	L @("+"_DIC_"0):1") E  W !,$$EZBLD^DIALOG(110) G Q ;**CCO/NI--'THE RECORD IS LOCKED'
 	D A

@@ -1,6 +1,6 @@
 DDS5	;SFISC/MKO-MULTS,NEXT/PREV PAGE,NEXT BLOCK ;9:53 AM  1 Oct 1999
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	I X="" D:DDSOLD="" NF^DDS01 D:DDSOLD]"" DM^DDS6 Q
 	I DIR0N,$D(DUZ)#2 S ^DISV(DUZ,$E(DDSGL,1,28))=$E(DDSGL,29,999)_X
 	I $G(@DDSREFS@("ASUB",DDSPG,DDSBK,DDO))]"" S DDS5PG=^(DDO)

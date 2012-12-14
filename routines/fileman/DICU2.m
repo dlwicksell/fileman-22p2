@@ -1,5 +1,6 @@
 DICU2	;SEA/TOAD,SF/TKW-VA FileMan: Lookup Tools, Return IDs ;28APR2012
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 IDS(DIFILE,DIEN,DIFLAGS,DINDEX,DICOUNT,DIDENT,DILIST,DI0NODE)	;
 	;

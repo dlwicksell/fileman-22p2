@@ -1,6 +1,6 @@
 DIAR	;SFISC/TKW,WISC/CAP-ARCHIVING FUNCTIONS ;7/1/93  4:17 PM
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	G NOKL
 	;
 1	;;SELECT ENTRIES TO ARCHIVE

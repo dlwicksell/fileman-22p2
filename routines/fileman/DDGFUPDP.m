@@ -1,6 +1,6 @@
 DDGFUPDP	;SFISC/MKO-UPDATE PAGE COORDINATES ;01:37 PM  19 Jan 1994
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 PAGE(P1,P2,P3,P4,T,A)	;
 	;

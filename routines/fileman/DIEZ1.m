@@ -1,5 +1,6 @@
 DIEZ1	;SFISC/GFT-COMPILE INPUT TEMPLATE ;30MAY2007
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	D QF^DIEZ2 S L=2,X="DE S DIE="_Q_",DIC=DIE,DP="_DP_",DL="_DL_",DIEL="_DIEZL_",DU="""" K DG,DE,DB Q:$O("_DIE_"DA,""""))=""""",DS=-1 D L S X=""
 DL	S DS=$O(^UTILITY($J,U,DS)) S:DS="" DS=-1 I DS<0 K ^UTILITY($J,U) G CN
 	S DSN=DS S:+DS'=DS DSN=""""_DSN_"""" S DPP=0,X=X_" I $D(^("_DSN_")) S %Z=^("_DSN_")"

@@ -1,6 +1,6 @@
 DDBRT	;SFISC/DCL-BROWSER TEST ROUTINE ;NOV 04, 1996@13:55
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	Q
 TEST()	;TEST IF CRT CAN USE BROWSER;USER MUST GO THRU ZU OR XUP FIRST
 	Q:$G(IOST(0)) $$GET(+IOST(0))

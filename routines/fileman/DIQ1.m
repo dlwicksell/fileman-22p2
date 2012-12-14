@@ -1,5 +1,6 @@
 DIQ1	;SFISC/XAK-INQUIRY WITH COMPUTED FIELDS ;26JAN2004
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 A	N DIDQ,DICMX,DIQ1W,D,Z,DIQX
 	S DIDQ=DD,DICMX="D LF^DIQ K:'S D I S W O,"": "",X S X="""",O=$J(X,$L(O))"

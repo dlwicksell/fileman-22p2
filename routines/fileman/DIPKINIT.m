@@ -1,6 +1,6 @@
 DIPKINIT	; ; 30-MAR-1999
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 	K DIF,DIFQ,DIFQR,DIFQN,DIK,DDF,DDT,DTO,D0,DLAYGO,DIC,DIDUZ,DIR,DA,DIFROM,DFR,DTN,DIX,DZ,DIRUT,DTOUT,DUOUT
 	S DIOVRD=1,U="^",DIFQ=0,DIFROM="22.0" W !,"This version (#22.0) of 'DIPKINIT' was created on 30-MAR-1999"

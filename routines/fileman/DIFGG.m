@@ -1,6 +1,6 @@
 DIFGG	;SFISC/XAK,EDE(OHPRD)-FILEGRAM GENERATOR ;7/25/92  2:15 PM
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	K DIFG S DIFG=DIC,DIC("A")="Select FILEGRAM TEMPLATE: "
 	S DK=+Y,DIC="^DIPT(",DIC("S")="I $P(^(0),U,8)=1 S %=^(0) I $P(%,U,4)=DK!'$L($P(%,U,4))",DIC(0)="QEAIS",D="F"_+Y
 	D IX^DIC K DIC,DY Q:Y<0  S (DIFG("TEMPLATE"),DIFGT)=+Y

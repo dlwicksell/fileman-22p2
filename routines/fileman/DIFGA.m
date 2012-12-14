@@ -1,6 +1,6 @@
 DIFGA	;SFISC/XAK-FILEGRAM TEMPLATES ;3/5/93  1:22 PM
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	S DIC=DI,(DIPT,DC(0))=DA,DC(1)=0 D INIT^DIFGA1,GET^DIFGB,L S L=1,DE="",DJ=0
 	K DNP Q
 	;

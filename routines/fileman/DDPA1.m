@@ -1,6 +1,6 @@
 DDPA1	;SFISC/TKW  RESET IX NODES ON HAND-EDITED TEMPLATES ;5/12/95  11:23
-V	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+V	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 EN	;
 	N A,B,I,J,X,DIR
 	S DIR("?",1)="This will repair known hand-edited templates in national packages.",DIR("?",2)="If none show on the report, it means that none of the templates on your system"

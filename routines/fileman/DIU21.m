@@ -1,6 +1,6 @@
 DIU21	;SFISC/XAK-EDIT FILE (PGMR PART) ;06:21 PM  2 Apr 2001
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	D:'$D(DISYS) OS^DII Q:$G(^DD("OS",DISYS,18))=""
 SCR	K DIR S DIR(0)="FOU^3:250",DIR("A")="FILE SCREEN" S:$D(^DD(DA,0,"SCR")) DIR("B")=^("SCR")
 	S DIR("?")="IF MUMPS CODE IS ENTERED HERE, IT IS A PERMANENT 'DIC(""S"")' FOR FILE"

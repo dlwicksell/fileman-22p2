@@ -1,5 +1,6 @@
 DIC	;SFISC/XAK,TKW,SEA/TOAD-VA FileMan: Lookup, Part 1 ;29AUG2012
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 	N %,D,DF,DIFILEI,DIENS,DINDEX,DS,DIASKOK,DIY,DO S U="^",DIC(0)=$G(DIC(0))
 	D GETFILE^DIC0(.DIC,.DIFILEI,.DIENS) I DIFILEI="" S Y=-1 Q

@@ -1,6 +1,6 @@
 DDBRU2	;SFISC/DCL-BROWSE LOCAL OR GLOBAL ARRAY DDBROOT DESCENDANTS ;2AUG2004
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	Q
 EN	N DDBNCC G CNTNU
 ROOT(DDBNCC,DDBRTOP,DDBRBOT)	; Browse Array Root Descendants ; DDBNCC node count check (default=1000)

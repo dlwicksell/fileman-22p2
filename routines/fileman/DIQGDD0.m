@@ -1,6 +1,6 @@
 DIQGDD0	;SFISC/DCL-NODE PIECE LOOKUP FOR DD ;09:26 AM  5 Jan 1994
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 NPS(DIQGDDN,DIQGNP)	;(CLOSEREFERENCE,PIECE)
 	;NODE PIECE SEARCH - DIQGDDN IS DD NUMBER - DIQGNP IS PIECE
 	; * * RETURNS FIELD NUMBER * *

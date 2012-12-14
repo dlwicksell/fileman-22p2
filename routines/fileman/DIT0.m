@@ -1,6 +1,6 @@
 DIT0	;SFISC/GFT,XAK-PREPARE TO XFR ;8AUG2011
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	N Y,DIC,DIT0KILL S DIT=DDF(1),DIC=L,DIC(0)="EQLAM",X="DATA INTO WHICH " D LK
 	G Q:Y<0 S DFR=+Y,DTO(1)=DIC_+Y_",",DIC(0)="EQAM",X="FROM ",DIC("S")="I Y-"_+Y D LK G Q:Y<0
 S	S (D0,DA)=+Y W ! D  G Q:%<0 S (DH,DIT0KILL)=2-% I '% D F^DIT G S

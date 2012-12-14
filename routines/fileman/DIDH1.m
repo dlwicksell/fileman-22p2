@@ -1,5 +1,6 @@
 DIDH1	; SFISC/ALL - HDR FOR DD LISTS; 16NOV2012
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	N DIDHI,DIDHJ,DIC,W,M1 D
 	.N I,J D IJ^DIUTL(DFF) M DIDHJ=J,DIDHI=I S DIDHJ=$O(J(""),-1)
 	S M=1 I DC=1 S (F(1),DA)=DFF,Z=1

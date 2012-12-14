@@ -1,5 +1,6 @@
 DINIT0	;SFISC/GFT,XAK-INITIALIZE VA FILEMAN ;2JUL2011
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 	I '$D(^DD("SETPTCNODE")) S ^("SETPTCNODE")=$H W !! F I=0:0 S I=$O(^DD(I)) Q:'I  F J=0:0 S J=$O(^DD(I,J)) Q:'J  S %=+$P($P($G(^(J,0)),U,2),"p",2) I %,$D(^DD(%,0)) S ^(0,"PTC",I,J)="" ;COMPUTED POINTER
 DD	F I=1:1 S X=$T(DD+I),Y=$P(X," ",3,99) G ^DINIT1:X?.P S @("^DD(0,"_$E($P(X," ",2),3,99)_")=Y")

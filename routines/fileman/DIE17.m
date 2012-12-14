@@ -1,5 +1,6 @@
 DIE17	;SFISC/GFT-COMPILED TMPLT UTIL ;03:47 PM  13 Aug 2002
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	I $D(DTOUT) S X="" G OUT
 	G:$A(X)-94 X:'$P(DW,";E",2),@("T^"_DNM)
 	I $D(DIE("NO^")),X=U,DIE("NO^")'["OUTOK" W !?3,"EXIT NOT ALLOWED " S D="" G X

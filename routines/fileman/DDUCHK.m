@@ -1,6 +1,6 @@
 DDUCHK	;SFISC/RWF-CHECK DD ;11:25 AM  30 Dec 2004
-	;;22.2T0;VA FILEMAN;;Dec 03, 2012
-	;Per VHA Directive 10-93-142, this routine should not be modified.
+	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;Per VHA Directive 2004-038, this routine should not be modified.
 	; DDUCFI=home file, DDUCFE=home field, DDUCFIX=flag to fix DD
 	; DDUCRFI=referenced file, DDUCRFE=referenced field.
 A	W !!,"Check the Data Dictionary." D
