@@ -186,6 +186,40 @@ DMUDT000 ; VEN/SMH - Unit Test Driver for Date Utilities; 26-DEC-2012
  D CHKEQ^XTMUNIT(Y,-1,"22 JANUARY 2013 should be invalid (After Limit)")
  QUIT
  ;
+DDUPDT ; @TEST - Internal Format to External Format - DD^%DT
+ ; Test normal operation first
+ N %DT
+ N Y S Y="3130522" D DD^%DT
+ D CHKEQ^XTMUNIT(Y,"MAY 22, 2013","3130522 didn't convert to external properly")
+ N Y S Y="3130522.22" D DD^%DT
+ D CHKEQ^XTMUNIT(Y,"MAY 22, 2013@22:00","3130522.22 didn't convert to external properly")
+ N Y S Y="3130522.2211" D DD^%DT
+ D CHKEQ^XTMUNIT(Y,"MAY 22, 2013@22:11","3130522.2211 didn't convert to external properly")
+ N Y S Y="3130522.221144" D DD^%DT
+ D CHKEQ^XTMUNIT(Y,"MAY 22, 2013@22:11:44","3130522.221144 didn't convert to external properly")
+ ;
+ N Y S Y=3130000 D DD^%DT
+ D CHKEQ^XTMUNIT(Y,2013,"3130000 didn't convert to external properly")
+ N Y S Y=3131200 D DD^%DT
+ D CHKEQ^XTMUNIT(Y,"DEC 2013","3131200 didn't convert to external properly")
+ ;
+ ; Test force seconds return (%DT="S")
+ D
+ . N %DT,Y S %DT="S"
+ . S Y=3130522.22 D DD^%DT
+ . D CHKEQ^XTMUNIT(Y,"MAY 22, 2013@22:00:00","Seconds not returned when requested")
+ ;
+ ; Test bad Input
+ N Y S Y=5 D DD^%DT
+ D CHKEQ^XTMUNIT(Y,-1,"5 (invalid value) converted to a unknown date")
+ ;
+ ; Test l10n
+ S DUZ("LANG")=2 ; German
+ N Y S Y=3130522.2211 D DD^%DT
+ D CHKEQ^XTMUNIT(Y,"22.05.2013 22:11","Date didn't convert correctly into German format")
+ S DUZ("LANG")="" ; Reset
+ QUIT
+ ;
 XTENT ; List of Unit Tests (This will be deprecated when Joel gives me the new version of the routine)
  ;;%DTFUT; %DT="F" - Future Dates
  ;;%DTPAST; %DT="P" - Past assumed flag
@@ -198,6 +232,7 @@ XTENT ; List of Unit Tests (This will be deprecated when Joel gives me the new v
  ;;%DTS; %DT="TS" or %DT="RS" - Seconds are to be returned
  ;;%DTX; %DT="X" - Exact (month and day) input is required
  ;;%DT0; %DT(0) - Limit dates to or from %DT(0)
+ ;;DDUPDT; DD^%DT - Internal to External Format
  ;
 INTWRAP(CMD,ARR) ; Interactive Prompt Wrapper. Write prompt to file and read back.
  ; CMD is command to execute by value
