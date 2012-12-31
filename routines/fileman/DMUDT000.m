@@ -220,20 +220,6 @@ DDUPDT ; @TEST - Internal Format to External Format - DD^%DT
  S DUZ("LANG")="" ; Reset
  QUIT
  ;
-XTENT ; List of Unit Tests (This will be deprecated when Joel gives me the new version of the routine)
- ;;%DTFUT; %DT="F" - Future Dates
- ;;%DTPAST; %DT="P" - Past assumed flag
- ;;%DTI; %DT="I" - International Dates
- ;;%DTINT; %DT="A" - Interactive Dates
- ;;%DTM; %DT="M" - Only Month and year input is allowed
- ;;%DTN; %DT="N" - Pure Numeric Input is not allowed
- ;;%DTR; %DT="R" - Time Input Required
- ;;%DTT; %DT="T" - Time Input Allowed
- ;;%DTS; %DT="TS" or %DT="RS" - Seconds are to be returned
- ;;%DTX; %DT="X" - Exact (month and day) input is required
- ;;%DT0; %DT(0) - Limit dates to or from %DT(0)
- ;;DDUPDT; DD^%DT - Internal to External Format
- ;
 INTWRAP(CMD,ARR) ; Interactive Prompt Wrapper. Write prompt to file and read back.
  ; CMD is command to execute by value
  ; ARR Return Array pass by reference. New before passing as we only add contents here.

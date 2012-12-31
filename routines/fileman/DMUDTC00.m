@@ -1,4 +1,4 @@
-DMUDTC00 ; VEN/SMH - Unit Test Driver for %DTC Utilities; 28-DEC-2012
+DMUDTC00 ; VEN/SMH - Unit Test Driver for %DTC Utilities; 31-DEC-2012
  ;;22.2;VA FILEMAN;;
  ;
  S IO=$PRINCIPAL
@@ -147,12 +147,7 @@ DW ; @TEST - DW^%DTC - Return the day of week
  QUIT
  ;
 H ; @TEST - H^%DTC - Convert an FM Date to a $H format date/time
- ;
-XTENT ; List of Unit Tests (This will be deprecated when Joel gives me the new version of the routine)
- ;;%DTC; ^%DTC - Returns the number of days between two dates
- ;;C; C^%DTC - Adds and subtracts dates
- ;;COMMA; COMMA^%DTC - Formats numbers with commas
- ;;DW; DW^%DTC - Return the day of week
+ QUIT
  ;
 INTWRAP(CMD,ARR) ; Interactive Prompt Wrapper. Write prompt to file and read back.
  ; CMD is command to execute by value
