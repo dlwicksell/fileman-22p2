@@ -147,7 +147,186 @@ DW ; @TEST - DW^%DTC - Return the day of week
  QUIT
  ;
 H ; @TEST - H^%DTC - Convert an FM Date to a $H format date/time
+ ; Input: X - FM Date
+ ; Output: %H - $H date, %T - Seconds since midnight,
+ ;   %Y: Numeric Day of Week
+ N X,%H,%T,%Y
+ S X="3121228.224422" D H^%DTC
+ D CHKEQ^XTMUNIT(%H,"62819","Horolog not correctly translated")
+ D CHKEQ^XTMUNIT(%T,(22*60*60)+(44*60)+22,"Number of seconds since midnight incorrect")
+ D CHKEQ^XTMUNIT(%Y,5,"Should be 5 for Friday")
+ ;
+ N X,%H,%T,%Y
+ S X="3100000" D H^%DTC
+ D CHKEQ^XTMUNIT(%H,"61727","Horolog not correctly translated 2")
+ D CHKEQ^XTMUNIT(%T,0,"Imprecise date - seconds should be zero")
+ D CHKEQ^XTMUNIT(%Y,-1,"Imprecise date - %Y should be -1")
+ ;
+ N X,%H,%T,%Y
+ S X="ABCDEF" D H^%DTC
+ D CHKEQ^XTMUNIT(%H,0,"Invalid input - %H should be 0")
+ D CHKEQ^XTMUNIT(%T,0,"Invalid input - %T should be 0")
+ D CHKEQ^XTMUNIT(%Y,-1,"Invalid input - %Y should be -1")
+ ;
+ N X,%H,%T,%Y
+ S X=5 D H^%DTC
+ D CHKEQ^XTMUNIT(%H,0,"Invalid input - %H should be 0")
+ D CHKEQ^XTMUNIT(%T,0,"Invalid input - %T should be 0")
+ D CHKEQ^XTMUNIT(%Y,-1,"Invalid input - %Y should be -1")
  QUIT
+ ;
+HELP ; @TEST - Exercise Help, no checks.
+ N REDBG S REDBG=$C(27)_"[41m" ; Red Background ANSI
+ N WHTFG S WHTFG=$C(27)_"[37m" ; White Forground ANSI
+ N RESET S RESET=$C(27)_"[0m"  ; Reset to original ANSI
+ N X  ; Looper variable
+ ;
+ ; Test %DT flags
+ F X="A","E","F","I","M","N","P","R","SR","ST","T","X","" D
+ . N %DT S %DT=X
+ . W !
+ . W REDBG_WHTFG
+ . W !,"%DT: ",%DT
+ . W RESET
+ . D HELP^%DTC
+ ;
+ ; Test %DT(0)
+ N X,Y ; Loopers
+ F X="3101231","T+30" F Y="-","+" D
+ . N %DT S %DT(0)=Y_X,%DT="I"
+ . W !
+ . W REDBG_WHTFG
+ . W !,"%DT(0): ",%DT(0)
+ . W RESET
+ . D HELP^%DTC
+ QUIT
+ ;
+NOW ; @TEST - Tests NOW^%DTC
+ ; Input: None
+ ; Output: 
+ ; - %  -> VA FileMan date/time down to the second.
+ ; - %H -> $H date/time.
+ ; %I(1) -> The numeric value of the month.
+ ; %I(2) -> The numeric value of the day.
+ ; %I(3) -> The numeric value of the year.
+ ; X -> VA FileMan date only.
+ N %,%H,%I,X
+ D NOW^%DTC
+ D CHKEQ^XTMUNIT($L(%,"."),2,"No date/time provided when they should be")
+ D CHKTF^XTMUNIT($L($P(%,".",2))>2,"Hours and minutes not provided when they should be")
+ D CHKEQ^XTMUNIT(%I(1),$E(DT,4,5),"Month incorrect")
+ D CHKEQ^XTMUNIT(%I(2),$E(DT,6,7),"Day incorrect")
+ D CHKEQ^XTMUNIT(%I(3),$E(DT,1,3)+1700,"Year incorrect")
+ D CHKEQ^XTMUNIT(X,DT,"VA Fileman date only incorrect")
+ QUIT
+ ;
+S ; @TEST - Test S^%DTC
+ ; Input: % - Number of seconds since midnight
+ ; Output: % - Decimal part of Fileman Date
+ N % S %=1 D S^%DTC
+ D CHKEQ^XTMUNIT(%,.000001,"1 second didn't convert correctly")
+ N % S %=(13*60*60)+(48*60)+47 D S^%DTC ; 1:48:47 PM
+ D CHKEQ^XTMUNIT(%,.134847,"1:48:47 didn't convert correctly")
+ N % S %=0 D S^%DTC
+ D CHKEQ^XTMUNIT(%,0,"0 didn't convert correctly")
+ N % S %="ABCDEF" D S^%DTC
+ D CHKEQ^XTMUNIT(%,0,"ABCDEF didn't convert correctly")
+ N % S %="1abcdef" D S^%DTC
+ D CHKEQ^XTMUNIT(%,.000001,"1abcdef didn't convert correctly")
+ QUIT
+YMD ; @TEST - Test YMD^%DTC
+ ; Input: %H - $H format date/time
+ ; Output: % - Time down to second in FM format
+ ;       : X - date in Fileman format
+ N %H,%,X
+ S %H=$H D YMD^%DTC
+ N FMTIME S FMTIME=$$FMTFDHT(%H)
+ D CHKEQ^XTMUNIT(%,FMTIME,"Time didn't convert correctly")
+ D CHKEQ^XTMUNIT(X,DT,"Date didn't convert correctly")
+ ;
+ ; Check date sans time
+ N %H,%,X
+ S %H=$P($H,",") D YMD^%DTC
+ D CHKEQ^XTMUNIT(%,0,"Time didn't convert correctly 2")
+ D CHKEQ^XTMUNIT(X,DT,"Date didn't convert correctly 2")
+ ;
+ ; Now check invalid inputs
+ N %H,%,X
+ S %H=0 D YMD^%DTC
+ D CHKEQ^XTMUNIT(%,0,"Time should be zero for $H of 0")
+ D CHKEQ^XTMUNIT(X,"","Date should be null? for $H of 0")
+ ;
+ N %H,%,X
+ S %H=1 D YMD^%DTC
+ D CHKEQ^XTMUNIT(%,0,"Time should be zero for $H of 1")
+ D CHKEQ^XTMUNIT(X,1410101,"Date for $H of 1 is 1410101")
+ ;
+ N %H,%,X
+ S %H="HELLO" D YMD^%DTC
+ D CHKEQ^XTMUNIT(%,0,"Time should be zero for $H of ""HELLO""")
+ D CHKEQ^XTMUNIT(X,"","Date should be null for $H of 0")
+ ;
+ N %H,%,X
+ S %H="1HELLO" D YMD^%DTC
+ D CHKEQ^XTMUNIT(%,0,"Time should be zero for $H of ""1HELLO""")
+ D CHKEQ^XTMUNIT(X,1410101,"Date for $H of ""1HELLO"" should be 1410101")
+ QUIT
+ ;
+YX ; @TEST - Test YX^%DTC
+ ; Input: %H - a $Horolog date
+ ; Output: Y - Date in external format
+ ;       : X - Date in Fileman Format
+ ;       : % - Time in Fileman decimal format
+ ;
+ ; $H cum datetime
+ N %H,Y,X,%
+ S %H="62823,40271" D YX^%DTC
+ D CHKEQ^XTMUNIT(Y,"JAN 01, 2013@11:11:11","$H didn't convert correctly")
+ D CHKEQ^XTMUNIT(X,3130101,"Fileman date didn't get produced correctly")
+ D CHKEQ^XTMUNIT(%,.111111,"Fileman time didn't get produced correctly")
+ ;
+ ; $H sans time
+ N %H,Y,X,%
+ S %H=62823 D YX^%DTC
+ D CHKEQ^XTMUNIT(Y,"JAN 01, 2013","$H didn't convert correctly 2")
+ D CHKEQ^XTMUNIT(X,3130101,"Fileman date didn't get produced correctly 2")
+ D CHKEQ^XTMUNIT(%,0,"Fileman time should be zero for $H of 62823")
+ ;
+ ; Invalid input
+ N %H,Y,X,%
+ S %H=0 D YX^%DTC
+ D CHKEQ^XTMUNIT(Y,0,"$H of 0 should produce zero date")
+ D CHKEQ^XTMUNIT(X,"","$H of 0 should produced a empty fileman date")
+ D CHKEQ^XTMUNIT(%,0,"$H of 0 should produce zero time")
+ ; 
+ ; Invalid input again
+ N %H,Y,X,%
+ S %H="HELLO" D YX^%DTC
+ D CHKEQ^XTMUNIT(Y,0,"$H of ""HELLO"" should produce zero date")
+ D CHKEQ^XTMUNIT(X,"","$H of ""HELLO"" should produce a zero fileman date")
+ D CHKEQ^XTMUNIT(%,0,"$H of ""HELLO"" should produce zero time")
+ ;
+ ; Slightly invalid input
+ N %H,Y,X,%
+ S %H="62823HELLO" D YX^%DTC
+ D CHKEQ^XTMUNIT(Y,"JAN 01, 2013","$H of 62823HELLO should be JAN 01, 2013")
+ D CHKEQ^XTMUNIT(X,3130101,"$H of 62823HELLO should be FM Date 3130101")
+ D CHKEQ^XTMUNIT(%,0,"$H of 62823HELLO should be FM time zero")
+ QUIT
+ ;
+FMTFDHT(%H) ; $$ ; Fileman Time from $H Time; Private to DMU routines
+ ; Input %H: By Value: Seconds portion of $H
+ ; Output: Fileman decimal representing the time
+ N SECONDS,REM ; seconds, remainder
+ S SECONDS=$P(%H,",",2)
+ N FMHR S FMHR=SECONDS/60/60\1 S:$L(FMHR)=1 FMHR="0"_FMHR ; derive hours
+ S REM=SECONDS-(60*60*FMHR) ; remainder seconds after hours
+ N FMMIN S FMMIN=REM/60\1 S:$L(FMMIN)=1 FMMIN="0"_FMMIN ; minutes
+ S REM=SECONDS-(60*60*FMHR)-(60*FMMIN) ; remainder
+ N FMSEC S FMSEC=REM ; seconds
+ S:$L(FMSEC)=1 FMSEC="0"_FMSEC ; and pad zero if one digit
+ N FMTIME S FMTIME="."_FMHR_FMMIN_FMSEC,FMTIME=+FMTIME ; create FM time number; remove extra trailing zeroes.
+ QUIT FMTIME
  ;
 INTWRAP(CMD,ARR) ; Interactive Prompt Wrapper. Write prompt to file and read back.
  ; CMD is command to execute by value
