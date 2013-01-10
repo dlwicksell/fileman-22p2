@@ -214,8 +214,8 @@ NOW ; @TEST - Tests NOW^%DTC
  D NOW^%DTC
  D CHKEQ^XTMUNIT($L(%,"."),2,"No date/time provided when they should be")
  D CHKTF^XTMUNIT($L($P(%,".",2))>2,"Hours and minutes not provided when they should be")
- D CHKEQ^XTMUNIT(%I(1),$E(DT,4,5),"Month incorrect")
- D CHKEQ^XTMUNIT(%I(2),$E(DT,6,7),"Day incorrect")
+ D CHKEQ^XTMUNIT(%I(1),+$E(DT,4,5),"Month incorrect")
+ D CHKEQ^XTMUNIT(%I(2),+$E(DT,6,7),"Day incorrect")
  D CHKEQ^XTMUNIT(%I(3),$E(DT,1,3)+1700,"Year incorrect")
  D CHKEQ^XTMUNIT(X,DT,"VA Fileman date only incorrect")
  QUIT

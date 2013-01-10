@@ -22,10 +22,6 @@ DMUDT000 ; VEN/SMH - Unit Test Driver for Date Utilities; 26-DEC-2012
  D CHKEQ^XTMUNIT(Y,3800000,"Future Date Test Year Only Failed.")
  S %DT="F",X="2000" D ^%DT
  D CHKEQ^XTMUNIT(Y,3000000,"Past Date Test failed.")
- S %DT="F",X="5/1" D ^%DT ; This test may fail around May 1st
- N FUTURE S FUTURE=Y
- S %DT="",X="5/1" D ^%DT
- D CHKEQ^XTMUNIT(FUTURE-Y,10000,"Future flag isn't working properly") ; NB: 10000 in FM Date is a difference of one year
  N YEAR S YEAR=$E(DT,1,3)+1700-10 ; Get a year 10 years in the past
  N YEAR2D S YEAR2D=$E(YEAR,3,4) ; Get the last 2 digits of the year
  S %DT="F" S X="03"_"11"_YEAR2D D ^%DT
