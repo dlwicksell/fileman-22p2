@@ -1,5 +1,5 @@
-DICATTDM	;GFT/GFT - SUBSCRIPT AND PIECE-POSITION FOR STORAGE OF SINGLE-VALUED DATA IN SCREENMAN ;21APR2005
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+DICATTDM	;GFT/GFT - SUBSCRIPT AND PIECE-POSITION FOR STORAGE OF SINGLE-VALUED DATA IN SCREENMAN ;2013-01-16  11:29 AM
+	;;22.2T1;VA FILEMAN;;Jan 13, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 SUBDEF	;
@@ -37,7 +37,7 @@ CHKSUB(X)	;used as INPUT TRANSFORM for Fields 16 & 76
 	S M=$$GET^DDSVALF(20.5,"DICATT",1,"","")
 	I $D(^DD(DICATTA,"GL",X)),M Q "Another Field is already stored at '"_X_"'"
 	I $D(^(X,0)) Q "A multiple field is already stored at '"_X_"'"
-	I $G(DICATTLN),$$MAX(DICATTLN,X)>250 Q "Too much to store at the '"_X_"' subscript"
+	I $G(DICATTLN),$$MAX(DICATTLN,X)>($G(^DD("STRING_LIMIT"),255)-5) Q "Too much to store at the '"_X_"' subscript"
 	Q 1
 	;
 MAX(L,Y)	;given L=length of new data, Y=subscript name

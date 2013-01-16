@@ -1,4 +1,4 @@
-DIAU	;SFISC/XAK-AUDIT OPTIONS ;23MAY2012
+DIAU	;SFISC/XAK-AUDIT OPTIONS ;2013-01-16  11:50 AM
 	;;22.2T1;VA FILEMAN;;Dec 14, 2012
 	;Per VHA Directive 2004-038, this routine should not be modified.
 0	S DIC="^DOPT(""DIAU"","
@@ -26,7 +26,10 @@ Q	K %,DIC,DIK,DI,DA,I,J,X,Y Q
 2	;;MONITOR A USER
 	N DIAUSR,%DT,DHIT,DWHEN,DIC,DIAUIDEN
 	S DIC=200,DIC(0)="AQEM",DIC("A")="Select a USER who has signed on to this system: ",DIC("S")="I $G(^(1.1))" D ^DIC K DIC Q:Y<0  S DIAUSR=+Y
-	D R1^DICRW S DIC("S")=DIC("S")_" I $D(^DIA(+Y,""D"",DIAUSR))",DIC=1,DIC(0)="QAEI",DIC("A")="Select AUDITED File: ",DIC("B")=$G(^DISV(DUZ,"^DIC(")) D ^DIC K DIC
+	D R1^DICRW ;Creates a DIC("S") that screens out files user has no access to
+	S DIC("S")=DIC("S")_" I $D(^DIA(+Y,""D"",DIAUSR))",DIC=1,DIC(0)="QAEI",DIC("A")="Select AUDITED File: "
+	S Y=$G(^DISV(DUZ,"^DIC(")) I Y X DIC("S") I  S DIC("B")=Y
+	D ^DIC K DIC
 	Q:$G(Y)'>0  S DIA=+Y,DIAUIDEN=$G(^DD(DIA,0,"ID","WRITE"))
 	K ^UTILITY("DIAU",$J)
 	S B=0,%DT="AEPT",%DT("A")="START WITH DATE: FIRST// " D ^%DT S DWHEN=" SINCE "_$$DATE^DIUTL(Y) I Y<1 Q:X]""  S Y=0,DWHEN=""

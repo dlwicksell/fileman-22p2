@@ -1,4 +1,4 @@
-DICATT6	;SFISC/XAK-SETS,FREE TEXT ;17MAY2005
+DICATT6	;SFISC/XAK-SETS,FREE TEXT ;2013-01-16  11:41 AM
 	;;22.2T1;VA FILEMAN;;Dec 14, 2012
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	G @N
@@ -17,7 +17,7 @@ C	I X["?",P=1 K X W !,"For Example: Internal Code 'M' could stand for 'MALE'",! 
 TOO	W $C(7),!,"TOO MUCH!! -- SHOULD BE 'POINTER', NOT 'SET'"
 T	W ! G NO^DICATT2:'$D(X) S DTOUT=1 G CHECK^DICATT
 	;
-4	K DG,DE,M S L=250,P=$P($P($P(^DD(A,DA,0),U,4),";",2),"E",2) I P S M=$P(P,",",2) I M S L=M-P+1
+4	K DG,DE,M S L=$G(^DD("STRING_LIMIT"),255)-5,P=$P($P($P(^DD(A,DA,0),U,4),";",2),"E",2) I P S M=$P(P,",",2) I M S L=M-P+1
 	S DL=1,DP=-1,DQ(1)="MINIMUM LENGTH^NR^^1^K:X\1'=X!(X<1) X",DQ(2)="MAXIMUM LENGTH^RN^^2^K:X\1'=X!(X>"_L_")!(DG(1)>X) X"
 	S T="",L=1,P=" X",DQ(3)="(OPTIONAL) PATTERN MATCH (IN 'X')^^^3^S X=""I ""_X D ^DIM S:$D(X) X=$E(X,3,999) I $D(X) K:X?.NAC X",DQ(3,3)="EXAMPLE: ""X?1A.A"" OR ""X'?.P"""
 	G DIED:'O,DG:C'?.E1"K:$L".E1" X"
