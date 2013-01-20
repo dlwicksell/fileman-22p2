@@ -1,5 +1,5 @@
-DDBRU	;SFISC/DCL-BROWSER UTILITIES AND EXTRINSIC FUNCTIONS ; 18NOV2012
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+DDBRU	;SFISC/DCL-BROWSER UTILITIES AND EXTRINSIC FUNCTIONS ; 19JAN2013
+	;;22.2T2;VA FILEMAN;;Dec 14, 2012
 	;Per VHA Directive 2004-038, this routine should not be modified.
 CTRLCH()	;Extrinsic function - returns control characters 1-31
 	N I,X S X="" N I F I=1:1:31 S X=X_$C(I)
@@ -43,7 +43,7 @@ DR	;Display Routine(s)
 	N DESC,RN,RSA,RTN,X,Y
 	K ^TMP($J,"DDBDR"),^TMP($J,"DDBDRL"),^UTILITY($J)  ;DR LIST
 	X ^DD("OS",DISYS,"RSEL") Q:$O(^UTILITY($J,""))']""
-	S RTN="",RN=1 F  S RTN=$O(^UTILITY($J,RTN)) Q:RTN=""  D
+	S RTN=" ",RN=1 F  S RTN=$O(^UTILITY($J,RTN)) Q:RTN=""  D  ; VEN/SMH - Make starting point " " for RTN so it won't crash on Cache
 	.S DESC=$P($P($T(+1^@RTN),";",2),"-",2),DESC=$S($L(DESC)>45:$E(DESC,1,45)_"...",1:DESC)
 	.S RSA=$NA(^TMP($J,"DDBDR",RN)),RN=RN+1,^TMP($J,"DDBDRL",RTN_$E("        ",1,8-$L(RTN))_": "_DESC)=RSA
 	.W !,"...loading ",RTN
