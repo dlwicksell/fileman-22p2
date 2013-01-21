@@ -1,5 +1,5 @@
-DDD	;GFT/DI*;14MAR2006
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+DDD	; GFT/DI* - Build Meta Data Dictionary ;20JAN2013
+	;;22.2V1;VA FILEMAN;;Dec 14, 2012
 	;Per VHA Directive 2004-038, this routine should not be modified.
 MAKE	;
 	N DDD,FLD,Z,I,L,F D DT^DICRW
@@ -33,7 +33,8 @@ DESCR	I $D(^DD(FILE,FLD,3)),^(3)]"" S L=1,^DDD(I,1,1,0)=^(3)
 OK	W !,"a Central Data Dictionary will now be compiled.",!?7,"OK"
 	S %=2 D YN^DICN I %-1 K % Q
 	S I=0
-	S Z=^DDD(0) K ^DDD S ^DDD(0)=$P(Z,U,1,2)
+	S ^DDD(0)=$P(^DDD(0),U,1,2)
+	N J F J=0:0 S J=$O(^DDD(J)) Q:J=""  K ^(J) ; Kill all nodes including indexes.
 	Q
 	;
 	;
