@@ -1,35 +1,48 @@
-DDGLIBP	;SFISC/MKO-PRINT FROM WITHIN SCREEN TOOLS ;7:56 AM  5 Dec 2012
+DDGLIBP	;SFISC/MKO-PRINT FROM WITHIN SCREEN TOOLS ;2013-01-22  3:45 PM
 	;;22.2T1;VA FILEMAN;;Dec 14, 2012;Build 19
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 PT(DDGLROOT,DDGLHDR)	;Prompt for device and print
-	N POP,DDGLFLAG,DDGLI,DDGLPHDR,DDGLWRAP,DX,DY
+	N POP,DDGLBAR,DDGLFLAG,DDGLHELP,DDGLI,DDGLPHDR,DDGLWRAP,DX,DY
 	N %,%A,%B,%B1,%B2,%B3,%BA,%C,%E,%G,%H,%I,%J,%K,%M,%N
 	N %P,%S,%T,%W,%X,%Y
 	N %A0,%D1,%D2,%DT,%J1,%W0
 	;
-	;Write info, and clear rest of screen
 	S DDGLFLAG=""
-	S DY=IOTM-1,DX=0 X IOXY
-	S:$G(DDGLHDR)="" DDGLHDR="Print document"
-	W $P(DDGLVID,DDGLDEL)_"Print: "_DDGLHDR_$P(DDGLVID,DDGLDEL,10)_$P(DDGLCLR,DDGLDEL)
-	F DDGLI=1:1:IOBM-IOTM W $C(13,10)_$P(DDGLCLR,DDGLDEL)
-	S DY=IOTM+1,DX=0 X IOXY
 	;
 	;Set terminal characterstics for scroll mode
 	X DDGLZOSF("EON"),DDGLZOSF("TRMOFF")
 	S X=$G(IOM,80) X DDGLZOSF("RM")
 	W $P(DDGLVID,DDGLDEL,9)
 	;
+	W:$G(DDGLHDR)]"" "Document: "_DDGLHDR,!
+	;
 	;Prompt whether to print a header
-	S DDGLPHDR=$$YNREAD("Print a header on each page")
+	S DDGLHELP(1)="  Answer 'Y' to print a document title, date/time, and page number"
+	S DDGLHELP="  at the top of each page."
+	S DDGLPHDR=$$YNREAD("Print a header on each page","N",.DDGLHELP)
+	K DDGLHELP
 	I DDGLPHDR=-1 D FINISH("Report canceled.") Q
 	S:DDGLPHDR DDGLFLAG=DDGLFLAG_"H"
 	;
 	;Prompt whether to wrap text
-	S DDGLWRAP=$$YNREAD("Wrap text and interpret word processing (|) windows")
+	S DDGLHELP(1)="  Answer 'Y' to wrap the text at word boundaries to fit within the margins"
+	S DDGLHELP(2)="             of the device."
+	S DDGLHELP="  Answer 'N' to print the text as-is (no-wrap)."
+	S DDGLWRAP=$$YNREAD("Wrap text","N",.DDGLHELP)
+	K DDGLHELP
 	I DDGLWRAP=-1 D FINISH("Report canceled.") Q
-	S:'DDGLWRAP DDGLFLAG=DDGLFLAG_"N"
+	;
+	;Prompt whether to interpret word processing (|) windows"
+	S DDGLHELP(1)="  Answer 'Y' to have text enclosed within vertical bars (|) interpreted as"
+	S DDGLHELP(2)="             word processing windows."
+	S DDGLHELP="  Answer 'N' to have vertical bars printed as-is."
+	S DDGLBAR=$$YNREAD("Interpret word processing windows (|)","N",.DDGLHELP)
+	K DDGLHELP
+	I DDGLBAR=-1 D FINISH("Report canceled.") Q
+	;
+	;Set flag for wrap and wp windows
+	S DDGLFLAG=DDGLFLAG_$S(DDGLWRAP&'DDGLBAR:"|",'DDGLWRAP&DDGLBAR:"N",'DDGLWRAP&'DDGLBAR:"X",1:"")
 	;
 DEVICE	;Device prompt
 	N IOF,IOSL
@@ -40,30 +53,29 @@ DEVICE	;Device prompt
 	;
 	I POP D FINISH("Report canceled!") Q
 	;
+	;Check that device is not a CRT
+	I $E(IOST,1,2)="C-" D  QUIT
+	. D FINISH($C(7)_"You cannot print the document on a CRT.")
+	;
 	;Queue report
-	I $D(IO("Q")),$D(^%ZTSK) D
-	. N I,ZTRTN,ZTDESC,ZTSAVE,ZTSK
+	I $D(IO("Q")),$D(^%ZTSK) D  Q
+	. N I,ZTRTN,ZTDESC,ZTSAVE,ZTSK,DDGLMSG
 	. S ZTRTN="PRINT^DDGLIBP"
 	. S ZTDESC=DDGLHDR
 	. F I="DDGLROOT","DDGLHDR","DDGLFLAG" S ZTSAVE(I)=""
 	. D ^%ZTLOAD
-	. I $D(ZTSK)#2 W !,"Report queued!",!,"Task number: "_ZTSK,!
-	. E  W !,"Report canceled!",!
+	. I $D(ZTSK)#2 D
+	.. W !,"Report queued!",!,"Task number: "_ZTSK,!
+	.. D EOPREAD
+	. E  S DDGLMSG="Report canceled!"
 	. S IOP="HOME" D ^%ZIS
-	;
-	E  I $E(IOST,1,2)="C-" D  Q
-	. W !,$C(7)_"You cannot print the document on a CRT.",!
-	. H 2
+	. D FINISH($G(DDGLMSG))
 	;
 	;Non-queued report
-	E  D
-	. W !,"Printing ..."
-	. D PRINT
-	. X $G(^%ZIS("C"))
-	. W !,"Done."
-	;
-	;Allow time to see messages
-	D FINISH()
+	W !,"Printing ..."
+	D PRINT
+	X $G(^%ZIS("C"))
+	D FINISH("Done.")
 	Q
 	;
 PRINT	;Print the document in DDGLROOT, Header text in DDGLHDR
@@ -74,8 +86,8 @@ PRINT	;Print the document in DDGLROOT, Header text in DDGLHDR
 	S DDGLZN=$D(@DDGLREF@($O(@DDGLREF@(0)),0))#2
 	S DDGLFLAG=$G(DDGLFLAG)
 	;
-	;Format the text, if DDGLFLAG contains neither N nor X
-	I DDGLFLAG'["N" D
+	;Format the text, if DDGLFLAG doesn't contain X
+	I DDGLFLAG'["X" D
 	. D FORMAT(DDGLREF,DDGLZN,DDGLFLAG)
 	. S DDGLZN=1
 	. S DDGLREF=$NA(^UTILITY($J,"W",1))
@@ -109,26 +121,31 @@ HDR	;Print the header DDGLHDR; increment DDGLPAGE
 	W !,$TR($J("",IOM-1)," ","-")
 	Q
 	;
-YNREAD(DDGLPROM,DDGLDEF)	;Issue a Yes/No Read
+YNREAD(DDGLPROM,DDGLDEF,DDGLHELP)	;Issue a Yes/No Read
 	N DIR,DTOUT,DUOUT,DIRUT,DIROUT,X,Y
 	S DIR(0)="Y"
-	S DIR("B")=$S("Ny"[$E($G(DDGLDEF)):"NO",1:"YES")
+	S DIR("B")=$S("Nn0"[$E($G(DDGLDEF)):"NO",1:"YES")
+	M:$D(DDGLHELP)]"" DIR("?")=DDGLHELP
 	S:$G(DDGLPROM)]"" DIR("A")=DDGLPROM
 	D ^DIR
 	Q $S($D(DIRUT):-1,1:Y)
 	;
+EOPREAD	; Issue an End-of-Page Read
+	N DIR,DTOUT,DUOUT,DIRUT,DIROUT,X,Y
+	S DIR(0)="E" D ^DIR
+	Q
+	;
 FORMAT(DDGLREF,DDGLZN,DDGLFLAG)	;Use ^DIWP to format the text
 	N DIWL,DIWR,DIWF,X
 	K ^UTILITY($J,"W")
-	S DIWL=1,DIWR=IOM-1,DIWF=$E("N",DDGLFLAG["N")
+	S DIWL=1,DIWR=IOM-1,DIWF=$E("N",DDGLFLAG["N")_$E("|",DDGLFLAG["|")_$E("X",DDGLFLAG["X")
 	S DDGLI=0 F  S DDGLI=$O(@DDGLREF@(DDGLI)) Q:'DDGLI  D
 	. S X=$S($G(DDGLZN):@DDGLREF@(DDGLI,0),1:$G(@DDGLREF@(DDGLI)))
 	. D ^DIWP
 	Q
 	;
 FINISH(DDGLMSG)	;Print message and reset terminal characteristics
-	W:$G(DDGLMSG)]"" !,DDGLMSG
-	H 2
+	I $G(DDGLMSG)]"" W !,DDGLMSG H 2
 	;
 	;Reset terminal characteristics for screen handling
 	X DDGLZOSF("EOFF"),DDGLZOSF("TRMON")
