@@ -52,7 +52,7 @@ M	S T=$F(X," IN ") I T S X=$E(X,1,T-5),W=":",M=T-4,I=X_W_$E(I,T,999),T=$F(I," FI
 LITDATE	S %DT="T" I $L(X)>2 D ^%DT I Y>0 S X=Y,Y(0)=0 D DATE Q  ;may be a literal date
 BACKPNT	S T=$O(^DIC("B",X)) I T]"",$P(T,X)=""!$D(^(X)),$D(J(0)) S T=DLV0 D ^DICOMPV I D>0 Q  ;try backwards-pointer  TOOK OFF CHECK FOR DICOMPW VARIABLE 3/28/2000
 MR	I M'>$L(I),+X'=X D MR^DICOMP G L:X]""
-DDD	I DICOMP["?",$D(^DDD("C")),DICOMP'["d" ; S T=$$^DICOMPU(X,.J,DICOMP,.DICMX) G BAD:$D(DUOUT) I T]"" W "  (",T,")" D   I $D(X),$D(Y) S:Y["m" DIMW="m" D:Y["D" DATE S K=K+1,K(K)=X_" S X=X" D DPS^DICOMPW S DLV=+Y Q
+DDD	I DICOMP["?",$D(^DDD("C")),DICOMP'["d" ; S T=$$EN^DICOMPU(X,.J,DICOMP,.DICMX) G BAD:$D(DUOUT) I T]"" W "  (",T,")" D   I $D(X),$D(Y) S:Y["m" DIMW="m" D:Y["D" DATE S K=K+1,K(K)=X_" S X=X" D DPS^DICOMPW S DLV=+Y Q
 	;.D ST^DICOMPX S D=$E(I,M,999),DICOMP=$TR(DICOMP,"?")_"d" D RCR^DICOMPZ(T) S M=0,I=D
 BAD	K Y Q
 	;

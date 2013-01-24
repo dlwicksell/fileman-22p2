@@ -1,7 +1,7 @@
-DIH	;SFISC/GFT-HISTOGRAM ;23SEP2004
+DIH	;SFISC/GFT-HISTOGRAM ; 24JAN2013
 	;;22.2T1;VA FILEMAN;;Dec 14, 2012
 	;Per VHA Directive 2004-038, this routine should not be modified.
-NO	I $O(^DOSV(0,IO(0),0))'>0 D ^DIALOG(1520) Q  ;**CCO/NI 'NO SUB-COUNTS'
+NO	I $O(^DOSV(0,IO(0),0))'>0 D EN^DIALOG(1520) Q  ;**CCO/NI 'NO SUB-COUNTS'
 	K ZTSK S:$D(^%ZTSK) %ZIS="QM" D ^%ZIS G ENDK:POP,QUE:$D(IO("Q"))
 DQ	S J=$I,DN="=$O(^DOSV(0,J," F X=0:1 Q:'$D(^DOSV(0,J,"BY",X+1))
 	G END:'X S A=^(1),DD=$P(A,U,3) I $D(^DD(+A,+$P(A,U,2),0)) S DD=^(0) S $P(DD,U)=$$LABEL^DIALOGZ(+A,+$P(A,U,2))

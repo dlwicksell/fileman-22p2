@@ -1,4 +1,4 @@
-DIV	;SFISC/GFT-VERIFY FLDS ;7JUL2005
+DIV	;SFISC/GFT-VERIFY FLDS ;24JAN2013
 	;;22.2T1;VA FILEMAN;;Dec 14, 2012
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	N DIUTIL,DIVDAT,DIVFIL,DIVMODE,DIVPG,POP S DIUTIL="VERIFY FIELDS"
@@ -13,7 +13,7 @@ DIC	S DIC="^DD("_A_",",DIC(0)="EZ",DIC("W")="W:$P(^(0),U,2) ""  (multiple)"""
 	I Y<0 W:X?1."?" !?3,"You may enter ALL to verify every field at this level of the file.",! G DIC
 	S DR=$P(Y(0),U,2) I DR S J(V)=A,P=+Y,V=V+1,A=+DR,I(V)=$P($P(Y(0),U,4),";") S:+I(V)'=I(V) I(V)=""""_I(V)_"""" G DIC
 	D DEVSEL G:$G(POP) Q D INIT
-	D ^DIVR(A,+Y)
+	D EN^DIVR(A,+Y)
 Q	K DIR,DIRUT,N,P
 	Q
 	;
@@ -33,7 +33,7 @@ ALLFLDS(A,DIVRTYPE)	S DQI=0 F  S DQI=$O(^DD(A,DQI)) Q:DQI'>0  S Y=DQI,Y(0)=^(Y,0
 	.I DR Q:$P(^DD(+DR,.01,0),U,2)["W"  D NEXTLVL Q
 	.I $G(DIVRTYPE)]"",$TR(DR,DIVRTYPE)=DR Q
 	.I DR["C" Q
-	.W !!!,"--",A,",",Y D ^DIVR(A,Y,1) Q
+	.W !!!,"--",A,",",Y D EN^DIVR(A,Y,1) Q
 	Q
 NEXTLVL	;
 	N A,P,DE,DA,DQI,I,J,V S DQI=0
@@ -108,6 +108,6 @@ ENQUEUE	;Entry point for queued reports
 	;
 	D INIT
 	I $G(DIVMODE)="A" D ALLFLDS(A),Q^DIVR Q
-	I $G(DIVMODE)="C" D ^DIVR(A,DA) Q
-	D ^DIVR(A,+Y)
+	I $G(DIVMODE)="C" D EN^DIVR(A,DA) Q
+	D EN^DIVR(A,+Y)
 	Q

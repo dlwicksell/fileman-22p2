@@ -1,4 +1,4 @@
-DIO0	;SFISC/GFT,TKW-BUILD SORT AND SUB-HDR ;23SEP2004
+DIO0	;SFISC/GFT,TKW-BUILD SORT AND SUB-HDR ;24JAN2013
 	;;22.2T1;VA FILEMAN;;Dec 14, 2012
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
@@ -58,7 +58,7 @@ EGP	I '$D(^DD(+DPP(Z),V,0)) S X=$P(DPP(Z),U,6,9)
 DT	I $P(X,U,2)["D" S Y=" S Y="_Y_" D:Y<9999999 DT"
 	E  I $G(DPP(Z,"OUT"))]"" S DPP(Z,"OUT")=" S Y="_Y_" "_DPP(Z,"OUT"),Y=",Y"
 	E  I $P(X,U,2)["O"!($P(X,U,4)?.P) S Y=","_Y
-DILL	E  D ^DILL(+DPP(Z),V,1)
+DILL	E  D EN^DILL(+DPP(Z),V,1)
 	S V=$P(F,";C",2),V="?"_$S(V:V-1,1:Z*3+5)
 F	I F[";S" S %=$P(F,";S",2) S:'% %=1 S V=$E("!!!!!!!!!!!!!!!!!!!!!!!!!!!!",1,%)_V,M=M+%
 	S F=$P(F,";""",2),%=$S(W["@":"",W["'":"",F]"":$P(F,"""",1,$L(F,"""")-1),Y]"":$P($P(DPP(Z),U,3),"""",1)_": ",1:""),Y=V_$S(%_Y]"":$E(",",V]"")_""""_%_"""",1:"")_Y I Y]"" S Y=" I DN D T"_$G(DPP(Z,"OUT"))_" W "_Y ;STOP IF ^

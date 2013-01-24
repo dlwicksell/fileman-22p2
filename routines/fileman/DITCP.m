@@ -1,6 +1,7 @@
-DITCP(DI1,DI2,DIDD,DIFLAG,DITCPT)	;GFT/MSC;30MAR2011
+DITCP	;MSC/GFT - Namespace/UCI comparer run code ;24JAN2013
 	;;22.2T1;VA FILEMAN;;Dec 14, 2012
 	;Per VHA Directive 2004-038, this routine should not be modified.
+EN(DI1,DI2,DIDD,DIFLAG,DITCPT) ; Main Entry Point
 	;DI1 & DI2 are left & right roots
 	;DIFLAG[1 -->compare files   [2-->compare entries   ["L" --> IGNORE EXTRA ENTRIES ON RIGHT SIDE
 	;DITCPT is array of TITLES, called by reference
@@ -232,7 +233,7 @@ PRINT	I $T(GET^DIPTED)'["," Q
 	N DITCPL,DISH,DHD F DITCPL=1,2 D GET^DIPTED($NA(DITCPL(DITCPL)),@("DI"_DITCPL))
 	D DITCPL("PRINT FIELDS") G UP
 	;
-DITCPL(H)	D ^DITCPL("DITCPL(1)","DITCPL(2)",H)
+DITCPL(H)	D EN^DITCPL("DITCPL(1)","DITCPL(2)",H)
 	Q
 	;
 BLOCK(X)	N D S D=DIL+(DIL#2=0)+1 N DIL S DIL=D,DIDD(DIL)=DIDD S:$G(DITCPT)>2 DITCPT=2 D E(.404,$P($G(^DIST(.404,+X,0)),U)) ;compare ScreenMan BLOCKs
@@ -241,7 +242,7 @@ E(XPDI,NAME,DIFL)	N X,N,MSC,S Q:NAME=""!'XPDI
 	S MSCF=$G(^DIC(XPDI,0,"GL")) Q:MSCF'?1"^".E  S MSCF=$E($$CREF^DILF(MSCF),2,99)
 	F X=1,2 S N=$$NS(X)_MSCF D  S:'S S=-999 S MSC(X)=$NA(@N@(S))
 	.F S=0:0 S S=$O(@N@("B",NAME,S)) Q:'S  Q:'$G(DIFL)  Q:XPDI<.4!(XPDI>.402)  Q:$P($G(@N@(S,0)),U,4)=DIFL  ;TEMPLATE FILE# MUST MATCH
-	D DITCP(MSC(1),MSC(2),XPDI,$G(DIL,2),.DITCPT)
+	D EN(MSC(1),MSC(2),XPDI,$G(DIL,2),.DITCPT)
 	Q
 	;
 	;

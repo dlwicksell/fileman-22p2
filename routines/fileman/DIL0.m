@@ -1,10 +1,10 @@
-DIL0	;SFISC/GFT-TURN PRINT FLDS INTO CODE ;26FEB2005
+DIL0	;SFISC/GFT-TURN PRINT FLDS INTO CODE ;24JAN2013
 	;;22.2T1;VA FILEMAN;;Dec 14, 2012
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	D XDUY S %=$P(X,U,2) S:%["Cm"&(W[";W") %="w"_% G WP:%["W",M:%["m",STATS^DIL1:$D(DCL(DP_U_+W)),N:W[";N"
 	I W[";W" D  S D1=$S(%["C":Y,1:$P(" S Y=",U,Y'?1" ".E)_Y_" S X=Y") D W S Y=Y_D1_" D ^DIWP" Q
-	.N %,DNP S DNP=1 D ^DILL(DP,+W,1)
-	D ^DILL(DP,+W,1)
+	.N %,DNP S DNP=1 D EN^DILL(DP,+W,1)
+	D EN^DILL(DP,+W,1)
 DN	;
 	I W[";X" D  Q
 	.S DE=$S(W[";C"!(W[";S"):DE,$A(Y)-32:" W ?0",1:"")
@@ -49,7 +49,7 @@ N	;
 	S DCL=DCL+1,DXS="Y",D=",Y=$$DITTO^DIO2("_DCL_",Y)",DITTO(DCL)="",I=""
 	I %["C" S X=X_" S Y=X"_D_" S X=Y" G Z
 	S Y=" S Y="_Y_D
-Z	D ^DILL(DP,+W) G DN
+Z	D EN^DILL(DP,+W) G DN
 	;
 DIWR	;
 	G DIWR^DIPZ1:DHT I $D(DIWR(DM)),DX=DIWR(DM) S ^UTILITY($J,99,DX)="D A^DIWW" G K

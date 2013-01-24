@@ -1,4 +1,4 @@
-DIL1	;SFISC/GFT-STATS, NUMBER FIELD, ON-THE-FLY ;26FEB2005
+DIL1	;SFISC/GFT-STATS, NUMBER FIELD, ON-THE-FLY ;24JAN2013
 	;;22.2T1;VA FILEMAN;;Dec 14, 2012
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	I $A(W)=34 D  Q
@@ -10,7 +10,7 @@ NUMB	S:DN<0 O=999 S X="",DRJ=0 I W?1"0".E D  D T^DIL Q
 	.K DPQ(DP,0)
 	.S Y="D"_(DIL-DIL0),X=$$LABEL^DIALOGZ(DP,.001)_U_$P($G(^DD(DP,.001,0)),U,2,99) S:X?.P X=$$EZBLD^DIALOG(7099)_"^^^^$L(X)>12" ;**CCO/NI
 	.I $D(DCL(DP_U_0)) D DE^DIL,STATS Q
-	.D ^DILL(DP,.001,1),DE^DIL,DN^DIL0
+	.D EN^DILL(DP,.001,1),DE^DIL,DN^DIL0
 	S DN=$E(W,$L(W)),X=$P(W,";") K DLN I DM,$A(X)=94 S W=F_W G UP^DIL
 COMP	D  D T^DIL Q
 	.N V,DILDATE,DILCUT
@@ -56,8 +56,8 @@ P	S N(D)=0
 A	S (S(D),DRJ)=0
 	S DSUM=",C="_D_" D "_DXS_%
 E	I TYPE["C" D
-	.D ^DILL(DP,+W) S Y=Y_" S Y=X"_DSUM,DXS=$S($D(^DD(DP,+W,9.02)):^(9.02),1:0)
-	E  S DXS=DSUM,Y=" S Y="_Y_DXS,I="",DXS="Y" D ^DILL(DP,+W)
+	.D EN^DILL(DP,+W) S Y=Y_" S Y=X"_DSUM,DXS=$S($D(^DD(DP,+W,9.02)):^(9.02),1:0)
+	E  S DXS=DSUM,Y=" S Y="_Y_DXS,I="",DXS="Y" D EN^DILL(DP,+W)
 UTIL	K DSUM S ^UTILITY($J,"T",DG)=DLN_U_D_U_DRJ_U_$P(X,U,2)_U_I
 	D  D DN^DIL0 Q
 	.I DXS?1E Q
@@ -65,7 +65,7 @@ UTIL	K DSUM S ^UTILITY($J,"T",DG)=DLN_U_D_U_DRJ_U_$P(X,U,2)_U_I
 	.I '$D(DNP) S V=$L(Y)+$L(DE) S:V<250 Y=DE_Y I V>249 S V=Y,Y=DE D PX^DIL S Y=V
 	.S DE=X,V=DLN N X,DLN,DNP S X=DE,DLN=V,DNP="" ;'Do Not Print' hidden fields
 LOOP	.F  S DE="",V=$P(DN,";"),W=$P(V,U,2),DN=$P(DN,";",2,99) Q:V=""  D:'$D(DCL(V))
-	..D PX^DIL,XDUY^DIL0,^DILL(DP,W,1)
+	..D PX^DIL,XDUY^DIL0,EN^DILL(DP,W,1)
 	..I $P(X,U,2)'["C" S Y=",X=$G("_DI_C_DU_"))"_$P(",Y=",U,Y'[" S Y=")_Y
 	..E  S Y=Y_" S Y=X"
 	..S (D,DCL)=DCL+1,S(D)=0,DCL(DP_U_+W)=D,Y=" S C="_D_Y_" D A"
