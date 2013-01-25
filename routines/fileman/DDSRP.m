@@ -1,5 +1,5 @@
-DDSRP	;GFT/GFT - PRINT FORM 'DDS', PAGE 'DDS3P';24JAN2013
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+DDSRP	;GFT/GFT - PRINT FORM 'DDS', PAGE 'DDS3P';2013-01-25  12:19 PM
+	;;22.2V0;VA FILEMAN;;Dec 14, 2012
 	;Per VHA Directive 2004-038, this routine should not be modified.
 EN(DDS,DDS3P,DDSJ) ; Main Entry Point
 	I '$G(DDSJ) S DDSJ=$J
@@ -7,10 +7,24 @@ EN(DDS,DDS3P,DDSJ) ; Main Entry Point
 	S DDSREFT=$NA(^TMP("DDS",DDSJ,DDS))
 	S DDSREFS=$NA(^DIST(.403,+DDS,"AY"))
 	K ^UTILITY($J,"DDSRP")
-	S IOP="P" D ^%ZIS I POP D HLP^DDSUTL("SORRY, I CANNOT FIND YOUR PRINTER") Q
-	D HLP^DDSUTL("PRINTING TO "_IO_" ...")
-	U IO
-	D CAP,BLKS,PRINT
+	;Set terminal characterstics for scroll mode
+	W *27,"[?1000l" ; Mouse Off
+	W $P(DDGLCLR,DDGLDEL,2) ; Clear ALL screen
+	S DX=0,DY=0 X IOXY ; Take cursor to 0,0
+	W $P(DDGLVID,DDGLDEL)_"PRINT SCREEN"_$P(DDGLVID,DDGLDEL,10) ; Write to screen in bold
+	D KILL^DDGLIB0() ; Turn off screen handling
+	D ^%ZIS ; Select Device
+	I POP D HLP^DDSUTL("SORRY, PRINTING FAILED") G ENQ  ; Quit if can't open
+	I $E(IOST,1,2)="C-" S IOF="!" ; On a terminal, make Form Feed a Line Feed
+	U IO ; Use printer device
+	D CAP,BLKS,PRINT ; This is where the printing really happens.
+	D  ; Block to new DDS so that the reader can't find it for writing to screen
+	. N DDS,DIR I $E(IOST,1,2)="C-" S DIR(0)="E" D ^DIR ; Press Enter to continue 
+	D ^%ZISC ; Close device
+ENQ ; Goto label in case we fail to open the device.
+	D INIT^DDGLIB0() ; Turn screen handling back on again.
+	I $G(DDS)>0 W *27,"[?1000h" ; Mouse On
+	D FINISH^DDGLIBP() ; Turn on terminators, off echo, and set RM to zero.
 	Q
 BLKS	;FROM ^DDSR
 	S BLK=$P($G(^DIST(.403,+DDS,40,DDS3P,0)),U,2) ;Hdr blk
@@ -26,7 +40,6 @@ PRINT	;
 	F Y=0:1:$O(^UTILITY($J,"DDSRP",""),-1) W !,$G(^UTILITY($J,"DDSRP",Y)) S DDSI=DDSI+1 I $G(IOSL),DDSI'<IOSL S DDSI=1 I $G(IOF)]"" W @IOF
 	W ! F Y=1:1:80 W "_"
 	W:$D(IOF) @IOF
-	D ^%ZISC,INIT^DDGLIB0()
 	Q
 	;
 CAP	N DDCAP,A,C,C1,C2,P,PC,V ; FROM ^DDSR1
