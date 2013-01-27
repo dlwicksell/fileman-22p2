@@ -1,4 +1,4 @@
-DICUIX2 ;VEN/TOAD,SF/TKW - Lookup: Build Index Data ; 1/24/13 3:54pm
+DICUIX2 ;VEN/TOAD,SF/TKW - Lookup: Build Index Data ; 1/25/13 12:32pm
  ;;22.2T1;VA FILEMAN;;Dec 14, 2012
  ;Per VHA Directive 2004-038, this routine should not be modified.
  ;
@@ -79,6 +79,15 @@ C5 ; 5. Set Any More?
  ;
  S DINDEX(DISUB,"MORE?")=0
  I +$P(DIPRT,"E")=DIPRT,DITYPE'["D" D
+ . ;
+ . Q:DIFLAGS["X"  ; no partial-numeric matches if require exact
+ . N PNM S PNM=0 ; suppress PNM for pointers or variable pointers?
+ . I "VP"[$E(DITYPE) D  Q:'PNM  ; at least for these cases:
+ . . I DIFLAGS["l",DIC(0)["U" Q  ; classic, untransformed lookup
+ . . I DIFLAGS[3,DIFLAGS["Q" Q  ; Lister, quick list
+ . . I DIFLAGS[4,DIFLAGS["Q" Q  ; Finder, quick lookup
+ . . S PNM=1 ; otherwise, allow it on ptrs or vptrs
+ . ;
  . I DINDEX(DISUB,"WAY")=-1 S DINDEX(DISUB,"MORE?")=1 Q
  . I +$P(DIFR,"E")=DIFR!(DIFR="") S DINDEX(DISUB,"MORE?")=1
  ;
