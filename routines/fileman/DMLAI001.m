@@ -1,4 +1,4 @@
-DMLAI001	; ; 06-DEC-2012
+DMLAI001	; ; 31-JAN-2012
 	;;22.2T1;VA FILEMAN;;Dec 14, 2012
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	Q:'DIFQ(.85)  F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,999) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
@@ -69,8 +69,6 @@ Q	Q
 	;;=3121114.111954
 	;;^DD(.85,0)
 	;;=FIELD^^10^20
-	;;^DD(.85,0,"DDA")
-	;;=N
 	;;^DD(.85,0,"DT")
 	;;=3121101
 	;;^DD(.85,0,"ID",.02)
