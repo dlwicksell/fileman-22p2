@@ -1,9 +1,9 @@
-DDGLIBP	;SFISC/MKO-PRINT FROM WITHIN SCREEN TOOLS ;2013-01-22  3:45 PM
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012;Build 19
+DDGLIBP	;SFISC/MKO-PRINT FROM WITHIN SCREEN TOOLS ;2013-03-04
+	;;22.2V2;VA FILEMAN;;Dec 14, 2012;Build 19
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 PT(DDGLROOT,DDGLHDR)	;Prompt for device and print
-	N POP,DDGLBAR,DDGLFLAG,DDGLHELP,DDGLI,DDGLPHDR,DDGLWRAP,DX,DY
+	N POP,DDGLBAR,DDGLFLAG,DDGLHELP,DDGLI,DDGLPHDR,DDGLREF,DDGLWRAP,DX,DY,DIR0,DDS
 	N %,%A,%B,%B1,%B2,%B3,%BA,%C,%E,%G,%H,%I,%J,%K,%M,%N
 	N %P,%S,%T,%W,%X,%Y
 	N %A0,%D1,%D2,%DT,%J1,%W0
@@ -53,16 +53,21 @@ DEVICE	;Device prompt
 	;
 	I POP D FINISH("Report canceled!") Q
 	;
-	;Check that device is not a CRT
-	I $E(IOST,1,2)="C-" D  QUIT
-	. D FINISH($C(7)_"You cannot print the document on a CRT.")
+	;Get the closed root of the array containing the text, resolve values like $J
+	S DDGLREF=$NA(@$$CREF^DILF($G(DDGLROOT)))
+	;
+	;If CRT selected, reset scrolling region to entire screen
+	I $E(IOST,1,2)="C-" D
+	. I $D(IOSTBM)#2 N IOTM,IOBM S IOTM=0,IOBM=$G(IOSL,24) W @IOSTBM
+	. W @IOF
 	;
 	;Queue report
 	I $D(IO("Q")),$D(^%ZTSK) D  Q
 	. N I,ZTRTN,ZTDESC,ZTSAVE,ZTSK,DDGLMSG
 	. S ZTRTN="PRINT^DDGLIBP"
 	. S ZTDESC=DDGLHDR
-	. F I="DDGLROOT","DDGLHDR","DDGLFLAG" S ZTSAVE(I)=""
+	. F I="DDGLREF","DDGLHDR","DDGLFLAG" S ZTSAVE(I)=""
+	. I DDGLREF]"" S ZTSAVE($$OREF^DILF(DDGLREF))=""
 	. D ^%ZTLOAD
 	. I $D(ZTSK)#2 D
 	.. W !,"Report queued!",!,"Task number: "_ZTSK,!
@@ -72,16 +77,16 @@ DEVICE	;Device prompt
 	. D FINISH($G(DDGLMSG))
 	;
 	;Non-queued report
-	W !,"Printing ..."
 	D PRINT
+	I $E(IOST,1,2)="C-" W @IOF W:$D(IOSTBM)#2 @IOSTBM ; Reset bottom margin
 	X $G(^%ZIS("C"))
 	D FINISH("Done.")
 	Q
 	;
-PRINT	;Print the document in DDGLROOT, Header text in DDGLHDR
-	N DDGLDT,DDGLI,DDGLPAGE,DDGLREF,DDGLZN
-	S DDGLREF=$$CREF^DILF($G(DDGLROOT))
-	Q:DDGLREF=""  Q:'$D(@DDGLREF)
+PRINT	;Print the document in DDGLREF, Header text in DDGLHDR
+	N DDGLDT,DDGLI,DDGLPAGE,DDGLZN
+	I $G(DDGLREF)="" D PRINTQ Q
+	I '$D(@DDGLREF) D PRINTQ Q
 	;
 	S DDGLZN=$D(@DDGLREF@($O(@DDGLREF@(0)),0))#2
 	S DDGLFLAG=$G(DDGLFLAG)
@@ -107,6 +112,10 @@ PRINT	;Print the document in DDGLROOT, Header text in DDGLHDR
 	. W !,$S(DDGLZN:$G(@DDGLREF@(DDGLI,0)),1:$G(@DDGLREF@(DDGLI)))
 	;
 	K:$G(DDGLFLAG)'["N" ^UTILITY($J,"W")
+	D PRINTQ
+	Q
+	;
+PRINTQ	;Delete the queued task and quit
 	S:$D(ZTQUEUED) ZTREQ="@"
 	Q
 	;
@@ -145,7 +154,7 @@ FORMAT(DDGLREF,DDGLZN,DDGLFLAG)	;Use ^DIWP to format the text
 	Q
 	;
 FINISH(DDGLMSG)	;Print message and reset terminal characteristics
-	I $G(DDGLMSG)]"" W !,DDGLMSG H 2
+	I $G(DDGLMSG)]"" W !,DDGLMSG H 1
 	;
 	;Reset terminal characteristics for screen handling
 	X DDGLZOSF("EOFF"),DDGLZOSF("TRMON")
