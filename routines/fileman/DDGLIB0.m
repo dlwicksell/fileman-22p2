@@ -1,4 +1,4 @@
-DDGLIB0	;SFISC/MKO-SETUP AND CLEANUP FOR WINDOWS ; 14NOV2012
+DDGLIB0	;SFISC/MKO-SETUP AND CLEANUP FOR WINDOWS ; 06 MAR 2013
 	;;22.2T1;VA FILEMAN;;Dec 14, 2012
 	;Per VHA Directive 2004-038, this routine should not be modified.
 INIT()	;Setup required variables
@@ -105,9 +105,9 @@ KILL(DDGLPARM)	;Cleanup variables
 	N X
 	D:'$D(DISYS) OS^DII ; garb OS from %ZOSF or Fileman in this sequence
 	I $G(DDGLPARM)'["W" D
-	. S X=$S($D(IOM)#2:IOM,1:80) X DDGLZOSF("RM")
+	. S X=$S($D(IOM)#2:IOM,1:80) X $G(DDGLZOSF("RM"))
 	. I $D(DUZ)#2,$D(^VA(200,DUZ,0))#2,$P($G(^(200)),U,9)'="Y" D
-	.. I '$G(DUZ("BUF"),1) X DDGLZOSF("NO-TYPE-AHEAD")
+	.. I '$G(DUZ("BUF"),1) X $G(DDGLZOSF("NO-TYPE-AHEAD"))
 	. W $P($G(DDGLVID),$G(DDGLDEL),9),$P($G(DDGLVID),$G(DDGLDEL),10)
 	;
 	I $G(DDGLPARM)'["T" D
