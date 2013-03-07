@@ -1,4 +1,4 @@
-DICLGFT	;GFT/GFT-- USE ANY SORT VALUES FOR LISTER;24NOV2010
+DICLGFT	;GFT/GFT-- USE ANY SORT VALUES FOR LISTER;07MAR2013
 	;;22.2T1;VA FILEMAN;;Dec 14, 2012
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
@@ -51,7 +51,7 @@ DIBT	S X=0 I $G(BY)?1"[".E1"]" S X=$O(^DIBT("F"_DIFILE,$TR(BY,"[]"),0)) I X&$O(^
 	;I X,'L S DICLGFT0=1
 	;
 FIELD	N DICLGFTX,DD S DICLGFTX=$G(BY),DICLGFT=$L(DICLGFTX,",") ;SORT BY FIELD
-	S:$D(FR)[0 FR=" , , , , , , , , , , , ," S:$D(TO)[0 TO=",,,,,,,,,,"
+	S:$D(FR)[0 FR=",,,,,,,,,,,," S:$D(TO)[0 TO=",,,,,,,,,,"
 	S DD=DIFILE F  S FLDS=$P(DICLGFTX,","),DICLGFTX=$P(DICLGFTX,",",2) Q:FLDS=""  D
 	.S FLDS=$P(FLDS,";") I $D(^DD(DD,FLDS,0))
 	.E  S FLDS=$O(^DD(DD,"B",FLDS,0)) Q:'FLDS
