@@ -1,21 +1,35 @@
-<ewd:config isFirstPage="true" cachePage="false" prePageScript="init^xwLogin">
+<ext4:container rootPath="/dev/ext-4" isFirstPage="true" title="<?= #fm.version ?>" onBeforeRender="initialize^xwFilemanInquire" cssVersion="ext-all-gray.css">
+  <link href="/dev/ext-4/examples/menu/menus.css" />
+  <link href="/dev/css/inquire.css" />
 
-<ewd:comment>
-  index.ewd
+  <ext4:viewPort layout="border">
+    <ext4:panel region="north" id="northPanel" title="<?= #fm.version ?> - <?= #vista.systemId ?> - <?= #fm.sessid ?>" titleAlign="center" autoheight="true" border="false" margins="0 0 5 0">
+      <ext4:toolbar dock="top">
+        <ext4:button text="Select OPTION" id="fmMenuBtn" hidden="true" iconCls="bmenu">
+          <ext4:buttonmenu id="fmMainMenu" sessionName="filemanMenus" />
+        </ext4:button>
+      </ext4:toolbar>
+    </ext4:panel>
 
-  Written by David Wicksell <dlw@linux.com>
-  Copyright © 2012 Fourth Watch Software, LC
+    <ext4:panel region="west" id="westPanel" collapsible="true" title="" width="350" autoheight="true" split="true" />
 
-  This program is free software: you can redistribute it and/or modify
-  it under the terms of the GNU Affero General Public License (AGPL)
-  as published by the Free Software Foundation, either version 3 of
-  the License, or (at your option) any later version.
+    <ext4:panel region="center" height="100%" id="centerPanel" />
+  </ext4:viewPort>
 
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-  GNU Affero General Public License for more details.
+  <ext4:modalwindow title="Fileman Login" id="loginPanel" autoHeight="true" width="400" layout="fit" autoShow="true">
+    <ext4:formPanel bodyPadding="10">
+      <ext4:fieldset title="Log in to Fileman <?= #vista.systemId ?>">
+        <ext4:displayfield id="introMessage" value="*" padding="0 0 15 0" />
 
-  You should have received a copy of the GNU Affero General Public License
-  along with this program. If not, see http://www.gnu.org/licenses/.
-</ewd:comment>
+        <ext4:textfield id="accessCode" inputType="password" fieldLabel="Access Code" allowBlank="false" value="" width="340" />
+
+        <ext4:textfield id="verifyCode" inputType="password" fieldLabel="Verify Code" allowBlank="false" value="" width="340" />
+      </ext4:fieldset>
+
+      <ext4:button text="Quick Login" handler="function() {Ext.getCmp('accessCode').setValue('pirated!');Ext.getCmp('verifyCode').setValue('@syouwish1!');}" />
+
+      <ext4:submitbutton text="Login" nextPage="login" margin="0 10 0 0" />
+    </ext4:formPanel>
+  </ext4:modalwindow>
+
+</ext4:container>

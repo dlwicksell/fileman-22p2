@@ -1,42 +1,9 @@
-<ext4:container isFirstPage="true" rootPath="/dev/ext-4" title="Fileman Tools" onBeforeRender="introMessage^xwFileman">
-  <ewd:comment>
-    login.ewd
-  
-    Written by David Wicksell <dlw@linux.com>
-    Copyright © 2012 Fourth Watch Software, LC
-  
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License (AGPL)
-    as published by the Free Software Foundation, either version 3 of
-    the License, or (at your option) any later version.
-  
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-    GNU Affero General Public License for more details.
-  
-    You should have received a copy of the GNU Affero General Public License
-    along with this program. If not, see http://www.gnu.org/licenses/.
-  </ewd:comment>
+<ext4:fragment onBeforeRender="login^xwFilemanInquire">
 
-  <ext4:viewPort id="viewPort" style="background-color: #cbddf3;">
-    <ext4:layout type="vbox" align="center" pack="center" />
+  <ext4:js at="top">
+    Ext.getCmp("loginPanel").destroy();
+    Ext.getCmp("fmMenuBtn").show();
+    Ext.getCmp("northPanel").setTitle("<?= #fm.version ?> - Welcome <?= #vista.name ?> - <?= #fm.sessid ?>");
+  </ext4:js>
 
-    <ext4:panel region="center" border="true" bodyPadding="0 0 5px 0">
-      <ext4:formPanel id="loginForm" title="Please Log in" border="false" bodyPadding="10px 0 0 0">
-     
-        <ext4:fieldSet id="introFieldSet" style="background: url(/dev/images/login.png) left no-repeat; border: none;">
-          <ext4:displayfield id="introMessage" width="360" fieldStyle="border: none; font-family: arial; text-align: right; font-size: 12px; padding: 10px;" value="*" />
-        </ext4:fieldSet>
-       
-        <ext4:fieldSet id="loginFieldSet" border="false">
-          <ext4:textfield id="accessCode" inputType="password" fieldLabel="Access Code" value="" allowBlank="false" width="350" />
-          <ext4:textfield id="verifyCode" inputType="password" fieldLabel="Verify Code" value="" allowBlank="false" width="350" />
-        </ext4:fieldSet>
-      
-        <ext4:submitbutton text="Login" nextPage="loginRedirect" />
-      </ext4:formPanel>
-    </ext4:panel>
-  </ext4:viewPort>
-
-</ext4:container>
+</ext4:fragment>
