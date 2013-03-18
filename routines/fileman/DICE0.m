@@ -1,5 +1,5 @@
 DICE0	;SFISC/GFT,XAK-XREF'S ;5/24/94  2:21 PM
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	S ^DD(J(N),DA,1,0)="^.1",^(DQ,0)=J(N-DH)_U_DE,X=I(0)
 	F Y=N:-1:DH+1 S X=X_"DA("_Y_"),"_I(N+1-Y)_","

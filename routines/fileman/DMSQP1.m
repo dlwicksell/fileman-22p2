@@ -1,5 +1,5 @@
 DMSQP1	;SFISC/EZ-PRINT SAMPLE SQLI STATS ;10/30/97  17:06
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	Q
 OK	; check if okay to run

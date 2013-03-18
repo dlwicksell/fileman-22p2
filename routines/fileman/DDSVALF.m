@@ -1,5 +1,5 @@
 DDSVALF	;SFISC/MKO-GET,PUT VALUES FOR FORM ONLY FIELDS ;2OCT2003
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 GET(DDSVFD,DDSVBK,DDSVPG,DDSPARM,DDSVDA)	;Get value
 	;In:  DDSPG = Current page

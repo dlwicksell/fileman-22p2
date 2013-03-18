@@ -1,5 +1,5 @@
 DICRW1	;SFISC/XAK-SELECT A FILE ;11:06 AM  12 Oct 1999
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 L	;LIST DD'S
 	S DIB(1)=0 S D=8101.1 D C2 G C4:U[X&(Y<0),L:Y<0 ;**CCO/NI 'START WITH WHAT FILE'

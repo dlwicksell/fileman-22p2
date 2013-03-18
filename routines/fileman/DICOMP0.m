@@ -1,5 +1,5 @@
 DICOMP0	;SFISC/GFT-EVALUATE COMPUTED FLD EXPR ;17DEC2007
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	N DICOMPI
 SETFUNC	I DPS,$D(DPS(DPS,"SET")),'$D(W(DPS)) S T="""",D=$P(X,T)_$P(X,T,2) G BAD:$L(D)+2\5-1!(D'?.UN)!(D?1"D".E)!(DUZ(0)'="@") S X=T_D_T,DICOMPX(D)=D,Y=0 Q

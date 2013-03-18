@@ -1,5 +1,5 @@
 DICOMP1	;SFISC/GFT-EVALUATE COMPUTED FLD EXPR ;19JUNE2007
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	F  Q:'$D(DPS(DPS,"ST"))  D DPS^DICOMPW S K=K+1,K(K)=X
 	G 0:DPS

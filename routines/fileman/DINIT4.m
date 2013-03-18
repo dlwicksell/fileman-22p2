@@ -1,5 +1,5 @@
 DINIT4	;SFISC/GFT-INITIALIZE VA FILEMAN ;24SEP2009
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 DD	F I=1:1 S X=$E($T(DD+I),4,999) G ^DINIT41:X?.P S ^DD("FUNC",I,0)=$P(X,";",1),Y=1 F DU=1,2,3,9,10 S Y=Y+1 I $P(X,";",Y)]"" S ^(DU)=$P(X,";",Y)
 	;;SQUAREROOT;D SQR^DIXC S X=$S(X'>0:"",1:Y);;;

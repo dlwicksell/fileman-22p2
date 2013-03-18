@@ -1,5 +1,5 @@
 DIDT	;SFISC/GFT-DATE/TIME UTILITY ;27JUL2010
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 %DT	;
 	I $G(DUZ("LANG"))>1,($G(^DI(.85,DUZ("LANG"),20.2))]"") X ^(20.2) Q

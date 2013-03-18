@@ -1,5 +1,5 @@
 DIC5	;SFISC/XAK,TKW,SEA/TOAD-VA FileMan: Lookup, Part 1 (utilities) ;24MAY2008
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 NODE75	; Do after executing 7.5 node on DD, called from ^DIC
 	I $D(X)#2 S (DIVAL,DIVAL(1))=X Q

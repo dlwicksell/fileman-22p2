@@ -1,7 +1,7 @@
 DDSRP	;GFT/GFT - PRINT FORM 'DDS', PAGE 'DDS3P';2013-01-25  12:19 PM
-	;;22.2V0;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
-EN(DDS,DDS3P,DDSJ) ; Main Entry Point
+EN(DDS,DDS3P,DDSJ)	; Main Entry Point
 	I '$G(DDSJ) S DDSJ=$J
 	N X,Y,IOP,POP,BLK,DDSREFS,DDSREFT
 	S DDSREFT=$NA(^TMP("DDS",DDSJ,DDS))
@@ -21,7 +21,7 @@ EN(DDS,DDS3P,DDSJ) ; Main Entry Point
 	D  ; Block to new DDS so that the reader can't find it for writing to screen
 	. N DDS,DIR I $E(IOST,1,2)="C-" S DIR(0)="E" D ^DIR ; Press Enter to continue 
 	D ^%ZISC ; Close device
-ENQ ; Goto label in case we fail to open the device.
+ENQ	; Goto label in case we fail to open the device.
 	D INIT^DDGLIB0() ; Turn screen handling back on again.
 	I $G(DDS)>0 W *27,"[?1000h" ; Mouse On
 	D FINISH^DDGLIBP() ; Turn on terminators, off echo, and set RM to zero.

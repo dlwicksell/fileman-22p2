@@ -1,5 +1,5 @@
 DIP23	;SFISC/XAK-PRINT TEMPLATE ;5/10/90  1:36 PM
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 ED	S DA=+Y,DRK=DK K Y
 	S DRK=DK,DIE="^DIPT(",DR=".01;3;6" D ^DIE K DR G Q^DIP:$D(Y)

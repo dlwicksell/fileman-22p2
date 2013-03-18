@@ -1,5 +1,5 @@
 DICF5	;SEA/TOAD,SF/TKW-VA FileMan: Finder, (Other lookup value transform) ;5/26/99  10:05
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 PREPS(DIFLAGS,DISUB,DINDEX,DINODE,DIVALUE)	;

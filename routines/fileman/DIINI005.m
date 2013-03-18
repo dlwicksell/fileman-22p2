@@ -1,8 +1,14 @@
-DIINI005	; ; 13-DEC-2012
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+DIINI005	; ; 08-MAR-2013 ; 3/8/13 10:40am
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,999) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q	Q
+	;;^UTILITY(U,$J,"OPT",8026,"U")
+	;;=LIST POINTER AND PARENT LINKS 
+	;;^UTILITY(U,$J,"OPT",8027,0)
+	;;=DMSQ TS SUBFILE BRIEF^List Subfile Links (Brief)^^R^^^^^^^^
+	;;^UTILITY(U,$J,"OPT",8027,1,0)
+	;;=^^3^3^2970805^^
 	;;^UTILITY(U,$J,"OPT",8027,1,1,0)
 	;;=This lists subfiles of a selected file number.  The subfile numbers are
 	;;^UTILITY(U,$J,"OPT",8027,1,2,0)
@@ -194,7 +200,7 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",8034,1,5,0)
 	;;=with PFK, parent foreign keys.)
 	;;^UTILITY(U,$J,"OPT",8034,10,0)
-	;;=^19.01IP^9^9
+	;;=^19.01PI^9^9
 	;;^UTILITY(U,$J,"OPT",8034,10,1,0)
 	;;=8030^DD1^10
 	;;^UTILITY(U,$J,"OPT",8034,10,1,"^")
@@ -232,7 +238,7 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",8034,10,9,"^")
 	;;=DMSQ TS PTR SUBFILE FULL
 	;;^UTILITY(U,$J,"OPT",8034,99)
-	;;=57909,41933
+	;;=62819,35308
 	;;^UTILITY(U,$J,"OPT",8034,"U")
 	;;=TABLE STATISTICS REPORTS
 	;;^UTILITY(U,$J,"OPT",8035,0)
@@ -333,7 +339,3 @@ Q	Q
 	;;=you can see how many are pointers, dates, or numbers.  It only looks at
 	;;^UTILITY(U,$J,"OPT",8036,1,3,0)
 	;;=columns from regular (non-index) tables and excludes the automatically
-	;;^UTILITY(U,$J,"OPT",8036,1,4,0)
-	;;=generated Table_ID columns built from internal entry numbers.
-	;;^UTILITY(U,$J,"OPT",8036,1,5,0)
-	;;= 

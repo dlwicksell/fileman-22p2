@@ -1,5 +1,5 @@
 DICATTD3	;GFT/GFT - Set of Codes ;09:06 AM  21 Jan 1999
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 Y(ORDER,CM)	;

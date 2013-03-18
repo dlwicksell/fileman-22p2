@@ -1,5 +1,5 @@
 DIR1	;SFISC/XAK(PROCESS DATATYPE) ;4DEC2009
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 	S %E=0 D @%T S:X?.E1C.E %E=1 Q:'%E!(X'?.E1L.E)!(%A["S")!(%A["Y")!((%T=1)&(%B["P"))!(%A["P")

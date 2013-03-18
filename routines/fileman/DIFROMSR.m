@@ -1,5 +1,5 @@
 DIFROMSR	;SFISC/DCL,TKW-RESOLVE POINTERS ON TARGET SYSTEM ;5/14/98  12:29
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	Q
 RP(DIFRFLG,DIFRFIA,DIFRSA,DIFRMSGR)	; Resolve Pointers on Target System

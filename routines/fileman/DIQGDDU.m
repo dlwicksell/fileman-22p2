@@ -1,5 +1,5 @@
 DIQGDDU	;SFISC/DCL-DATA DICTIONARY UTILITIES ;1:16 PM  26 Sep 1996
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	Q
 FL(DIQGFILE,DIQGFLD)	;Return field length

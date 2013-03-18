@@ -1,5 +1,5 @@
-DIINI002	; ; 13-DEC-2012
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+DIINI002	; ; 08-MAR-2013 ; 3/8/13 10:40am
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,999) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q	Q
@@ -54,7 +54,7 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",1349,10,7,"^")
 	;;=DI SORT COMPILE
 	;;^UTILITY(U,$J,"OPT",1349,99)
-	;;=57909,41932
+	;;=62819,35307
 	;;^UTILITY(U,$J,"OPT",1349,99.1)
 	;;=55799,10811
 	;;^UTILITY(U,$J,"OPT",1349,"U")
@@ -100,85 +100,87 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",1353,"U")
 	;;=DATA DICTIONARY CROSS-REFERENC
 	;;^UTILITY(U,$J,"OPT",1354,0)
-	;;=DIAUDIT^Audit Menu^^M^^XUAUDITING^^^^^^^^
+	;;=DIAUDIT^Audit Menu^^M^^XUAUDITING^^^^^^VA FILEMAN^^
 	;;^UTILITY(U,$J,"OPT",1354,1,0)
-	;;=^19.06^2^2^3021204^^^^
+	;;=^^2^2^3130126^
 	;;^UTILITY(U,$J,"OPT",1354,1,1,0)
-	;;=This menu contains the options which show which files and fields are
+	;;=This menu contains the options that show which files and fields are being
 	;;^UTILITY(U,$J,"OPT",1354,1,2,0)
-	;;=being audited as well as the options which purge audit trails.
+	;;=audited as well as the options that purge audit trails.
 	;;^UTILITY(U,$J,"OPT",1354,10,0)
-	;;=^19.01IP^5^5
+	;;=^19.01IP^7^7
 	;;^UTILITY(U,$J,"OPT",1354,10,1,0)
 	;;=1355^^1
 	;;^UTILITY(U,$J,"OPT",1354,10,1,"^")
 	;;=DIAUDITED FIELDS
-	;;^UTILITY(U,$J,"OPT",1354,10,2,0)
-	;;=1356^^2
-	;;^UTILITY(U,$J,"OPT",1354,10,2,"^")
-	;;=DIAUDIT DD
 	;;^UTILITY(U,$J,"OPT",1354,10,3,0)
 	;;=1357^^3
 	;;^UTILITY(U,$J,"OPT",1354,10,3,"^")
 	;;=DIAUDIT PURGE DATA
 	;;^UTILITY(U,$J,"OPT",1354,10,4,0)
-	;;=1358^^4
+	;;=1358^^5
 	;;^UTILITY(U,$J,"OPT",1354,10,4,"^")
 	;;=DIAUDIT PURGE DD
 	;;^UTILITY(U,$J,"OPT",1354,10,5,0)
-	;;=1370^^5
+	;;=1370^^2
 	;;^UTILITY(U,$J,"OPT",1354,10,5,"^")
 	;;=DIAUDIT TURN ON/OFF
+	;;^UTILITY(U,$J,"OPT",1354,10,6,0)
+	;;=11396^^4
+	;;^UTILITY(U,$J,"OPT",1354,10,6,"^")
+	;;=DIAUDIT SHOW DD AUDIT TRAIL
+	;;^UTILITY(U,$J,"OPT",1354,10,7,0)
+	;;=11388^^6
+	;;^UTILITY(U,$J,"OPT",1354,10,7,"^")
+	;;=DIAUDIT MONITOR USER
 	;;^UTILITY(U,$J,"OPT",1354,99)
-	;;=62802,64488
+	;;=62849,43060
 	;;^UTILITY(U,$J,"OPT",1354,"U")
 	;;=AUDIT MENU
 	;;^UTILITY(U,$J,"OPT",1355,0)
-	;;=DIAUDITED FIELDS^Fields Being Audited^^R^^^^^^^^^^
+	;;=DIAUDITED FIELDS^List Fields Being Audited^^R^^^^^^^^VA FILEMAN^^
 	;;^UTILITY(U,$J,"OPT",1355,1,0)
-	;;=^^2^2^2930125^^^
+	;;=^^2^2^3130126^
 	;;^UTILITY(U,$J,"OPT",1355,1,1,0)
-	;;=This options lists all the fields that are being audited.  One can
+	;;=This options lists all the fields that are being audited. One can see all
 	;;^UTILITY(U,$J,"OPT",1355,1,2,0)
-	;;=see all the fields or just those in a particular file range.
+	;;=the fields or just those in a particular file range.
 	;;^UTILITY(U,$J,"OPT",1355,25)
 	;;=1^DIAU
 	;;^UTILITY(U,$J,"OPT",1355,"U")
-	;;=FIELDS BEING AUDITED
-	;;^UTILITY(U,$J,"OPT",1356,0)
-	;;=DIAUDIT DD^Data Dictionaries Being Audited^NO LONGER FUNCTIONAL -- ALL DATA DICTIONARIES ARE NOW AUDITED^R^^^^^^^^^^
-	;;^UTILITY(U,$J,"OPT",1356,1,0)
-	;;=^^2^2^2890803^
-	;;^UTILITY(U,$J,"OPT",1356,1,1,0)
-	;;=This option lists the data dictionaries being audited within a selected
-	;;^UTILITY(U,$J,"OPT",1356,1,2,0)
-	;;=range.
-	;;^UTILITY(U,$J,"OPT",1356,25)
-	;;=2^DIAU
-	;;^UTILITY(U,$J,"OPT",1356,"U")
-	;;=DATA DICTIONARIES BEING AUDITE
+	;;=LIST FIELDS BEING AUDITED
 	;;^UTILITY(U,$J,"OPT",1357,0)
-	;;=DIAUDIT PURGE DATA^Purge Data Audits^^R^^^^^^^^^^
+	;;=DIAUDIT PURGE DATA^Data Audit Trail Purge^^R^^^^^^^^VA FILEMAN^^
 	;;^UTILITY(U,$J,"OPT",1357,1,0)
-	;;=^^3^3^2890804^^
+	;;=^^4^4^3130126^
 	;;^UTILITY(U,$J,"OPT",1357,1,1,0)
-	;;=This option purges the audited data from a particular file.  Either all
+	;;=This option purges all or part of the data-audit trail for a particular
 	;;^UTILITY(U,$J,"OPT",1357,1,2,0)
-	;;=of the audits may be purged or the audits may be deleted based on a
+	;;=file. Either all of the data audits may be purged or part of the data
 	;;^UTILITY(U,$J,"OPT",1357,1,3,0)
-	;;=field in the audit file, e.g., date, user, field.
+	;;=audits may be deleted based on a field in the audit file, e.g., date,
+	;;^UTILITY(U,$J,"OPT",1357,1,4,0)
+	;;=user, field.
 	;;^UTILITY(U,$J,"OPT",1357,25)
 	;;=3^DIAU
 	;;^UTILITY(U,$J,"OPT",1357,99.1)
 	;;=56123,39787
 	;;^UTILITY(U,$J,"OPT",1357,"U")
-	;;=PURGE DATA AUDITS
+	;;=DATA AUDIT TRAIL PURGE
 	;;^UTILITY(U,$J,"OPT",1358,0)
-	;;=DIAUDIT PURGE DD^Purge DD Audits^^R^^^^^^^^^^
+	;;=DIAUDIT PURGE DD^DD Audit Trail Purge^^R^^^^^^^^VA FILEMAN^^
+	;;^UTILITY(U,$J,"OPT",1358,1,0)
+	;;=^^3^3^3130126^
+	;;^UTILITY(U,$J,"OPT",1358,1,1,0)
+	;;=This option purges all or part of the DD audit trail for a particular
+	;;^UTILITY(U,$J,"OPT",1358,1,2,0)
+	;;=file. Either all of the DD audits may be purged or part of it may be
+	;;^UTILITY(U,$J,"OPT",1358,1,3,0)
+	;;=deleted based on a field in the audit file, e.g., date, user, field.
 	;;^UTILITY(U,$J,"OPT",1358,25)
-	;;=4^DIAU
+	;;=5^DIAU
 	;;^UTILITY(U,$J,"OPT",1358,"U")
-	;;=PURGE DD AUDITS
+	;;=DD AUDIT TRAIL PURGE
 	;;^UTILITY(U,$J,"OPT",1359,0)
 	;;=DIOTHER^Other Options^^M^^^^^^^^^^
 	;;^UTILITY(U,$J,"OPT",1359,1,0)
@@ -228,7 +230,7 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",1359,10,9,"^")
 	;;=DDMP IMPORT
 	;;^UTILITY(U,$J,"OPT",1359,99)
-	;;=59229,43587
+	;;=62849,43060
 	;;^UTILITY(U,$J,"OPT",1359,"U")
 	;;=OTHER OPTIONS
 	;;^UTILITY(U,$J,"OPT",1360,0)
@@ -268,7 +270,7 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",1361,10,4,"^")
 	;;=DDS PURGE UNUSED BLOCKS
 	;;^UTILITY(U,$J,"OPT",1361,99)
-	;;=57909,41932
+	;;=62819,35304
 	;;^UTILITY(U,$J,"OPT",1361,"U")
 	;;=SCREENMAN
 	;;^UTILITY(U,$J,"OPT",1362,0)
@@ -388,7 +390,7 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",1368,10,6,"^")
 	;;=DIFG INSTALL
 	;;^UTILITY(U,$J,"OPT",1368,99)
-	;;=57909,41931
+	;;=62819,35306
 	;;^UTILITY(U,$J,"OPT",1368,99.1)
 	;;=54674,36753
 	;;^UTILITY(U,$J,"OPT",1368,"U")
@@ -404,24 +406,20 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",1369,"U")
 	;;=MANDATORY/REQUIRED FIELD CHECK
 	;;^UTILITY(U,$J,"OPT",1370,0)
-	;;=DIAUDIT TURN ON/OFF^Turn Data Audit On/Off^^R^^^^^^^^
+	;;=DIAUDIT TURN ON/OFF^Turn Data Audit On/Off^^R^^^^^^^^VA FILEMAN
 	;;^UTILITY(U,$J,"OPT",1370,1,0)
-	;;=^^4^4^2901206^
+	;;=^^4^4^3130126^
 	;;^UTILITY(U,$J,"OPT",1370,1,1,0)
-	;;=This option allows the user to start or stop an audit on a particular
+	;;=This option lets the user start or stop an audit on a particular data
 	;;^UTILITY(U,$J,"OPT",1370,1,2,0)
-	;;=data field.  The user must have audit access to the file in order to turn
+	;;=field. The user must have audit access to the file to turn an audit on or
 	;;^UTILITY(U,$J,"OPT",1370,1,3,0)
-	;;=an audit on or off.  No other attributes in the field definition can 
+	;;=off. No other attributes in the field definition can be affected by this
 	;;^UTILITY(U,$J,"OPT",1370,1,4,0)
-	;;=be affected by this option.
+	;;=option.
 	;;^UTILITY(U,$J,"OPT",1370,25)
-	;;=5^DIAU
+	;;=2^DIAU
 	;;^UTILITY(U,$J,"OPT",1370,"U")
 	;;=TURN DATA AUDIT ON/OFF
 	;;^UTILITY(U,$J,"OPT",1371,0)
 	;;=DIWF^Forms Print^^R^^^^^^^^
-	;;^UTILITY(U,$J,"OPT",1371,1,0)
-	;;=^^7^7^2901206^
-	;;^UTILITY(U,$J,"OPT",1371,1,1,0)
-	;;=This VA FileMan routine asks first for a 'document' file, which must be

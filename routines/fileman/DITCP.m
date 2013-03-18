@@ -1,7 +1,7 @@
 DITCP	;MSC/GFT - Namespace/UCI comparer run code ;24JAN2013
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
-EN(DI1,DI2,DIDD,DIFLAG,DITCPT) ; Main Entry Point
+EN(DI1,DI2,DIDD,DIFLAG,DITCPT)	; Main Entry Point
 	;DI1 & DI2 are left & right roots
 	;DIFLAG[1 -->compare files   [2-->compare entries   ["L" --> IGNORE EXTRA ENTRIES ON RIGHT SIDE
 	;DITCPT is array of TITLES, called by reference

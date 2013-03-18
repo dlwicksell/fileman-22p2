@@ -1,5 +1,5 @@
 DDS3	;SFISC/MLH-COMMAND UTILS ;16FEB2005
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	I $G(Y(0))]"","ECNRSPQ"[$E(Y(0)) D @$E(Y(0)) ;'Y' is carried over from the ^DIR read in DDSCOM
 	Q

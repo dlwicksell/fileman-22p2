@@ -1,5 +1,5 @@
 DIKZ	;SFISC/XAK-XREF COMPILER ;1JUN2010
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 	I $G(DUZ(0))'="@" W:$D(^DI(.84,0)) $C(7),$$EZBLD^DIALOG(101) Q

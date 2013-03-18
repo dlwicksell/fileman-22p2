@@ -1,5 +1,5 @@
 DICFIX	;SEA/TOAD,SF/TKW-FileMan: Finder, Search Compound Indexes ;5/26/99  14:40
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012;
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013;
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 WALK(DIFLAGS,DINDEX,DIDENT,DIFILE,DIEN,DIFIEN,DISCREEN,DILIST,DIC,DIY,DIYX)	;

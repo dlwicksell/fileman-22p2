@@ -1,5 +1,5 @@
 DICATT5	;SFISC/XAK-POINTERS ;12:04 PM  25 Jan 2000
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 7	K DIC S Y="",%=$P(O,U,3),DIC(0)="EFQIZ"
 	S:$P(O,U,2)["P"&$L(%) Y=$S($D(@("^"_%_"0)")):$P(^(0),U),1:"")

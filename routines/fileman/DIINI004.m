@@ -1,8 +1,14 @@
-DIINI004	; ; 13-DEC-2012
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+DIINI004	; ; 08-MAR-2013 ; 3/8/13 10:40am
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,999) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q	Q
+	;;^UTILITY(U,$J,"OPT",1394,"U")
+	;;=DELETE A FORM
+	;;^UTILITY(U,$J,"OPT",1395,0)
+	;;=DDS PURGE UNUSED BLOCKS^Purge Unused Blocks^^R^^^^^^^^
+	;;^UTILITY(U,$J,"OPT",1395,1,0)
+	;;=^^3^3^2940630^
 	;;^UTILITY(U,$J,"OPT",1395,1,1,0)
 	;;=An option to delete blocks that aren't used on any forms.  This option
 	;;^UTILITY(U,$J,"OPT",1395,1,2,0)
@@ -82,7 +88,7 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",8013,1,1,0)
 	;;=This is the main menu for all VA FileMan SQLI (SQL Interface) options.
 	;;^UTILITY(U,$J,"OPT",8013,10,0)
-	;;=^19.01IP^8^7
+	;;=^19.01PI^8^7
 	;;^UTILITY(U,$J,"OPT",8013,10,1,0)
 	;;=8012^RUN^10
 	;;^UTILITY(U,$J,"OPT",8013,10,1,"^")
@@ -112,7 +118,7 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",8013,10,8,"^")
 	;;=DMSQ DIAGNOSTICS
 	;;^UTILITY(U,$J,"OPT",8013,99)
-	;;=57909,41933
+	;;=62819,35307
 	;;^UTILITY(U,$J,"OPT",8013,99.1)
 	;;=57215,42037
 	;;^UTILITY(U,$J,"OPT",8013,"U")
@@ -194,7 +200,7 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",8016,1,2,0)
 	;;=this site (where SQLI is installed).
 	;;^UTILITY(U,$J,"OPT",8016,10,0)
-	;;=^19.01IP^9^9
+	;;=^19.01PI^9^9
 	;;^UTILITY(U,$J,"OPT",8016,10,1,0)
 	;;=8017^TBL^10
 	;;^UTILITY(U,$J,"OPT",8016,10,1,"^")
@@ -232,7 +238,7 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",8016,10,9,"^")
 	;;=DMSQ PS COLUMNS BY DOMAIN
 	;;^UTILITY(U,$J,"OPT",8016,99)
-	;;=57909,41933
+	;;=62819,35307
 	;;^UTILITY(U,$J,"OPT",8016,"U")
 	;;=SITE STATISTICS REPORTS
 	;;^UTILITY(U,$J,"OPT",8017,0)
@@ -385,9 +391,3 @@ Q	Q
 	;;=are shown.
 	;;^UTILITY(U,$J,"OPT",8026,25)
 	;;=EN2^DMSQP
-	;;^UTILITY(U,$J,"OPT",8026,"U")
-	;;=LIST POINTER AND PARENT LINKS 
-	;;^UTILITY(U,$J,"OPT",8027,0)
-	;;=DMSQ TS SUBFILE BRIEF^List Subfile Links (Brief)^^R^^^^^^^^
-	;;^UTILITY(U,$J,"OPT",8027,1,0)
-	;;=^^3^3^2970805^^

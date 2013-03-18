@@ -1,5 +1,5 @@
 DINZONT	;SFISC/AC - SETS UP ^%ZOSF FOR Open M for NT ;2:45 PM  1 Oct 1998
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	K ^%ZOSF("MASTER"),^%ZOSF("SIGNOFF")
 	F I=1:2 S Z=$P($T(Z+I),";;",2) Q:Z=""  S X=$P($T(Z+1+I),";;",2,99) S ^%ZOSF(Z)=X

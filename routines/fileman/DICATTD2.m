@@ -1,5 +1,5 @@
 DICATTD2	;SFISC/GFT-NUMERIC FIELD ;1/7/2009
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012;Build 11
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013;Build 11
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 POST2	;check NUMERIC

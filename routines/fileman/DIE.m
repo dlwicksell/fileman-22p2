@@ -1,5 +1,5 @@
 DIE	;SFISC/GFT,XAK-PROC.DR-STR ;14AUG2006
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	N DG,DNM,DICRREC K DB I DIE S DIE=^DIC(DIE,0,"GL")
 	Q:$D(@(DIE_DA_",-9)"))  Q:'$D(@(DIE_"0)"))  S U="^",DP=+$P(^(0),U,2) Q:$P($G(^DD($$FNO^DILIBF(DP),0,"DI")),U,2)["Y"&'$D(DIOVRD)&'$G(DIFROM)

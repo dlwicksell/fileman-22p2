@@ -1,5 +1,5 @@
-DIINI001	; ; 13-DEC-2012
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+DIINI001	; ; 08-MAR-2013
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,999) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q	Q
@@ -152,7 +152,7 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",1333,20)
 	;;=
 	;;^UTILITY(U,$J,"OPT",1333,99)
-	;;=57909,41933
+	;;=62819,35307
 	;;^UTILITY(U,$J,"OPT",1333,"U")
 	;;=UTILITY FUNCTIONS
 	;;^UTILITY(U,$J,"OPT",1334,0)
@@ -246,7 +246,7 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",1337,20)
 	;;=W !!?10,"VA FileMan Version "_^DD("VERSION")
 	;;^UTILITY(U,$J,"OPT",1337,99)
-	;;=59229,43587
+	;;=62819,35307
 	;;^UTILITY(U,$J,"OPT",1337,99.1)
 	;;=62627,35095
 	;;^UTILITY(U,$J,"OPT",1337,1613)

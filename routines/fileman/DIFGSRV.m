@@ -1,5 +1,5 @@
 DIFGSRV	;SFISC/RWF-SERVER INTERFACE TO FILEGRAMS ;
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	Q
 HIST	;Add a message to the FileGram History file so it can be processed.

@@ -1,5 +1,5 @@
 DIP2	;SFISC/GFT-PRINT FLDS OR TEMPLATES ;12:44 PM  16 Aug 2002
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	K ^UTILITY("DIP2",$J),DG,K,DISH,DIL,DXS,A,P,I,J S I(0)=DI,(DE,DINS,DV,DNP)="",(DXS,DL,R)=1,(DIPT,DJ,DCL,DIL)=0,DK=+$P(@(DI_"0)"),U,2),J(0)=DK
 EN	;

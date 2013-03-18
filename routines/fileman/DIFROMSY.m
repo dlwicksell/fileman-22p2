@@ -1,5 +1,5 @@
 DIFROMSY	;SFIRMFO/DCM/TKW-MOVE KEY FILE ENTRIES ;12:32 PM  31 Oct 2001
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 DDKEYOUT(DIFRFILE,DIFRF2,DIFRTA)	; retrieve KEY entries for file
 	; DIFRFILE=top level file number

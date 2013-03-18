@@ -1,5 +1,5 @@
 DIP22	;SFISC/GFT-EDIT PRINT TEMPLATE ;16MAR2010
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	S DC(1)=$O(^DIPT(DC(0),"F",DC(1))),DC=0 Q:DC(1)=""   S DC=2,DY=^(DC(1)),Y=2
 Y	S X=$P(DY,$C(126)),DY=$P(DY,$C(126),2,99) I X="" G DIP22:'$D(DC(2)) Q

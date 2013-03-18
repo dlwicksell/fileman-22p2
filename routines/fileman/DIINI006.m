@@ -1,8 +1,12 @@
-DIINI006	; ; 13-DEC-2012
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+DIINI006	; ; 08-MAR-2013 ; 3/8/13 10:40am
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,999) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q	Q
+	;;^UTILITY(U,$J,"OPT",8036,1,4,0)
+	;;=generated Table_ID columns built from internal entry numbers.
+	;;^UTILITY(U,$J,"OPT",8036,1,5,0)
+	;;= 
 	;;^UTILITY(U,$J,"OPT",8036,1,6,0)
 	;;=Here is an example of percentages from a sample account:
 	;;^UTILITY(U,$J,"OPT",8036,1,7,0)
@@ -80,17 +84,83 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",8767,"U")
 	;;=KEY DEFINITION
 	;;^UTILITY(U,$J,"OPT",11388,0)
-	;;=DIAUDIT MONITOR USER^Monitor a User^^R^^^^^^^y^
+	;;=DIAUDIT MONITOR USER^Monitor a User^^R^^^^^^^y^VA FILEMAN
 	;;^UTILITY(U,$J,"OPT",11388,1,0)
-	;;=^19.06^2^2
+	;;=^^2^2^3130126^
 	;;^UTILITY(U,$J,"OPT",11388,1,1,0)
-	;;=This Option allows tracking of a given user's access to entries in a
+	;;=This option allows tracking of a given user's access to entries in a given
 	;;^UTILITY(U,$J,"OPT",11388,1,2,0)
-	;;=given (audited) File.  Display starts with a selected access date.
+	;;=(audited) file. Display starts with a selected access date.
 	;;^UTILITY(U,$J,"OPT",11388,25)
-	;;=2^DIAU
+	;;=6^DIAU
 	;;^UTILITY(U,$J,"OPT",11388,"U")
 	;;=MONITOR A USER
+	;;^UTILITY(U,$J,"OPT",11392,0)
+	;;=DMU PRINT FROM 1009.7^DMU PRINT FROM 1009.7^^P^^^^^^^^
+	;;^UTILITY(U,$J,"OPT",11392,60)
+	;;=DMU(1009.7,
+	;;^UTILITY(U,$J,"OPT",11392,62)
+	;;=0
+	;;^UTILITY(U,$J,"OPT",11392,63)
+	;;=[DMU PRINT TEMPLATE 1009.7]
+	;;^UTILITY(U,$J,"OPT",11392,64)
+	;;=
+	;;^UTILITY(U,$J,"OPT",11392,65)
+	;;=
+	;;^UTILITY(U,$J,"OPT",11392,66)
+	;;=
+	;;^UTILITY(U,$J,"OPT",11392,"U")
+	;;=DMU PRINT FROM 1009.7
+	;;^UTILITY(U,$J,"OPT",11393,0)
+	;;=DMU SORT/PRINT FROM 1009.7^DMU SORT/PRINT FROM 1009.7^^P^^^^^^^^
+	;;^UTILITY(U,$J,"OPT",11393,60)
+	;;=DMU(1009.7,
+	;;^UTILITY(U,$J,"OPT",11393,62)
+	;;=0
+	;;^UTILITY(U,$J,"OPT",11393,63)
+	;;=[DMU PRINT TEMPLATE 1009.7]
+	;;^UTILITY(U,$J,"OPT",11393,64)
+	;;=[DMU SORT TEMPLATE 1009.7]
+	;;^UTILITY(U,$J,"OPT",11393,65)
+	;;=
+	;;^UTILITY(U,$J,"OPT",11393,66)
+	;;=
+	;;^UTILITY(U,$J,"OPT",11393,"U")
+	;;=DMU SORT/PRINT FROM 1009.7
+	;;^UTILITY(U,$J,"OPT",11394,0)
+	;;=DMU EDIT 1009.7 BOTH FIELDS^DMU EDIT 1009.7 BOTH FIELDS^^E^^^^^^^^
+	;;^UTILITY(U,$J,"OPT",11394,30)
+	;;=DMU(1009.7,
+	;;^UTILITY(U,$J,"OPT",11394,31)
+	;;=AEMQL
+	;;^UTILITY(U,$J,"OPT",11394,50)
+	;;=DMU(1009.7,
+	;;^UTILITY(U,$J,"OPT",11394,51)
+	;;=[DMU EDIT 1009.7]
+	;;^UTILITY(U,$J,"OPT",11394,"U")
+	;;=DMU EDIT 1009.7 BOTH FIELDS
+	;;^UTILITY(U,$J,"OPT",11395,0)
+	;;=DMU EDIT 1009.7 WITHOUT LAYGO^DMU EDIT 1009.7 WITHOUT LAYGO^^E^^^^^^^^
+	;;^UTILITY(U,$J,"OPT",11395,30)
+	;;=DMU(1009.7,
+	;;^UTILITY(U,$J,"OPT",11395,31)
+	;;=AEMQ
+	;;^UTILITY(U,$J,"OPT",11395,50)
+	;;=DMU(1009.7,
+	;;^UTILITY(U,$J,"OPT",11395,51)
+	;;=[DMU EDIT 1009.7]
+	;;^UTILITY(U,$J,"OPT",11395,"U")
+	;;=DMU EDIT 1009.7 WITHOUT LAYGO
+	;;^UTILITY(U,$J,"OPT",11396,0)
+	;;=DIAUDIT SHOW DD AUDIT TRAIL^Show DD Audit Trail^^R^^^^^^^^VA FILEMAN
+	;;^UTILITY(U,$J,"OPT",11396,1,0)
+	;;=^^1^1^3130126^
+	;;^UTILITY(U,$J,"OPT",11396,1,1,0)
+	;;=This option shows all Data Dictionary changes since a certain date.
+	;;^UTILITY(U,$J,"OPT",11396,25)
+	;;=4^DIAU
+	;;^UTILITY(U,$J,"OPT",11396,"U")
+	;;=SHOW DD AUDIT TRAIL
 	;;^UTILITY(U,$J,"REM",139,0)
 	;;=DDR GETS ENTRY DATA^GETSC^DDR2^2^R
 	;;^UTILITY(U,$J,"REM",139,1,0)
@@ -331,7 +401,3 @@ Q	Q
 	;;=^^3^3^2960430^^
 	;;^UTILITY(U,$J,"REM",353,3,1,0)
 	;;=If values pass validation, 1 is returned in first node of array.  If
-	;;^UTILITY(U,$J,"REM",353,3,2,0)
-	;;=validation fails, 0 is returned in first node followed by error
-	;;^UTILITY(U,$J,"REM",353,3,3,0)
-	;;=information.

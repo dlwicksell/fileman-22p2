@@ -1,5 +1,5 @@
 DIC0	;SFISC/TKW-Lookup routine utilities called by DIC ;16JAN2011
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 D	; Reset back to starting index for lookup.

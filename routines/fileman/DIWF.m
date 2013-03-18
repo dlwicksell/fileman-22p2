@@ -1,5 +1,5 @@
 DIWF	;SFISC/GFT-FORMS PRINT ;01:52 PM  13 Nov 2000
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	D DT^DICRW,DICS,L S DIC("S")=DIC("S")_" I  "_L
 	S DIC="^DIC(",DIC(0)="AEQMZ",DIC("A")="Select Document File: "

@@ -1,5 +1,5 @@
 DINIT42	;SFISC-INITIALIZE VA FILEMAN ;10MAR2008
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	I $G(^DD("FUNC",89,0))="DUPLICATED" S DA=89,DIK="^DD(""FUNC""," D ^DIK
 	S %=47

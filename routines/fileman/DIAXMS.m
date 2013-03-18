@@ -1,5 +1,5 @@
 DIAXMS	;SFISC/DCM-MAP SUBFILES ;9/2/94  06:17
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	S DIAXSB=1,DIAXTAB=DL+DL-2 S:DJ DIAXTAB=DIAXTAB+1 S $P(DIAXTABZ," ",DIAXTAB)=" "
 	W !,$C(7),?DIAXTAB,DIAXDICA," is a multiple valued field",!,?DIAXTAB,"It MUST be mapped to a subfile."

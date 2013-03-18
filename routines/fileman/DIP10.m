@@ -1,5 +1,5 @@
 DIP10	;SFISC/TKW - PROCESS BY(0) INPUT VARIABLES ;12:59 PM  6 Aug 1999
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 EN	;
 	N I,J,K,X,Y,DIR K DPP(0),DPP(1) I $G(BY(0))="" D BLD^DIALOG(201,"BY(0)")

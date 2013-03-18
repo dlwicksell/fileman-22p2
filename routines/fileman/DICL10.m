@@ -1,5 +1,5 @@
 DICL10	;SEA/TOAD,SF/TKW-VA FileMan: Lookup: Lister, Part 2 ;5/21/98  15:27
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 POINT(DIFILE,DIFLAGS,DINDEX,DIDENT,DIEN,DIFIEN,DISCREEN,DILIST)	;

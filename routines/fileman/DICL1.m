@@ -1,5 +1,5 @@
 DICL1	;SEA/TOAD,SF/TKW-VA FileMan: Lookup: Lister, Part 2 ;10/15/98  14:19
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 PREP	; set up subfile's DA array under DIEN, init how many found,

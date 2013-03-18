@@ -1,5 +1,5 @@
 DINITPST	;SFISC/MKO-POST INIT FOR DINIT ;9:31 AM  23 Mar 1999
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	N %,%Y,C,D,D0,DI,DIV,DQ
 	;

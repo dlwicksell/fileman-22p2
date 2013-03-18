@@ -1,5 +1,5 @@
 DIP21	;SFISC/XAK-PRINT TEMPLATE ;01:59 PM  7 Dec 1999
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	D D S DIC(0)=$E("E",'$D(FLDS)!''L)_"QZSI"
 	S DIC("S")="I $D(^(""F""))"_$S($G(DIAR)=4:",$D(^(1))",$G(DDXP)=2:",$P(^(0),U,8)=7",$G(DDXP)=4:",$P(^(0),U,8)=3",1:"")_" "_DIC("S") S:$G(DDXP)=4 DIC("W")=""

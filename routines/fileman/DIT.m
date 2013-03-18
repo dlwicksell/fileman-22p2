@@ -1,5 +1,5 @@
 DIT	;SFISC/GFT-GET XFR ANSWERS ;14FEB2005
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;;
 0	S DIC="^DOPT(""DIT""," G OPT:$D(^DOPT("DIT",3)) S ^(0)="TRANSFER OPTION^1.01" K ^("B")

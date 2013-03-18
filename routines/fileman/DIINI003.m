@@ -1,8 +1,12 @@
-DIINI003	; ; 13-DEC-2012
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+DIINI003	; ; 08-MAR-2013 ; 3/8/13 10:40am
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	F I=1:2 S X=$T(Q+I) Q:X=""  S Y=$E($T(Q+I+1),4,999),X=$E(X,4,999) S:$A(Y)=126 I=I+1,Y=$E(Y,2,999)_$E($T(Q+I+1),5,999) S:$A(Y)=61 Y=$E(Y,2,999) X NO E  S @X=Y
 Q	Q
+	;;^UTILITY(U,$J,"OPT",1371,1,0)
+	;;=^^7^7^2901206^
+	;;^UTILITY(U,$J,"OPT",1371,1,1,0)
+	;;=This VA FileMan routine asks first for a 'document' file, which must be
 	;;^UTILITY(U,$J,"OPT",1371,1,2,0)
 	;;=a file that contains a word processing field at the first level.  It then
 	;;^UTILITY(U,$J,"OPT",1371,1,3,0)
@@ -52,7 +56,7 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",1373,10,3,"^")
 	;;=DI DDUCHK
 	;;^UTILITY(U,$J,"OPT",1373,99)
-	;;=59229,43587
+	;;=62819,35306
 	;;^UTILITY(U,$J,"OPT",1373,"U")
 	;;=DATA DICTIONARY UTILITIES
 	;;^UTILITY(U,$J,"OPT",1374,0)
@@ -168,7 +172,7 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",1380,10,5,"^")
 	;;=DDXP FORMAT DOCUMENTATION
 	;;^UTILITY(U,$J,"OPT",1380,99)
-	;;=57909,41932
+	;;=62819,35304
 	;;^UTILITY(U,$J,"OPT",1380,"U")
 	;;=DATA EXPORT TO FOREIGN FORMAT
 	;;^UTILITY(U,$J,"OPT",1381,0)
@@ -220,7 +224,7 @@ Q	Q
 	;;^UTILITY(U,$J,"OPT",1381,15)
 	;;=K DIAX
 	;;^UTILITY(U,$J,"OPT",1381,99)
-	;;=57909,41931
+	;;=62819,35305
 	;;^UTILITY(U,$J,"OPT",1381,"U")
 	;;=EXTRACT DATA TO FILEMAN FILE
 	;;^UTILITY(U,$J,"OPT",1382,0)
@@ -405,9 +409,3 @@ Q	Q
 	;;=DDSDFRM
 	;;^UTILITY(U,$J,"OPT",1394,99.1)
 	;;=56123,39787
-	;;^UTILITY(U,$J,"OPT",1394,"U")
-	;;=DELETE A FORM
-	;;^UTILITY(U,$J,"OPT",1395,0)
-	;;=DDS PURGE UNUSED BLOCKS^Purge Unused Blocks^^R^^^^^^^^
-	;;^UTILITY(U,$J,"OPT",1395,1,0)
-	;;=^^3^3^2940630^

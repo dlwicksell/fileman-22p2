@@ -1,5 +1,5 @@
 DIT1	;SFISC/GFT,TKW-TRANSFER DD'S ;30JAN2010
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	K A W !! S A=+Y,E=A
 CHK	F V=0:0 S V=$O(^DD(A,"SB",V)) Q:'V  S A(V)=0,L(V)=V#1+DHIT

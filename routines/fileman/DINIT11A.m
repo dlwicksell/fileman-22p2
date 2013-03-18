@@ -1,5 +1,5 @@
 DINIT11A	;SFISC/XAK-INITIALIZE VA FILEMAN ;06:30 PM  5 Aug 2002
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 EGP	I '$D(^DD("DD")) S ^("DD")="S Y=$$FMTE^DILIBF(Y,""5U"")" ;**CCO/NI DO NOT WRITE OVER DATE-OUTPUT CODE
 DD	F I=1:1 S X=$T(DD+I),Y=$P(X," ",3,99) Q:X?.P  S @("^DD("_$E($P(X," ",2),3,99)_")=Y")

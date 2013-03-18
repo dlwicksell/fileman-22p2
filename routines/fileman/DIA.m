@@ -1,5 +1,5 @@
 DIA	;SFISC/GFT-SELECT FIELDS TO EDIT ;4JUNE2008
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	D DICS
 1	D F W !?F*3,"EDIT WHICH "_X I $S(DB:DIAT="",1:1) R ": ALL// ",X:DTIME S:'$T X=U,DTOUT=1 G ALL^DIA1:X=""!(X="ALL"),TEMP^DIA1:X?1"[".E&'F,L

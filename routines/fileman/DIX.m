@@ -1,5 +1,5 @@
 DIX	;SFISC/GFT,NHRC/DRH-STATISTICS ;05:46 PM  16 Dec 1999
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	S DIK="^DOPT(""DIX"","
 	G F:$D(^DOPT("DIX",3)) S ^(0)="STATISTICAL ROUTINE^1.01^" F I=1:1:3 S ^DOPT("DIX",I,0)=$E($T(F+I),4,99)

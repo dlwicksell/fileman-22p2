@@ -1,5 +1,5 @@
 DDFIX	;SFCIOFO/S0/MKO VARIOUS DD AND DIC FIXES ;9:17 AM  15 Mar 1999
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 FIXPT	; ==> Fix Bad "PT" Nodes <==

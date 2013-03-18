@@ -1,5 +1,5 @@
 DIU5	;SFISC/TKW-QUERY CONDITION EXTRINSIC FUNCTIONS ;8/27/93  13:41
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 BEF(X,Y,N)	; X BEFORE Y
 	I $G(N)="'" G:Y']]X Q1 Q 0

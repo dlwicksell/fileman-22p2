@@ -1,5 +1,5 @@
-DIINIT1	; ; 13-DEC-2012
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+DIINIT1	; ; 08-MAR-2013 ; 3/8/13 10:41am
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	; LOADS AND INDEXES DD'S
 	;
@@ -8,9 +8,10 @@ DIINIT1	; ; 13-DEC-2012
 ASK	I %=1,$D(DIFQ(0)) W !,"SHALL I WRITE OVER FILE SECURITY CODES" S %=2 D YN^DICN S DSEC=%=1 I %<1 K DIFQ Q
 	F X="KEY","OPT","REM" D W Q:'$D(DIFQ)
 	Q:'$D(DIFQ)  S %=2 W !!,"ARE YOU SURE EVERYTHING'S OK" D YN^DICN I %-1 K DIFQ Q
+	D ^DIINITPR D NOW^%DTC S DIFROM("INI")=%
 	I $D(DIFKEP) F DIDIU=0:0 S DIDIU=$O(DIFKEP(DIDIU)) Q:DIDIU'>0  S DIU=DIDIU,DIU(0)=DIFKEP(DIDIU) D EN^DIU2
 	D DT^DICRW K ^UTILITY(U,$J),^UTILITY("DIK",$J) D WAIT^DICD
-	S DN="^DIINI" F R=1:1:6 D @(DN_$$B36(R)) W "."
+	S DN="^DIINI" F R=1:1:7 D @(DN_$$B36(R)) W "."
 	F  S D=$O(^UTILITY(U,$J,"SBF","")) Q:D'>0  K:'DIFQ(D) ^(D) S D=$O(^(D,"")) I D>0  K ^(D) D IX
 KEYSNIX	; Keys and new style indexes installer ; new in FM V22.2
 	N DIFRSA S DIFRSA=$NA(^UTILITY("KX",$J)) ; Tran global for Keys and Indexes

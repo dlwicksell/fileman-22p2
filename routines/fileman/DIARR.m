@@ -1,5 +1,5 @@
 DIARR	;SFISC/DCM-ARCHIVING FUNCTION, RETRIEVAL OF ARCHIVED RECORD ;8/11/98  13:19
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 START	W !!,"This option will scan your archived file and will attempt to retrieve entries"
 	W !,"that match the name (.01) field and",!,"either Primary KEY or identifier field(s) of the archived file."

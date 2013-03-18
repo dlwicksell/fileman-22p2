@@ -1,5 +1,5 @@
 DICN0	;SFISC/GFT,XAK,SEA/TOAD/TKW-ADD NEW ENTRY ;22MAR2006
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 NEW	; try to add a new record to the file

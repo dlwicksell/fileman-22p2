@@ -1,5 +1,5 @@
 DDGF1	;SFISC/MKO-MAIN SCREEN ;02:46 PM  12 Oct 1994
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	D RC($P(DDGFLIM,U),$P(DDGFLIM,U,2))
 	S DDGFE=0 F  S Y=$$READ W:$T(@Y)="" $C(7) D:$D(DDGFMSG) MSG^DDGF() D:$T(@Y)]"" @Y Q:DDGFE

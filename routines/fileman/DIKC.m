@@ -1,5 +1,5 @@
 DIKC	;SFISC/MKO-FIRE INDEX FILE CROSS REFERENCES ;24OCT2012
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 	;
 INDEX(DIFILE,DIREC,DIFLD,DIXREF,DICTRL)	;Fire Index file xrefs

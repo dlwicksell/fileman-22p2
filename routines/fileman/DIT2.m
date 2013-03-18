@@ -1,5 +1,5 @@
 DIT2	;SFISC/GFT-TRANSFER TEMPLATES ;10/16/90  9:37 AM
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 TEM	F Z=0:0 W "." S Z=$O(^UTILITY("DITR",$J,DIK,Z)) Q:Z=""  F V=V:1 I $O(@(%Y_"0)"))="" D %XY S ^(0)=$P(@(%Y_"0)"),U,1,3)_U_DDT(0)_U_$P(^(0),U,5,99) K ^("ROU"),^("ROUOLD") K:DIK="^DIBT(" ^DIBT(V,1) Q
 	Q

@@ -1,5 +1,5 @@
 DIP100	;SFISC/TKW - PROCESS BY(0) INPUT VARIABLES (CONT.OF DIP10) ;12:27 PM  13 Oct 1999
-	;;22.2T1;VA FILEMAN;;Dec 14, 2012
+	;;22.2V2;VA FILEMAN;;Mar 08, 2013
 	;Per VHA Directive 2004-038, this routine should not be modified.
 ENBY0	; Interactive dialogue to prompt for BY(0) data
 	Q:DUZ(0)'["@"  K DPP,BY(0),L(0),FR(0),TO(0),DISPAR(0) N DIR,DTOUT,DUOUT,DIRUT,DIROUT,X,Y
