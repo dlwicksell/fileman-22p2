@@ -1,6 +1,6 @@
-<ext4:fragment onBeforeRender="menuSelected^xwFilemanInquire">
+<ext4:fragment onBeforeRender="enterEdit^xwFilemanInquire">
   <ewd:comment>
-    Fileman Web Application - fmEnterEditForm.ewd
+    Fileman Web Application - fmEntryForm.ewd
   
     Written by DP Roberts <rdreadpirate@gmail.com>
             and David Wicksell <dlw@linux.com>
@@ -21,11 +21,7 @@
     A graphical replacement of Fileman roll and scroll
   </ewd:comment>
 
-  <ext4:formPanel id="fileSelectForm" border="false">
-    <ext4:fieldSet id="fileLookup" title="<?= #menuSelected ?>" margin="10 10 0 10">
-      <ext4:comboBox fieldLabel="Input to what file" labelWidth="140" name="fileSelect" value="*" />
-    </ext4:fieldSet>
-
-    <ext4:submitbutton text="Select" margin="0 10 0 0" nextPage="fmEnterEditSelect"addTo="westPanel" replacePreviousPage="true" /> 
-  </ext4:formPanel>
+  <ext4:panel>
+    <ext4:panel id="enterEditForm" items="[enterEditForm]" />
+  </ext4:panel>
 </ext4:fragment>

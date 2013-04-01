@@ -1,4 +1,22 @@
-xwFilemanInquire ;DLW/FLAP & DPR/FLAP - EWD/openMDWS methods;2013-03-01  4:47 PM
+xwFilemanInquire ;VEN/DPR & V4W/DLW - EWD/openMDWS methods ;2013-03-31  8:25 PM
+ ;;0.1.0;EWD Utils;****LOCL RTN**;
+ ;
+ ; Written by DP Roberts <rdreadpirate@gmail.com>
+ ;         and David Wicksell <dlw@linux.com>
+ ; Copyright © 2012,2013 VISTA Expertise Network and Fourth Watch Software
+ ;
+ ; Licensed under the Apache License, Version 2.0 (the "License");
+ ; you may not use this file except in compliance with the License.
+ ; You may obtain a copy of the License at
+ ;
+ ;     http://www.apache.org/licenses/LICENSE-2.0
+ ;
+ ; Unless required by applicable law or agreed to in writing, software
+ ; distributed under the License is distributed on an "AS IS" BASIS,
+ ; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ; See the License for the specific language governing permissions and
+ ; limitations under the License.
+ ;
  ;
 initialize(sessid)
  d setSessionValue^%zewdAPI("vista.systemId","FLAP Development Server",sessid)
@@ -323,6 +341,30 @@ stdCaptionO(inputs,results)
  . . s results(count)=$g(values(ien,sub))
  ;
  quit
+ ;
+enterEdit(sessid)
+ ;
+ n duz,fileName,fileNumber,inputs,record,results,selected
+ s duz=$$getSessionValue^%zewdAPI("vista_DUZ",sessid)
+ s fileName=$$getSessionValue^%zewdAPI("fileSelect",sessid)
+ s fileName=$$UP^XLFSTR(fileName)
+ s fileNumber=$$FIND1^DIC(1,,"X",fileName,)
+ d getMultipleSelectValues^%zewdAPI("recordList",.selected,sessid)
+ s recordIen=$g(selected(1))
+ s record=$$GET1^DIQ(fileNumber,recordIen_",",.01,"E")
+ ;
+ s inputs("fileNumber")=fileNumber
+ s inputs("attrs")="**"
+ d formBuilder^xwFilemanAPI(.inputs,.results)
+ k ^dpr
+ m ^dpr=results
+ d mergeArrayToSession^%zewdAPI(.results,"enterEditForm",sessid)
+ ;
+ d setSessionValue^%zewdAPI("zzFileName",fileName,sessid)
+ d setSessionValue^%zewdAPI("zzFileNumber",fileNumber,sessid)
+ d setSessionValue^%zewdAPI("zzRecord",record,sessid)
+ ;
+ quit ""
  ;
 error ;Call the VISTA error trap and then display the error on the screen
  s $zt="h" ;If we have an error in here, abandon all hope and kill the process

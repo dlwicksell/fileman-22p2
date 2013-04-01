@@ -1,16 +1,43 @@
 <ext4:fragment onBeforeRender="recordSelect^xwFilemanInquire">
+  <ewd:comment>
+    Fileman Web Application - fmRecordSelect.ewd
+  
+    Written by DP Roberts <rdreadpirate@gmail.com>
+            and David Wicksell <dlw@linux.com>
+    Copyright © 2012,2013 VISTA Expertise Network and Fourth Watch Software
+  
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+  
+        http://www.apache.org/licenses/LICENSE-2.0
+  
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+  
+    A graphical replacement of Fileman roll and scroll
+  </ewd:comment>
+
   <ext4:formPanel id="recordSelectForm" border="false">
-    <ext4:fieldSet id="recordLookup" title="<?= #menuSelected ?>" margin="10 10 0 10" >
+    <ext4:fieldSet id="recordLookup" title="<?= #menuSelected ?>" margin="10 10 0 10">
       <ext4:displayfield fieldLabel="Output from what file" labelWidth="140" value="<?= #fileSelect ?>" />
+
       <ext4:comboBox fieldLabel="Select (one or more)" labelWidth="140" name="recordList" multiSelect="true" />
+
       <ext4:checkboxgroup fieldLabel="Flags" labelWidth="140" columns="1" vertical="true">
         <ext4:checkboxfield boxLabel="Audit" name="a_flags" inputValue="A" />
+
         <ext4:checkboxfield boxLabel="Computed Fields" name="c_flags" inputValue="C" />
+
         <ext4:checkboxfield boxLabel="Record Number" name="r_flags" inputValue="R" />
       </ext4:checkboxgroup>
 
       <ext4:radiogroup fieldLabel="Standard Captioned Output" labelWidth="160" columns="2" vertical="true">
         <ext4:radiofield boxLabel="Yes" name="stdCapO" inputValue="yes" handler="function(checkbox, checked) {if (checked === true) {Ext.getCmp('printFields').hide();}}" />
+
         <ext4:radiofield boxLabel="No" name="stdCapO" inputValue="no" handler="function(checkbox, checked) {if (checked === true) {Ext.getCmp('printFields').show();}}" />
       </ext4:radiogroup>
 
@@ -20,7 +47,7 @@
     </ext4:fieldSet>
 
     <ext4:submitbutton text="Choose New File" margin="0 10 0 0 " nextPage="fmInquireForm" addTo="westPanel" replacePreviousPage="true" />
-    <ext4:submitbutton text="Select" margin="0 10 0 0" nextPage="captionedOutput" addTo="centerPanel" replacePreviousPage="true" />
 
+    <ext4:submitbutton text="Select" margin="0 10 0 0" nextPage="captionedOutput" addTo="centerPanel" replacePreviousPage="true" />
   </ext4:formPanel>
 </ext4:fragment>
